@@ -38,7 +38,8 @@ jobs:
           sudo apt-get update -q
           sudo apt-get install -y -q --no-install-recommends \
             texlive-xetex texlive-latex-recommended texlive-latex-extra \
-            texlive-pictures texlive-lang-other texlive-fonts-recommended \
+            texlive-pictures texlive-lang-other texlive-lang-arabic texlive-science \
+            texlive-fonts-recommended \
             culmus lmodern
           fc-list | grep -q "David CLM" || { echo "David CLM font not found"; exit 1; }
 
