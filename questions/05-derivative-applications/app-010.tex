@@ -1,0 +1,264 @@
+% ==================================================================
+% id:       app-010
+% topic:    שימושי הנגזרת
+% subtopic: כלל לופיטל
+% solution: full
+% ==================================================================
+חשבו את הגבולות הבאים:
+\begin{solbox}
+בחישוב הגבולות הבאים נשתמש בכלל לופיטל.
+\end{solbox}
+\bE\bMs{2}
+\item $\ds{\lim_{x \to 1} \frac{x^x - x}{\ln x - x + 1}} $
+\hint{זהו גבול מהצורה $\frac00$. כדי לגזור את $x^x$ כתבו אותו כ-$e^{x\ln x}$; ייתכן שתצטרכו להפעיל את כלל לופיטל יותר מפעם אחת.}
+\begin{solbox}
+לפני שניגש לגזירה, נבין מהי נגזרתה של
+$h(x)=x^x$.
+טוב, זה לא
+$x$,
+בחזקה קבועה וזה לא קבוע בחזקת
+$x$
+זהו "ערבוב" של שני אלה.
+מה עשוי לעזור כאן?
+אם רק היינו יכולים "להוריד" את המעריך, זה היה מאוד עוזר. מיהו ה"שפיץ" בהורדת המעריכים?
+נכון! לוגריתם!
+נתבונן בפונקציה
+$$.h(x)=e^{\ln x^x}=e^{x\ln x}$$
+בהסתמך על כלל השרשרת נקבל
+$$,h'(x)=e^{x\ln x}(x\ln x)'=(\ln x+1)e^{x\ln x}=(\ln x+1)x^x.$$
+הצלחנו!
+ניגש לתרגיל המקורי.
+נשים לב תחילה כי
+$$,\lim_{x \to 1} \frac{x^x - x}{\ln x - x + 1}=\left[\frac{0}{0}\right]$$
+מכיוון ש-
+$f(x)=x^x - x,\ g(x)=\ln x - x + 1$
+פונקציות גזירות בסביבה נקובה של
+$x=1$
+ו-
+$g'(x)$
+לא מתאפסת בסביבה זו,
+אז נוכל לנסות להשתמש בכלל לופיטל.
+ננסה לחשב את הגבול
+$\lim_{x \to 1} \frac{f'(x)}{g'(x)}$
+\begin{align*}
+    \lim_{x \to 1} \frac{f'(x)}{g'(x)}=\ \lim_{x \to 1} \frac{\left(x^x - x\right)'}{(\ln x - x + 1)'}
+    =\ \lim_{x \to 1}\frac{(\ln x+1)x^x-1}{\frac{1}{x}-1},
+\end{align*}
+לאחר הצבת
+$x=1$
+בביטוי האחרון נגלה ששוב קיבלנו גבול מסוג
+$\frac{0}{0}$.
+שוב, הפונקציות
+$f'(x),\ g'(x)$
+גזירות בסביבה נקובה של
+$x=1$
+ו-
+$g''(x)\neq 0$
+בסביבה זו,
+נוכל לשתמש שוב בכלל לופיטל ולנסות לחשב את
+$\displaystyle\lim_{x \to 1}\frac{f''(x)}{g''(x)}$.
+מתקיים
+\begin{align*}
+    \lim_{x \to 1}\frac{f''(x)}{g''(x)}&=\ \lim_{x \to 1}\frac{\left((\ln x+1)x^x-1\right)'}{\left(\frac{1}{x}-1\right)'}\\
+    &=\ \lim_{x \to 1}\frac{x^{x-1}+x^2(\ln x+1)}{-\frac{1}{x^2}}
+    =\ -2.
+\end{align*}
+קיבלנו כי קיים הגבול
+$\displaystyle\lim_{x \to 1} \frac{f''(x)}{g''(x)}$
+לכן, לפי כלל לופיטל, קיים גם הגבול
+$\lim_{x \to 1} \frac{f'(x)}{g'(x)}$
+ושוב, לפי כלל לופיטל, קיים גם הגבול המקורי ומתקיים
+$$.\lim_{x \to 1} \frac{\left(x^x - x\right)}{(\ln x - x + 1)}=-2$$
+\end{solbox}
+
+\item $\ds{\lim_{x \to +\infty} \frac{\ln x}{x^\eps} \quad (\eps > 0)}$
+\begin{solbox}
+נסמן
+$f(x)=\ln x$,
+$g(x)=x^\varepsilon$.
+נשים לב כי
+$f,g$
+גזירות בכל הקרן החיובית ו-
+$g'(x)=\varepsilon x^{\varepsilon-1}\neq 0$
+לכל
+$x>0$,
+בנוסף
+$$,\lim_{x \to +\infty} \frac{\ln x}{x^\varepsilon}=\left[\frac{\infty}{\infty}\right]$$
+לכן ננסה להשתמש בכלל לופיטל,
+כלומר נחשב את הגבול
+$\displaystyle\lim_{x \to +\infty} \frac{f'(x)}{g'(x)}$
+\begin{align*}
+    \displaystyle\lim_{x \to +\infty} \frac{f'(x)}{g'(x)}=\ \lim_{x \to +\infty} \frac{(\ln x)'}{(x^\varepsilon)'}
+    =\ \lim_{x \to +\infty}\frac{\frac{1}{x}}{\varepsilon \cdot x^{\varepsilon - 1}}
+=\ \frac{1}{\varepsilon} \lim_{x \to +\infty} \frac{1}{x^\varepsilon}
+=\ 0.
+\end{align*}
+מכיוון שקיים הגבול
+$\displaystyle\lim_{x \to +\infty} \frac{f'(x)}{g'(x)}$,
+נסיק מכלל לופיטל כי קיים גם הגבול המקורי ו-
+$$.\displaystyle\lim_{x \to +\infty} \frac{f(x)}{g(x)}=0$$
+\end{solbox}
+\item $\ds{\lim_{x \to 0} \frac{\arcsin 2x - 2\arcsin x}{x^3}}$
+\hint{הפעילו את כלל לופיטל, ולאחר מכן הוציאו מהגבול גורמים ששואפים לגבול סופי ושונה מאפס לפני שממשיכים.}
+\begin{solbox}
+נסמן
+$.f(x)=\arcsin(2x)-2\arcsin x,\ g(x)=x^3$
+שתי הפונקציות גזירות בסביבה נקובה של
+$x=0$,
+$g'(x)\neq0$
+בסביבה זו ו-
+$\displaystyle\lim_{x\to0}\frac{f(x)}{g(x)}=\left[\frac{0}{0}\right]$.
+ננסה להשתמש בכלל לופיטל ונחשב את
+$\displaystyle\lim_{x\to0}\frac{f'(x)}{g'(x)}$.
+מתקיים
+\begin{align*}
+    \lim_{x \to 0} \frac{f'(x)}{g'(x)}&=\ \lim_{x \to 0} \frac{\frac{2}{\sqrt{1 - 4x^2}} - \frac{2}{\sqrt{1 - x^2}}}{3x^2}
+=\ \frac{2}{3} \lim_{x \to 0} \frac{\sqrt{1 - x^2} - \sqrt{1 - 4x^2}}{x^2 \cdot \sqrt{1 - 4x^2} \cdot \sqrt{1 - x^2}}.
+\end{align*}
+נשים לב כי אם נוכל להתמודד עם הגבול
+$\displaystyle\lim_{x\to0}\frac{\sqrt{1 - x^2} - \sqrt{1 - 4x^2}}{x^2}$,
+נתמודד גם עם הגבול האחרון, הרי
+$\displaystyle\lim_{x\to0}\sqrt{1 - 4x^2} \cdot \sqrt{1 - x^2}=1$.
+נסמן
+$$.h(x)=\sqrt{1 - x^2} - \sqrt{1 - 4x^2},\ k(x)=x^2$$
+שוב, אנו נמצאים בתנאים של כלל לופיטל
+(נמקו).
+מתקיים
+\begin{align*}
+    \lim_{x\to0}\frac{h'(x)}{k'(x)}&=\ \lim_{x\to 0}\frac{-\frac{x}{\sqrt{1-x^2}}+\frac{4x}{\sqrt{1-4x^2}}}{2x}\\
+    &=\ \lim_{x\to 0}\frac{-\frac{1}{\sqrt{1-x^2}}+\frac{4}{\sqrt{1-4x^2}}}{2}
+    =\ \frac{-1+4}{2}
+    =\ \frac{3}{2}.
+\end{align*}
+מכלל לופיטל, נסיק כי קיים הגבול
+$\displaystyle\lim_{x\to0}\frac{h(x)}{k(x)}$
+וערכו הוא
+$\frac{3}{2}$.
+מכאן הגבול המקורי הוא
+$1$.
+\end{solbox}
+\item $\ds{\lim_{x \to 1} \left( 2 - x \right)^{\tan\frac{\pi x}{2}}}$
+\hint{זהו גבול מהצורה $1^\infty$: כתבו את הביטוי כ-$e$ בחזקת מכפלה, והציגו את המכפלה כמנה שמתאימה לכלל לופיטל.}
+\begin{solbox}
+בדומה לתרגילים אחרים, ננסה להיפטר מהחזקה:
+$$.\left( 2 - x \right)^{\tan\frac{\pi x}{2}}=e^{\ln\left( 2 - x \right)^{\tan\frac{\pi x}{2}}}=e^{\tan\frac{\pi x}{2}\ln\left( 2 - x \right)}=e^{\frac{\sin\frac{\pi x}{2}}{\cos\frac{\pi x}{2}}\ln\left( 2 - x \right)}$$
+אם נדע להתמודד עם הגבול ב-
+$x=1$
+של
+$\frac{1}{\cos\frac{\pi x}{2}}\ln\left( 2 - x \right)$,
+נדע גם להתמודד עם הגבול
+$\frac{\sin\frac{\pi x}{2}}{\cos\frac{\pi x}{2}}\ln\left( 2 - x \right)$
+ב-
+$x=1$,
+הרי ש-
+$$.\lim_{x\to1}\sin\frac{\pi x}{2}=1$$
+נסמן
+$$.f(x)=\ln\left( 2 - x \right),\ g(x)=\cos\frac{\pi x}{2}$$
+מתקיים
+$f,g$
+גזירות בסביבה נקובה של
+$x=1$,
+$g'(x)\neq0$
+בסביבה זו ו-
+$$,\lim_{x\to0}\frac{f(x)}{g(x)}=\left[\frac{0}{0}\right]$$
+לכן ננסה להשתמש בכלל לופיטל ונחשב את הגבול
+$$.\lim_{x\to1}\frac{f'(x)}{g'(x)}$$
+מתקיים
+\begin{align*}
+\lim_{x \to 1}\frac{f'(x)}{g'(x)}
+&=\ \lim_{x\to 1}\frac{-\frac{1}{2-x}}{-\frac{\pi}{2}\sin\left(\frac{\pi x}{2}\right)}\\[4pt]
+&=\ \frac{2}{\pi}.
+\end{align*}
+מכאן נסיק כי
+$$.\lim_{x\to 1}(2-x)^{\tan\left(\frac{\pi x}{2}\right)}
+=e^\frac{2}{\pi}$$
+\end{solbox}
+
+\item $\ds{\lim_{x \to 0} \lr{\cot x - \frac{1}{x}}}$
+\hint{כתבו את $\cot x$ כמנה ואחדו את שני השברים למכנה משותף.}
+\begin{solbox}
+נציג תחילה
+$$.\left(\cot x-\frac{1}{x}\right)
+=\left(\frac{\cos x}{\sin x}-\frac{1}{x}\right)=\frac{x\cos x-\sin x}{x\sin x}=\frac{x\cos x-\sin x}{x^2\cdot\frac{\sin x}{x}}$$
+אם נדע להתמודד עם הגבול ב-
+$x=0$
+של
+$\frac{x\cos x-\sin x}{x^2}$,
+,נדע גם להתמודד עם הגבול המקורי
+הרי ש-
+$$.\displaystyle\lim_{x\to0}\frac{\sin x}{x}=1$$
+נסמן
+$f(x)=x\cos x-\sin x,\ g(x)=x^2$.
+מתקיים
+$\displaystyle\lim_{x\to0}\frac{f}{g}=\left[\frac{0}{0}\right]$.
+נשים לב כי שתי הפונקציות גזירות בסביבה נקובה של
+$x=0$
+ובסביבה זו
+$g'(x)\neq0$.
+לכן ננסה להשתמש בכלל לופיטל ולחשב את הגבול
+$\displaystyle\lim_{x\to0}\frac{f'(x)}{g'(x)}$.
+מתקיים
+\begin{align*}
+\displaystyle\lim_{x\to0}\frac{f'(x)}{g'(x)}
+&=\ \lim_{x\to 0}\frac{\cos x-x\sin x-\cos x}{2x}\\
+&=\ \lim_{x\to 0}\frac{-x\sin x}{2x}\\
+&=\ \lim_{x\to 0}\frac{-\sin x}{2}\\\
+&=\ 0.
+\end{align*}
+מכיוון שקיים הגבול
+$\displaystyle\lim_{x\to0}\frac{f'(x)}{g'(x)}$,
+קיים גם הגבול
+$\displaystyle\lim_{x\to0}\frac{f(x)}{g(x)}$
+וערכו הוא
+$0$.
+מכאן
+\begin{align*}
+    \lim_{x\to0}\left(\cot x-\frac{1}{x}\right)&=\ \lim_{x\to0}\frac{x\cos x-\sin x}{x^2\cdot\frac{\sin x}{x}}\\
+    &=\ \lim_{x\to0}\frac{f(x)}{g(x)}\cdot\frac{x}{\sin x}\\
+    &=\ 0\cdot1\\
+    &=\ 0.
+\end{align*}
+\end{solbox}
+
+\item $\ds{\lim_{x \to 0^+} \left( \ln \frac{1}{x} \right)^x}$
+\hint{כתבו את הביטוי כ-$e^{x\ln\left(\ln\frac1x\right)}$, והציגו את המעריך (מהצורה $0\cdot\infty$) כמנה כדי להשתמש בכלל לופיטל.}
+\begin{solbox}
+נסדר תחילה את הפונקציה
+$$.\left(\ln\frac{1}{x}\right)^x=e^{\ln\left(\ln\frac{1}{x}\right)^x}=e^{x\ln\left(\ln\frac{1}{x}\right)}$$
+נשים לב כי
+\begin{align*}
+,\lim_{x\to 0^+}x\ln\left( \ln \frac{1}{x} \right)
+&=\ [0\cdot\infty]
+\end{align*}
+נתאים את גבול לשימוש בכלל לופיטל ע"י הצגה
+$$.x\ln\left( \ln \frac{1}{x} \right)=\frac{\ln\left( \ln \frac{1}{x} \right)}{\frac{1}{x}}$$
+נסמן
+$$.f(x)=\ln\left( \ln \frac{1}{x} \right),\ g(x)=\frac{1}{x}$$
+נשים לב כי
+$f,g$
+גזירות בסביבה נקובה ימנית של
+$x=0$
+ו-
+$g'(x)\neq0$
+בסביבה זו וכן
+$\displaystyle\lim_{x\to0^+}\frac{f(x)}{g(x)}=\left[\frac{\infty}{\infty}\right]$
+, לכן ננסה להשתמש בכלל לופיטל.
+נחשב
+$\lim_{x\to 0^+}\frac{f'(x)}{g'(x)}$.
+
+\begin{align*}
+\lim_{x\to 0^+}\frac{f'(x)}{g'(x)}&= \lim_{x\to 0^+}\frac{\frac{1}{\ln(1/x)}\cdot\left(-\frac{1}{x}\right)}{-\frac{1}{x^2}}\\[6pt]
+&=\ \lim_{x\to 0^+}\frac{x}{\ln(1/x)}\\
+&=\ 0,
+\end{align*}
+מכיוון שקיים הגבול
+$\displaystyle\lim_{x\to 0^+}\frac{f'(x)}{g'(x)}$,
+קיים גם הגבול
+$\displaystyle\lim_{x\to 0^+}\frac{f(x)}{g(x)}$
+וערכו הוא
+$0$.
+מכאן
+$$\lim_{x \to 0^+} \left( \ln \frac{1}{x} \right)^x=e^0=1$$
+\end{solbox}
+\eMs
+\eE

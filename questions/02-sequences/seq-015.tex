@@ -1,0 +1,61 @@
+% ==================================================================
+% id:       seq-015
+% topic:    סדרות
+% subtopic: גבולות במובן הרחב
+% solution: full
+% ==================================================================
+\textbf{בכל אחד מהסעיפים (השונים) הבאים,
+תנו דוגמה לסדרה
+$a_n\goes\infty$
+המקיימת:}
+\begin{enumerate}\bMs{2}
+\item $\ds\lim_{n \to \infty} (a_{n+1} - a_n) = 0$
+\hint{חפשו סדרה ששואפת לאינסוף לאט יותר מ-$n$. לחישוב ההפרש היעזרו בכפל בצמוד.}
+\begin{solbox}
+ניקח
+$a_n=\sqrt{n}$.
+מתקיים
+\begin{align*}
+    a_{n+1}-a_n&=\ \sqrt{n+1}-\sqrt{n}\\
+    &=\ (\sqrt{n+1}+\sqrt{n})\cdot{\color{red}\frac{\sqrt{n+1}+\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}}\\
+    &=\ \frac{1}{\sqrt{n+1}+\sqrt{n}}.
+\end{align*}
+מכיוון שהמכנה שואף לאינסוף,
+נסיק כי
+$\lim_{n\to\infty}(a_{n+1}-a_n)=0$.
+
+\end{solbox}
+\item $\ds\lim_{n \to \infty} (a_{n+1} - a_n) = \infty$
+\begin{solbox}
+ניקח
+$a_n=n^2$.
+מתקיים
+
+    $$.a_{n+1}-a_n=(n+1)^2-n^2=2n+1\xrightarrow[n\to\infty]{}\infty$$
+
+\end{solbox}
+\item $\ds\lim_{n \to \infty} (a_{n+1} - a_n)$ לא קיים.
+\hint{נסו להוסיף לסדרה פשוטה ששואפת לאינסוף איבר חסום שמתנודד.}
+\begin{solbox}
+ ניקח
+$a_n=n+(-1)^n$.
+מתקיים
+\begin{align*}
+    a_{n+1}-a_n&=\ \left((n+1)+(-1)^{n+1}\right)-\left(n+(-1)^n\right)\\
+    &=\ 1+(-1)^{n+1}-(-1)^n\\
+    &=\ \case{cc}{3 &n \text{\R{ זוגי }}\\-1 &n \text{\R{ אי זוגי }}},
+    \end{align*}
+בבירור הסדרה
+$(a_{n+1}-a_{n})_{n=1}^\infty$
+אינה מתכנסת.
+\\\\
+
+    דוגמה נוספת: הסדרה שנתונה על ידי
+    $$1,2,2,3,3,4,4,\ldots$$
+    זו כמובן שואפת לאינסוף, אבל ההפרשים בין שני איברים סמוכים משתנים בין
+    $0$
+    ל-$1$,
+    בדומה לדוגמה הקודמת.
+\end{solbox}
+\eMs
+\end{enumerate}

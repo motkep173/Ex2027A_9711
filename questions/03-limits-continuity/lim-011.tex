@@ -1,0 +1,207 @@
+% ==================================================================
+% id:       lim-011
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: גבולות אינסופיים ואסימפטוטות
+% solution: full
+% ==================================================================
+\textbf{
+בשאלה זו נקצר ונכתוב
+$\ds{\lim_{x\to x_0}}f(x)=\pm\infty$
+אם
+$\ds{\lim_{x\to x_0}}f(x)=\infty$
+או
+$\ds{\lim_{x\to x_0}}f(x)=-\infty$.
+\\
+הוכיחו או הפריכו
+כל אחד מהסעיפים הבאים:
+}
+\begin{enumerate}
+    \item אם
+    $\ds{\lim_{x\to \infty}}f(x)=\infty$ ו-
+    $g(x)$
+    חסומה,
+    אז
+    $\ds{\lim_{x\to \infty}}(f(x)+g(x))=\infty$.
+
+\ifsol
+\hint{בדקו אם החסם התחתון של $g$ מאפשר להשוות את $f+g$ לפונקציה ששואפת לאינסוף; אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+    הטענה נכונה.
+    קיים
+    $m$
+    כך ש-
+    $g(x)>m$
+    לכל
+    $x\in\mathbb{R}$.
+    ולכן
+    $$,f(x)+g(x)>f(x)+m$$
+    לכל
+    $x\in\rr$,
+    והרי מאריתמטיקה במובן הרחב ידוע כי
+    $$\lim_{x\to \infty} (f(x)+m)=\infty$$
+    לכן מכלל הפיצה נסיק שמתקיים
+$\lim_{x\to\infty}(f(x)+g(x))=\infty$.
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to 3}}f(x)=\infty$ ו-
+    $g(x)$
+    חסומה,
+    אז
+    $\ds{\lim_{x\to 3}}f(x)\cdot g(x)=\pm\infty$.
+
+\ifsol
+\hint{חשבו מה קורה למכפלה כש-$g$ מקבלת ערכים מסוגים שונים ליד $3$. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.}
+\begin{solbox}
+הטענה אינה נכונה.
+נביא דוגמא נגדית:
+$$.f(x)=\frac{1}{|x-3|},\ g(x)=\case{cc}{|x-3| & x\in[2,4]\\ 1 & x\notin[2,4]} $$
+מתקיים
+$\lim_{x\to3}f(x)=\infty$,
+$|g(x)|\leq1$,
+כלומר
+$g(x)$
+חסומה,
+אבל
+$$.\lim_{x\to3}f(x)\cdot g(x)=1$$
+גם הפונקציה הקבועה
+$g(x)=0$
+תעבוד במקרה זה כדוגמה נגדית.
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to -2}}f(x)=\infty$ ו-
+    $11\leq g(x)\leq13$
+    אז
+    $\ds{\lim_{x\to -2}}f(x)\cdot g(x)=\pm\infty$.
+
+\ifsol
+\hint{חשבו מה החסם התחתון החיובי של $g$ נותן למכפלה $f\cdot g$ ליד $-2$; אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה נכונה.
+נקבע
+חיובי
+$M$,
+אזי מכיוון ש-
+$\displaystyle\lim_{x\to-2}f(x)=\infty$,
+קיים
+$\delta>0$
+כך ש-
+$f(x)>\frac{M}{11}$
+לכל
+$x\in(-2-\delta,-2+\delta)$.
+מתקיים
+$$,f(x)\cdot g(x)>\frac{M}{11}\cdot11=M,\ \forall x\in(-2-\delta,2+\delta)$$
+משמעו
+$$.\ds{\lim_{x\to -2}}f(x)\cdot g(x)=\infty$$
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to \infty}}f(x)=\infty$ ו-
+    $g(x)$
+    חסומה וחיובית,
+    אז
+    $\ds{\lim_{x\to \infty}}f(x)\cdot g(x)=\infty$.
+
+\ifsol
+\hint{השוו לסעיף הקודם: האם חיוביות של $g$ נותנת את מה שהחסם התחתון החיובי נתן שם? אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה אינה נכונה.
+נביא דוגמא נגדית:
+$$.f(x)=x^2+1,\ g(x)=\frac{1}{x^2+1}$$
+מתקיים
+$\displaystyle\lim_{x\to\infty}f(x)=\infty$,
+$g(x)\leq 1$,
+כלומר,
+$g(x)$
+חסומה, אבל
+$$.\lim_{x\to\infty}f(x)\cdot g(x)=1$$
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to\infty}}f(x)\cdot g(x)=\infty$,
+    אז
+    $\ds{\lim_{x\to\infty}}f(x)=\pm\infty$
+    ו-
+    $\ds{\lim_{x\to\infty}}g(x)=\pm\infty$.
+
+\ifsol
+\hint{נסו מכפלות של חזקות של $x$ ששואפות לאינסוף ובדקו את הגבול של כל גורם בנפרד; אם הטענה נכונה בכל הדוגמאות, נסו להוכיח אותה.}
+\begin{solbox}
+    הטענה אינה נכונה.
+    נציג דוגמא נגדית:
+    $$.f(x)=\frac{1}{x},\ g(x)=x^2$$
+    מתקיים
+    $$,\lim_{x\to\infty}f(x)\cdot g(x)=\lim_{x\to\infty}x=\infty$$
+    אבל
+    $\displaystyle\lim_{x\to\infty}f(x)=0\neq\pm\infty$.
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to\infty}}f(x)\cdot g(x)=\infty$,
+    אז
+    $\ds{\lim_{x\to\infty}}f(x)=\pm\infty$
+    או
+    $\ds{\lim_{x\to\infty}}g(x)=\pm\infty$.
+
+\ifsol
+\hint{השוו לסעיף הקודם. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.}
+\begin{solbox}
+        הטענה אינה נכונה.
+    נציג דוגמא נגדית:
+    $$.f(x)=g(x)=(-1)^{\lfloor x\rfloor}\cdot x$$
+    מתקיים
+    $$,\lim_{x\to\infty}f(x)\cdot g(x)=\lim_{x\to\infty}x^2=\infty$$
+    אבל
+    $\displaystyle\lim_{x\to\infty}f(x)\neq\pm\infty$,
+    למעשה, הגבול לא קיים כלל.
+    אכן,
+    $$,f(x)=x,\quad \forall\ 2k\leq x<2k+1,\ k\in\mathbb{Z}$$
+    מצד שני
+    $$.f(x)=-x,\quad \forall\ 2k+1\leq x<2(k+1),\ k\in\mathbb{Z}$$
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to1}}\frac{f(x)}{g(x)}=\infty$,
+    אז
+    $\ds{\lim_{x\to1}}(f(x)-g(x))=\infty$.
+
+\ifsol
+\hint{חשבו באילו דרכים מנה יכולה לשאוף לאינסוף, ומה כל אחת מהן אומרת על ההפרש. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.}
+\begin{solbox}
+    הטענה אינה נכונה. להלן דוגמא נגדית:
+    $$,f(x)=1,\ g(x)=|x-1|$$
+    מתקיים
+    $$,\lim_{x\to1}\frac{f(x)}{g(x)}=\lim_{x\to1}\frac{1}{|x-1|}=\infty$$
+    אבל
+    $$.\lim_{x\to1}(f(x)-g(x))=\lim_{x\to1}(1-|x-1|)=1\neq\infty$$
+\end{solbox}
+\fi
+
+    \item אם
+    $\ds{\lim_{x\to-5}}\frac{f(x)}{g(x)}=\infty$,
+    ו-
+    $\ds{\lim_{x\to-5}}g(x)=\infty$,
+    אז
+    $\ds{\lim_{x\to-5}}(f(x)-g(x))=\infty$.
+
+\ifsol
+\hint{נסו להוציא את $g$ כגורם משותף מ-$f-g$ ובדקו לאן שואף כל גורם; אם זה לא מוביל לתשובה, חפשו דוגמה נגדית.}
+\begin{solbox}
+    הטענה נכונה.
+    נשים לב כי מתקיים
+    $$f(x)-g(x)=g(x)\cdot\left(
+    \frac{f(x)}{g(x)}-1
+    \right)$$
+    ולכן מאריתמטיקה במובן הרחב של חיסור וכפל נקבל כי
+    $$.\lim_{x\to-5}
+    (f(x)-g(x))=\infty$$
+\end{solbox}
+\fi
+\end{enumerate}

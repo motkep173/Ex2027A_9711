@@ -1,0 +1,215 @@
+% ==================================================================
+% id:       seq-001
+% topic:    סדרות
+% subtopic: הגדרת הגבול (ε, N)
+% solution: full
+% ==================================================================
+\textbf{בעזרת הגדרת הגבול, הוכיחו כי:}
+\begin{enumerate}\bMs{2}
+    \item $\ds{\lim_{n\to\infty}\dfrac{2n + 1}{n-2} =2}$
+    
+\hint{פשטו את המרחק בין איבר הסדרה לגבול לשבר אחד, ובדקו עבור אילו $n$ הוא קטן מ-$\varepsilon$.}
+\begin{solbox}
+    נקבע
+    $\varepsilon>0$
+    ונחפש
+    $N$
+    טבעי כך ש-
+    $\left|\dfrac{2n + 1}{n-2}-2\right|<\varepsilon$
+    לכל
+    $n>N$.
+    נפשט
+    $$,\left|\dfrac{2n + 1}{n-2}-2\right|=\left|\dfrac{5}{n-2}\right|$$
+    נניח כי
+    $n>2$,
+    אז די להבין מתי מתקיים האי-שיוויון
+    $\frac{5}{n-2}<\varepsilon$.
+    האי-שיוויון האחרון שקול ל-
+    $\frac{n-2}{5}>\frac{1}{\varepsilon}$,
+    ולאחר פישוט אלגברי נקבל
+    $$.n>2+\frac{5}{\varepsilon}$$
+לכן נבחר
+    $N=\lfloor 2+\frac{5}{\varepsilon}\rfloor$
+    ואז לכל
+    $n>N$
+    מתקיים
+    $\left|\dfrac{2n + 1}{n-2}-2\right|<\varepsilon$.
+\end{solbox}
+
+    \item $\ds{\lim_{n\to\infty}\left(
+    17+\frac{(-1)^n}{n}\right)=17}$
+
+    \begin{solbox}
+    נסמן
+    $a_n=
+    17+\frac{(-1)^n}{n}$.
+       יהי
+       $\varepsilon >0$.
+       נסתכל על הביטוי
+       $$|a_n-17|=\left|
+       \left(
+    17+\frac{(-1)^n}{n}\right)-17
+       \right|=\left|
+       \frac{(-1)^n}{n}
+       \right|=\frac{1}{n}$$
+       נרצה כי זה יהיה קטן מ-$\varepsilon$,
+       כלומר נרצה שיתקיים
+       $\frac{1}{n}<\varepsilon$,
+       שזה שקול לכך שמתקיים
+       $n>\frac{1}{\varepsilon}$.
+       לכן נבחר
+       $N=\lfloor\frac{1}{\varepsilon}\rfloor +1$
+       ואז לכל
+       $n>N$
+       מתקיים
+       $|a_n-17|<\varepsilon$,
+       כמבוקש.
+\end{solbox}
+
+    \item
+    $\ds{\lim_{n\to\infty}\dfrac{n + \sin(n)}{n^2+3n} = 0}$
+      
+\hint{חסמו את הביטוי מלמעלה בביטוי פשוט יותר: השתמשו ב-$|\sin n|\le1$ והקטינו את המכנה.}
+\begin{solbox}
+        נסמן
+        $$.a_n=\dfrac{n + \sin(n)}{n^2+3n}$$
+    נקבע
+    $\varepsilon>0$
+    ונחפש
+    $N$
+    כך ש-
+    $\left|a_n-0\right|<\varepsilon$
+    לכל
+    $n>N$,
+    כלומר,
+    $$.\left|\dfrac{n + \sin(n)}{n^2+3n}\right|<\varepsilon$$
+    זהו אי-שיוויון מאתגר, ננסה "להקל על חיינו", נשים לב כי
+    $$,\left|\dfrac{n + \sin(n)}{n^2+3n}\right|\leq\dfrac{|n| + |\sin(n)|}{n^2+3n}\leq\dfrac{n + 1}{n^2+3n}\leq\dfrac{n + 1}{n^2}\leq\frac{2n}{n^2}=\frac{2}{n}$$
+    כאשר המעבר הראשון מבוסס עך אי-שיוויון המשולש ואילו המעבר השני על העובדה כי
+    $|\sin x|\leq 1$
+    לכל
+    $x\in\mathbb{R}$.
+    לכן נחפש
+    $N$
+עבורו
+    $\frac{2}{n}<\varepsilon$
+    לכל
+    $n>N$.
+    נבחר
+    $N=\lfloor\frac{2}{\varepsilon}\rfloor$,
+    אזי לכל
+    $n>N$
+    $\left|a_n-0\right|<\varepsilon$,
+    מה שמוכיח את הנטען.
+\end{solbox}
+
+    \item
+$\displaystyle\lim_{n \to \infty}\frac{5n-12}{2n+3}=\frac{5}{2}$.
+
+\hint{פשטו את המרחק בין איבר הסדרה ל-$\frac52$ לשבר אחד. כדי לקבל בחירה פשוטה של $N$ אפשר לחסום אותו מלמעלה בביטוי מהצורה $\frac{c}{n}$.}
+\begin{solbox}
+    נסמן
+    $$a_n=\dfrac{5n-12}{2n+3}$$
+    ונקבע
+    $\varepsilon>0$.
+    נתבונן בהפרש הבא
+    $$\left|a_n-\frac{5}{2}\right|=\left|\dfrac{5n-12}{2n+3}-\frac{5}{2}\right|=\left|
+    \frac{10n-24-10n-15}{2(2n+3)}
+    \right|=\frac{39}{4n+6}$$
+    נרצה כי הביטוי האחרון יהיה קטן מ-$\varepsilon$,
+    נוכל לפשט זאת כך
+    $$\frac{39}{4n+6}<\varepsilon \iff{0} \frac{1}{4}\cdot\left(\frac{39}{\varepsilon}-6\right)<n$$
+    קיבלנו דרישה מהסוג שאנו אוהבים, אך יש לשים לב כי המספר ממנו
+    $n$
+    צריך להיות גדול יותר הפעם יכול להיות שלילי (למשל, אם
+    $\varepsilon=7$), ובמקרה כזה הדרישה הזו מתקיימת לכל ה-$n$-ים, לכן נבחר
+    $$N=\max\{\lfloor \frac{1}{4}\cdot\left(\frac{39}{\varepsilon}-6\right)\rfloor ,1 \}$$
+ואז בוודאות לכל
+$n>N$
+מתקיים
+$|a_n-5/2|<\varepsilon$,
+כמבוקש.
+
+שימו לב כי ניתן היה להמשיך בדרך קצת אחרת ולומר כי
+$$\frac{39}{4n+6}\le \frac{39}{4n}\le\frac{40}{4n}=\frac{10}{n}$$
+דבר המפשט את הבחירה להיות
+$N=\lfloor \frac{10}{\varepsilon}\rfloor$,
+בדומה לתרגילים הקודמים.
+\end{solbox}
+    \item $\displaystyle\lim_{n \to \infty}\frac{5n-12}{2n+3}\neq\frac{3}{2}$
+    
+\hint{נסחו את שלילת הגדרת הגבול, ופשטו את המרחק בין איבר הסדרה ל-$\frac32$: האם הוא נשאר רחוק מאפס עבור $n$ גדולים?}
+\begin{solbox}
+     דרך א׳: נניח בשלילה כי הגבול כן שווה
+     $\frac{3}{2}$,
+     לכן
+לכל
+$\varepsilon>0$
+קיים
+$N\in\mathbb{N}$
+כך שלכל
+$n>N$
+מתקיים
+$$.\left|\frac{5n-12}{2n+3}-\frac{3}{2}\right|<\varepsilon$$
+נפשט את את האי-שיוויון ונקבל
+\begin{align*}
+\left|\frac{5n-12}{2n+3}-\frac{3}{2}\right|<\varepsilon
+&\iff{1}
+\left|\frac{4n-33}{4n+6}\right|<\varepsilon
+\\&\iff{1}
+-\varepsilon<\frac{4n-33}{4n+6}<\varepsilon
+\\&\iff{1}
+-4\varepsilon n-6\varepsilon< 4n-33< 4\varepsilon n+6\varepsilon
+\\&\iff{1}
+\frac{33-6\varepsilon}{4(\varepsilon+1)}< n<\frac{33+6\varepsilon}{4(1-\varepsilon)}
+\end{align*}
+כאשר במעבר האחרון חילקנו ב-$(1-\varepsilon)$
+ולכן נניח כי הוא חיובי, כלומר כי
+$\varepsilon<1$.
+ניתן לראות כי אם נבחר
+$\varepsilon=\frac12$
+למשל, התנאי האחרון שקיבלנו מתקיים רק עבור מספר סופי של
+$n$-ים
+בסתירה לכך שהוא אמור להתקיים החל
+מ-$N$
+מסוים.
+\end{solbox}
+
+\begin{solbox}
+דרך ב׳:
+נראה שקיים
+$\varepsilon>0$
+כך שלכל
+$N\in\mathbb{N}$
+קיים
+$n>N$
+אשר יקיים
+$$.\left|\frac{5n-12}{2n+3}-\frac{3}{2}\right|\geq\varepsilon$$
+נפשט את הביטוי בתוך הערך המוחלט ונקבל
+$$.\left| a_n-\frac{3}{2}\right|=\left|\frac{4n-33}{4n+6}\right|\geq\varepsilon$$
+מסובך לעבוד עם ערכים מוחלטים, לכן ננסה "להיפטר" מהערך המוחלט, לשם כך נשים לב כי המכנה הוא חיובי ואילו המונה הוא חיובי רק כאשר
+$n\geq 9$.
+לכן נניח כי
+$n\geq 9$
+ונמשיך
+$$.\left|\frac{5n-12}{2n+3}-\frac{3}{2}\right|=\frac{4n-33}{4n+6}=1-\frac{39}{4n+6}\geq 1-\frac{39}{4\cdot 9+6}=\frac{1}{14}$$
+איך התוצאה שהתקבלה ניתנת לפירוש?
+אם נבחר
+$0<\varepsilon<\frac{1}{14}$
+(לא משנה איזה)
+אז הראנו כי \textbf{לכל}
+$n\ge9$
+מתקיים
+$$\left|a_n-\frac{3}{2}\right|\geq\frac{1}{14}>\varepsilon$$
+לכן לא קיים
+$N$
+עבורו לכל
+$n>N$
+מתקיים
+$|a_n-\frac{3}{2}|<\varepsilon$.
+זה מוכיח כי
+$\frac{3}{2}$
+אינו גבול של הסדרה.
+\end{solbox}
+\eMs
+\end{enumerate}

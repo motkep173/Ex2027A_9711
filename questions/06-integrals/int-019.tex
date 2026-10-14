@@ -1,0 +1,36 @@
+% ==================================================================
+% id:       int-019
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% verified: no
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \frac{dx}{\sqrt{1+e^{x}}}$
+\hint{נסו הצבה שתפטר מהשורש כולו, ואז פרקו לשברים חלקיים.}
+\begin{solbox}
+\unverified
+נבצע הצבה
+$t=\sqrt{1+e^x}$.
+אז
+$t>1$,
+$t^2=1+e^x$,
+ולכן
+$2t\,dt=e^x\,dx=(t^2-1)\,dx$,
+כלומר
+$dx=\frac{2t}{t^2-1}\,dt$.
+נקבל
+\begin{align*}
+\int\frac{dx}{\sqrt{1+e^x}}
+=\int\frac{1}{t}\cdot\frac{2t}{t^2-1}\,dt
+=\int\frac{2}{t^2-1}\,dt
+=\int\lr{\frac{1}{t-1}-\frac{1}{t+1}}dt
+=\ln\abs{\frac{t-1}{t+1}}+C.
+\end{align*}
+נחזור למשתנה
+$x$
+(ונשים לב ש-$t-1>0$):
+\begin{align*}
+\boxed{\int\frac{dx}{\sqrt{1+e^x}}=\ln\lr{\frac{\sqrt{1+e^x}-1}{\sqrt{1+e^x}+1}}+C}
+\end{align*}
+\end{solbox}

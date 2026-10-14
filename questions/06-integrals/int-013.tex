@@ -1,0 +1,31 @@
+% ==================================================================
+% id:       int-013
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int x^2\cos(2x)dx$
+\hint{השתמשו באינטגרציה בחלקים פעמיים, ובכל פעם גזרו את החזקה של $x$.}
+\begin{solbox}
+נשתמש באינטגרציה בחלקים פעמיים
+(השלימו בעצמכם את הפרטים מהו
+$u$
+ומהו
+$v'$
+בשתי האינטגרציות).
+\begin{align*}
+,\int x^2\cos\lr{2x}\,dx
+&=\frac{x^2}{2}\sin\lr{2x}-\int x\sin\lr{2x}\,dx\\
+,\int x\sin\lr{2x}\,dx
+&=-\frac{x}{2}\cos\lr{2x}+\frac14\sin\lr{2x}+C
+\end{align*}
+ולכן
+\begin{align*}
+.\int x^2\cos\lr{2x}\,dx
+&=\frac{x^2}{2}\sin\lr{2x}+\frac{x}{2}\cos\lr{2x}-\frac14\sin\lr{2x}+C
+\end{align*}
+%\begin{align*}
+%\boxed{\frac{x^2}{2}\sin\lr{2x}+\frac{x}{2}\cos\lr{2x}-\frac14\sin\lr{2x}+C}
+%\end{align*}
+\end{solbox}

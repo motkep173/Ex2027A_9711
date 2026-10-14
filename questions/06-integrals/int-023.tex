@@ -1,0 +1,68 @@
+% ==================================================================
+% id:       int-023
+% topic:    אינטגרלים
+% subtopic: פונקציה קדומה ואינטגרל לא מסוים
+% solution: full
+% ==================================================================
+מצאו פונקציה קדומה לפונקציה
+$\ds f(x)=\lr{\arcsin x}^{2}$
+\hint{נסו הצבה שהופכת את $\arcsin x$ למשתנה החדש, ואז אינטגרציה בחלקים פעמיים.}
+\begin{solbox}
+נבצע הצבה
+$$,x=\sin t$$
+נקבל
+$$t=\arcsin x,\quad dx=\cos t\,dt.$$
+מתקיים
+\[
+\int (\arcsin x)^2\,dx=\int t^2\cos t\,dt.
+\]
+
+כעת נבצע אינטגרציה בחלקים:
+\[
+,u=t^2,\ v'=\cos t
+\]
+מכאן
+$$.u'=2t,\ v=\sin t
+$$
+לכן
+\[
+\int t^2\cos t\,dt
+=t^2\sin t-\int 2t\sin t\,dt.
+\]
+
+ע"י ביצוע אינטגרציה בחלקים פעם נוספת
+(בררו מהו
+$u$
+ומהו
+$v'$)
+נקבל
+\begin{align*}
+\int 2t\sin t\,dt&
+=\ 2t(-\cos t)-\int (-\cos t)\cdot 2\,dt\\
+&=\ -2t\cos t+2\int \cos t\,dt\\
+&=\ -2t\cos t+2\sin t.
+\end{align*}
+
+נחזור להצבה הראשונה:
+\[
+\int t^2\cos t\,dt
+=t^2\sin t-\bigl(-2t\cos t+2\sin t\bigr)
+=t^2\sin t+2t\cos t-2\sin t+C.
+\]
+
+כעת נחזור ל- \(x\)
+(הזכרו בממצאים בסופו של הפתרון לשאלה
+\qref{int-005}):
+\[
+t=\arcsin x,\qquad \sin t=x,\qquad \cos t=\sqrt{1-x^2}.
+\]
+ולכן
+\[
+\boxed{
+\int \bigl(\arcsin x\bigr)^2\,dx
+= x\bigl(\arcsin x\bigr)^2
++2\sqrt{1-x^2}\,\arcsin x
+-2x+C
+}
+\]
+\end{solbox}

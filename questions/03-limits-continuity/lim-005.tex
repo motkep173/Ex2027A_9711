@@ -1,0 +1,102 @@
+% ==================================================================
+% id:       lim-005
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: גבולות חד־צדדיים
+% solution: full
+% ==================================================================
+\textbf{
+בכל אחד מהסעיפים הבאים,
+חשבו
+את הגבול החד-צדדי:}
+\begin{enumerate}
+\item ${\displaystyle\lim_{x\to0^+}}\frac{\lfloor x\rfloor}{x}$
+\ifsol
+\hint{מה הערך של $\lfloor x\rfloor$ כאשר $x$ קרוב ל-$0$ מימין?}
+\begin{solbox}
+נסמן
+$f(x)=\frac{\lfloor x\rfloor}{x}$.
+תהא
+$(a_n)_{n=1}^\infty$
+כך ש-
+$\displaystyle\lim_{n\to\infty}a_n=0$
+ו-
+$x>0$
+לכל
+$n\in\mathbb{N}$.
+החל מ-
+$n$
+מסוים, מתקיים
+$0<a_n<1$,
+ולכן
+$f(a_n)=\frac{\lfloor a_n\rfloor}{a_n}=0$
+
+בסביבה ימנית של
+$0$
+מספיק קטנה, לדוגמא ב-
+$(0,\tfrac{1}{2})$
+מתקיים
+$f(x)=0$
+כלומר הפונקציה היא קבועה
+$0$
+ולכן
+$\ds{\lim_{x\to 0^+}}f(x)=0$.
+\end{solbox}
+\fi
+
+\item ${\displaystyle\lim_{x\to0^-}}\frac{\abs{x}}{x}$
+\ifsol
+\begin{solbox}
+לכל
+$x<0$
+מתקיים
+$|x|=-x$,
+לכן
+$\frac{|x|}{x}=-1$
+ואז
+$\ds{\lim_{x\to0^-}\frac{|x|}{x}}=-1$.
+\end{solbox}
+\fi
+
+\item ${\displaystyle\lim_{x\to0^-}}\lfloor\sin x\rfloor$
+\ifsol
+\hint{בין אילו ערכים נמצא $\sin x$ כאשר $x$ שלילי וקרוב ל-$0$?}
+\begin{solbox}
+נשים לב כי לכל
+$-\pi<x<0$
+מתקיים
+$-1<\sin(x)<0$,
+לכן
+$\lfloor\sin(x)\rfloor=-1$,
+כלומר הפונקציה היא קבועה ושווה
+$(-1)$
+בסביבה שמאלית של
+$0$,
+לכן
+$\ds{\lim_{x\to0^-}\lfloor\sin(x)\rfloor}=-1$.
+\end{solbox}
+\fi
+
+\item
+${\displaystyle\lim_{x\to0^+}}f(x)$
+כאשר
+\[
+.f(x) = \case{cc}{
+       e^{x+5}, &  x\leq 0\\ x^2-5x+2, & x> 0}
+\]
+\ifsol
+\begin{solbox}
+בסביבה ימנית של
+$0$
+מתקיים
+$f(x)=x^2-5x+2$
+ולכן
+מתקיים
+\begin{align*}
+    \lim_{x\to0^+}f(x)= \lim_{x\to0^+}(x^2-5x+2)
+    = 0^2-5\cdot0+2
+    = 2.
+\end{align*}
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\fi
+\end{enumerate}

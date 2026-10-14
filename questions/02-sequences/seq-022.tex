@@ -1,0 +1,64 @@
+% ==================================================================
+% id:       seq-022
+% topic:    סדרות
+% subtopic: חישוב גבולות בעזרת אריתמטיקה של גבולות
+% solution: full
+% verified: no
+% ==================================================================
+\textbf{חשבו את הגבולות הבאים:}
+\begin{enumerate}\bMs{2}
+\item $\ds\limn\frac{2n^2-3n}{5n^2+1}$
+\begin{solbox}
+\unverified
+נחלק מונה ומכנה ב-$n^2$:
+$$\frac{2n^2-3n}{5n^2+1}=\frac{2-\frac3n}{5+\frac{1}{n^2}}\longrightarrow\frac{2-0}{5+0}=\frac25 .$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של סדרות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\item $\ds\limn\frac{n^3+1}{2n^4-n}$
+\begin{solbox}
+\unverified
+נחלק מונה ומכנה ב-$n^4$:
+$$\frac{n^3+1}{2n^4-n}=\frac{\frac1n+\frac{1}{n^4}}{2-\frac{1}{n^3}}\longrightarrow\frac{0+0}{2-0}=0 .$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של סדרות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\item $\ds\limn\frac{(2n+1)(3n-2)}{n^2+4}$
+\begin{solbox}
+\unverified
+נחלק מונה ומכנה ב-$n^2$:
+$$\frac{(2n+1)(3n-2)}{n^2+4}=\frac{\lr{2+\frac1n}\lr{3-\frac2n}}{1+\frac{4}{n^2}}\longrightarrow\frac{2\cdot3}{1}=6 .$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של סדרות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\item $\ds\limn\lr{\sqrt{n^2+3n}-n}$
+\begin{solbox}
+\unverified
+נכפול ונחלק בצמוד:
+$$\sqrt{n^2+3n}-n=\frac{3n}{\sqrt{n^2+3n}+n}=\frac{3}{\sqrt{1+\frac3n}+1}\longrightarrow\frac{3}{1+1}=\frac32 ,$$
+כי
+$\sqrt{1+\frac3n}=\lr{1+\frac3n}^{1/2}\to1$
+(גבול של חזקה).
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של סדרות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\item $\ds\limn\lr{\sqrt{n+1}-\sqrt n}$
+\begin{solbox}
+\unverified
+נכפול ונחלק בצמוד:
+$$\sqrt{n+1}-\sqrt n=\frac{1}{\sqrt{n+1}+\sqrt n}.$$
+מתקיים
+$0<\frac{1}{\sqrt{n+1}+\sqrt n}<\frac{1}{\sqrt n}$,
+ו-$\frac{1}{\sqrt n}=\lr{\frac1n}^{1/2}\to0$.
+לפי כלל הסנדוויץ' הגבול הוא $0$.
+\end{solbox}
+\item $\ds\limn\lr{\frac{n+1}{2n}}^{\frac{n+1}{n}}$
+\begin{solbox}
+\unverified
+הבסיס
+$\frac{n+1}{2n}=\frac12+\frac{1}{2n}$
+חיובי ושואף ל-$\frac12>0$,
+והמעריך
+$\frac{n+1}{n}=1+\frac1n$
+שואף ל-$1$.
+לפי משפט הגבול של חזקה, הגבול הוא
+$\lr{\frac12}^1=\frac12$.
+\end{solbox}
+\eMs
+\end{enumerate}

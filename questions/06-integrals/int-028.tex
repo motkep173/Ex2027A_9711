@@ -1,0 +1,52 @@
+% ==================================================================
+% id:       int-028
+% topic:    אינטגרלים
+% subtopic: פונקציה קדומה ואינטגרל לא מסוים
+% solution: full
+% verified: no
+% ==================================================================
+מצאו פונקציה קדומה לפונקציה
+$\ds f(x)=\frac{1}{3\sin^{2}x-4\sin\lr{2x}+5\cos^{2}x}$
+\hint{הוציאו מהמכנה חזקה מתאימה של $\cos x$ כך שיישאר ביטוי ב-$\tan x$ בלבד, ונסו הצבה.}
+\begin{solbox}
+\unverified
+נשתמש בזהות
+$\sin(2x)=2\sin x\cos x$
+ונוציא
+$\cos^2x$
+מהמכנה:
+$$.3\sin^{2}x-4\sin\lr{2x}+5\cos^{2}x=3\sin^2x-8\sin x\cos x+5\cos^2x=\cos^2x\lr{3\tan^2x-8\tan x+5}$$
+לכן, בתחום שבו
+$\cos x\neq0$,
+נבצע הצבה
+$t=\tan x$,
+$dt=\frac{dx}{\cos^2x}$:
+\begin{align*}
+\int\frac{dx}{3\sin^{2}x-4\sin\lr{2x}+5\cos^{2}x}
+=\int\frac{1}{3\tan^2x-8\tan x+5}\cdot\frac{dx}{\cos^2x}
+=\int\frac{dt}{3t^2-8t+5}.
+\end{align*}
+מתקיים
+$3t^2-8t+5=(t-1)(3t-5)$,
+ונפרק לשברים חלקיים:
+$$,\frac{1}{(t-1)(3t-5)}=\frac{A}{t-1}+\frac{B}{3t-5}$$
+כלומר
+$1=A(3t-5)+B(t-1)$.
+הצבת
+$t=1$
+נותנת
+$A=-\frac12$,
+והצבת
+$t=\frac53$
+נותנת
+$B=\frac32$.
+לכן
+\begin{align*}
+\int\frac{dt}{3t^2-8t+5}=-\frac12\ln|t-1|+\frac32\cdot\frac13\ln|3t-5|+C=\frac12\ln\abs{\frac{3t-5}{t-1}}+C,
+\end{align*}
+ובחזרה למשתנה
+$x$:
+\begin{align*}
+\boxed{F(x)=\frac12\ln\abs{\frac{3\tan x-5}{\tan x-1}}+C}
+\end{align*}
+\end{solbox}

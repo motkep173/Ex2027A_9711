@@ -1,0 +1,29 @@
+% ==================================================================
+% id:       int-027
+% topic:    אינטגרלים
+% subtopic: פונקציה קדומה ואינטגרל לא מסוים
+% solution: full
+% ==================================================================
+מצאו פונקציה קדומה לפונקציה
+$\ds f(x)=e^{\sqrt{x}}$
+\hint{נסו הצבה שתפטר מהשורש, ואז אינטגרציה בחלקים.}
+\begin{solbox}
+נציב $t=\sqrt{x}$,
+כלומר,
+$t^2=x$,
+נקבל
+$2tdt=dx$,
+ואז
+\begin{align*}
+    \int e^{\sqrt{x}}dx&=\ 2\int te^tdt.
+\end{align*}
+לאחר ביצוע אינטגרציה בחלקים (השלימו את הפרטים) נקבל
+\begin{align*}
+    2\int te^tdt&=\ 2\left(te^t-\int e^tdt\right)\\
+    &=\ 2te^t-2e^t+C.
+\end{align*}
+בסה"כ קיבלנו
+\begin{align*}
+\boxed{\int e^{\sqrt{x}}dx=2e^{\sqrt{x}}\lr{\sqrt{x}-1}+C}
+\end{align*}
+\end{solbox}

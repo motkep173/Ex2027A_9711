@@ -1,0 +1,597 @@
+% קובץ זה נוצר אוטומטית ע"י make_bank.py -- אל תערכו אותו ידנית.
+% חוברת הרמזים והפתרונות לסטודנטים: רמזים (בלי פתרונות), ואחריהם התרגילים עם הפתרונות.
+% מספרי התרגילים זהים למספרים בחוברת התרגילים (booklet.tex).
+\newif\ifsol
+\soltrue
+\documentclass[12pt, a4paper]{article}
+\usepackage[most]{tcolorbox}   % חייב להיטען לפני ה-preamble (bidi)
+\input{preamble/MotkePreamble}
+\input{bank-setup}
+\newcommand{\bookletkind}{רמזים ופתרונות}
+\newcommand{\bookletsitenote}{באתר התרגול הרמזים והפתרונות נפתחים בלחיצה, שלב אחר שלב.}
+\input{booklet-header}
+% פתרון שעדיין לא נבדק מסומן כך, כמו באתר
+\renewcommand{\unverified}{{\color{bkgray}\small\textbf{פתרון שלא נבדק על ידי צוות הקורס}}\par}
+
+\begin{document}
+\selectlanguage{hebrew}
+\booklettitlepage
+{\small\tableofcontents}
+
+\expandafter\def\csname qref@func-025\endcsname{1}
+\expandafter\def\csname qref@func-001\endcsname{2}
+\expandafter\def\csname qref@func-027\endcsname{3}
+\expandafter\def\csname qref@func-011\endcsname{4}
+\expandafter\def\csname qref@func-026\endcsname{5}
+\expandafter\def\csname qref@func-028\endcsname{6}
+\expandafter\def\csname qref@func-002\endcsname{7}
+\expandafter\def\csname qref@seq-017\endcsname{8}
+\expandafter\def\csname qref@seq-018\endcsname{9}
+\expandafter\def\csname qref@seq-019\endcsname{10}
+\expandafter\def\csname qref@seq-001\endcsname{11}
+\expandafter\def\csname qref@seq-002\endcsname{12}
+\expandafter\def\csname qref@seq-005\endcsname{13}
+\expandafter\def\csname qref@seq-021\endcsname{14}
+\expandafter\def\csname qref@seq-020\endcsname{15}
+\expandafter\def\csname qref@seq-025\endcsname{16}
+\expandafter\def\csname qref@seq-003\endcsname{17}
+\expandafter\def\csname qref@seq-004\endcsname{18}
+\expandafter\def\csname qref@seq-022\endcsname{19}
+\expandafter\def\csname qref@seq-006\endcsname{20}
+\expandafter\def\csname qref@seq-009\endcsname{21}
+\expandafter\def\csname qref@seq-007\endcsname{22}
+\expandafter\def\csname qref@seq-008\endcsname{23}
+\expandafter\def\csname qref@seq-010\endcsname{24}
+\expandafter\def\csname qref@seq-011\endcsname{25}
+\expandafter\def\csname qref@seq-012\endcsname{26}
+\expandafter\def\csname qref@seq-013\endcsname{27}
+\expandafter\def\csname qref@seq-016\endcsname{28}
+\expandafter\def\csname qref@seq-014\endcsname{29}
+\expandafter\def\csname qref@seq-015\endcsname{30}
+\expandafter\def\csname qref@func-003\endcsname{31}
+\expandafter\def\csname qref@func-004\endcsname{32}
+\expandafter\def\csname qref@func-005\endcsname{33}
+\expandafter\def\csname qref@func-006\endcsname{34}
+\expandafter\def\csname qref@func-007\endcsname{35}
+\expandafter\def\csname qref@func-008\endcsname{36}
+\expandafter\def\csname qref@func-009\endcsname{37}
+\expandafter\def\csname qref@func-012\endcsname{38}
+\expandafter\def\csname qref@func-013\endcsname{39}
+\expandafter\def\csname qref@func-014\endcsname{40}
+\expandafter\def\csname qref@func-019\endcsname{41}
+\expandafter\def\csname qref@func-020\endcsname{42}
+\expandafter\def\csname qref@func-021\endcsname{43}
+\expandafter\def\csname qref@func-022\endcsname{44}
+\expandafter\def\csname qref@func-015\endcsname{45}
+\expandafter\def\csname qref@func-023\endcsname{46}
+\expandafter\def\csname qref@func-016\endcsname{47}
+\expandafter\def\csname qref@func-017\endcsname{48}
+\expandafter\def\csname qref@func-018\endcsname{49}
+\expandafter\def\csname qref@func-024\endcsname{50}
+\expandafter\def\csname qref@lim-001\endcsname{51}
+\expandafter\def\csname qref@lim-002\endcsname{52}
+\expandafter\def\csname qref@lim-003\endcsname{53}
+\expandafter\def\csname qref@lim-004\endcsname{54}
+\expandafter\def\csname qref@lim-010\endcsname{55}
+\expandafter\def\csname qref@lim-005\endcsname{56}
+\expandafter\def\csname qref@lim-006\endcsname{57}
+\expandafter\def\csname qref@lim-007\endcsname{58}
+\expandafter\def\csname qref@lim-008\endcsname{59}
+\expandafter\def\csname qref@lim-009\endcsname{60}
+\expandafter\def\csname qref@lim-011\endcsname{61}
+\expandafter\def\csname qref@lim-012\endcsname{62}
+\expandafter\def\csname qref@lim-020\endcsname{63}
+\expandafter\def\csname qref@lim-021\endcsname{64}
+\expandafter\def\csname qref@lim-013\endcsname{65}
+\expandafter\def\csname qref@lim-014\endcsname{66}
+\expandafter\def\csname qref@lim-015\endcsname{67}
+\expandafter\def\csname qref@lim-016\endcsname{68}
+\expandafter\def\csname qref@lim-017\endcsname{69}
+\expandafter\def\csname qref@lim-018\endcsname{70}
+\expandafter\def\csname qref@lim-019\endcsname{71}
+\expandafter\def\csname qref@der-001\endcsname{72}
+\expandafter\def\csname qref@der-002\endcsname{73}
+\expandafter\def\csname qref@der-005\endcsname{74}
+\expandafter\def\csname qref@der-006\endcsname{75}
+\expandafter\def\csname qref@der-007\endcsname{76}
+\expandafter\def\csname qref@der-008\endcsname{77}
+\expandafter\def\csname qref@der-009\endcsname{78}
+\expandafter\def\csname qref@der-003\endcsname{79}
+\expandafter\def\csname qref@der-004\endcsname{80}
+\expandafter\def\csname qref@der-010\endcsname{81}
+\expandafter\def\csname qref@app-001\endcsname{82}
+\expandafter\def\csname qref@app-002\endcsname{83}
+\expandafter\def\csname qref@app-011\endcsname{84}
+\expandafter\def\csname qref@app-003\endcsname{85}
+\expandafter\def\csname qref@app-005\endcsname{86}
+\expandafter\def\csname qref@app-004\endcsname{87}
+\expandafter\def\csname qref@app-022\endcsname{88}
+\expandafter\def\csname qref@app-006\endcsname{89}
+\expandafter\def\csname qref@app-007\endcsname{90}
+\expandafter\def\csname qref@app-008\endcsname{91}
+\expandafter\def\csname qref@app-009\endcsname{92}
+\expandafter\def\csname qref@app-010\endcsname{93}
+\expandafter\def\csname qref@app-012\endcsname{94}
+\expandafter\def\csname qref@app-013\endcsname{95}
+\expandafter\def\csname qref@app-014\endcsname{96}
+\expandafter\def\csname qref@app-015\endcsname{97}
+\expandafter\def\csname qref@app-016\endcsname{98}
+\expandafter\def\csname qref@app-017\endcsname{99}
+\expandafter\def\csname qref@app-018\endcsname{100}
+\expandafter\def\csname qref@app-019\endcsname{101}
+\expandafter\def\csname qref@app-020\endcsname{102}
+\expandafter\def\csname qref@app-021\endcsname{103}
+\expandafter\def\csname qref@int-001\endcsname{104}
+\expandafter\def\csname qref@int-002\endcsname{105}
+\expandafter\def\csname qref@int-003\endcsname{106}
+\expandafter\def\csname qref@int-004\endcsname{107}
+\expandafter\def\csname qref@int-005\endcsname{108}
+\expandafter\def\csname qref@int-006\endcsname{109}
+\expandafter\def\csname qref@int-007\endcsname{110}
+\expandafter\def\csname qref@int-008\endcsname{111}
+\expandafter\def\csname qref@int-009\endcsname{112}
+\expandafter\def\csname qref@int-010\endcsname{113}
+\expandafter\def\csname qref@int-011\endcsname{114}
+\expandafter\def\csname qref@int-012\endcsname{115}
+\expandafter\def\csname qref@int-013\endcsname{116}
+\expandafter\def\csname qref@int-014\endcsname{117}
+\expandafter\def\csname qref@int-015\endcsname{118}
+\expandafter\def\csname qref@int-016\endcsname{119}
+\expandafter\def\csname qref@int-017\endcsname{120}
+\expandafter\def\csname qref@int-018\endcsname{121}
+\expandafter\def\csname qref@int-019\endcsname{122}
+\expandafter\def\csname qref@int-020\endcsname{123}
+\expandafter\def\csname qref@int-021\endcsname{124}
+\expandafter\def\csname qref@int-022\endcsname{125}
+\expandafter\def\csname qref@int-023\endcsname{126}
+\expandafter\def\csname qref@int-024\endcsname{127}
+\expandafter\def\csname qref@int-025\endcsname{128}
+\expandafter\def\csname qref@int-026\endcsname{129}
+\expandafter\def\csname qref@int-027\endcsname{130}
+\expandafter\def\csname qref@int-028\endcsname{131}
+\expandafter\def\csname qref@int-029\endcsname{132}
+\expandafter\def\csname qref@int-030\endcsname{133}
+\expandafter\def\csname qref@int-031\endcsname{134}
+\renewcommand{\qref}[1]{\ifcsname qref@#1\endcsname\csname qref@#1\endcsname\else\textenglish{#1}\fi}
+
+\newpage
+\section*{רמזים}
+\addcontentsline{toc}{section}{רמזים}
+כאן מופיעים רק הרמזים, בלי הפתרונות. נסו קודם לפתור בעזרת הרמז, ורק אחר כך עברו לפתרון.
+
+
+\subsection*{מספרים ממשיים}
+\noindent \bknum{2}\ (ב)\enskip כתבו את אי-השוויון כאי-שוויון כפול עבור $\frac{1}{x}$, ורק אחר כך עברו ל-$x$ (שימו לב לסימן לפני שהופכים).\par\smallskip
+\noindent \bknum{2}\ (ג)\enskip חלקו את הישר לתחומים לפי הנקודות שבהן הביטויים שבתוך הערכים המוחלטים מחליפים סימן, ופתרו בכל תחום בנפרד.\par\smallskip
+\noindent \bknum{2}\ (ד)\enskip מתי מתקיים $|a|>a$? השתמשו בתשובה עם $a=x^2-x-6$.\par\smallskip
+\noindent \bknum{3}\ (ב)\enskip היעזרו בסעיף א׳.\par\smallskip
+\noindent \bknum{4}\ (א)\enskip חקו את ההוכחה ש-$\sqrt2\notin\mathbb{Q}$.\par\smallskip
+\noindent \bknum{4}\ (ב)\enskip עקבו אחרי ההדרכה. כדי להראות ש-$\sqrt2+\sqrt3$ ו-$\sqrt2-\sqrt3$ אינם שניהם רציונליים, הסתכלו על הסכום שלהם.\par\smallskip
+\noindent \bknum{5}\ (א)\enskip כתבו כל מספר רציונלי כמנה של שני שלמים, ובדקו מה מתקבל בכל פעולה.\par\smallskip
+\noindent \bknum{5}\ (ב)\enskip הניחו בשלילה שהתוצאה רציונלית, והשתמשו בסעיף הקודם.\par\smallskip
+\noindent \bknum{5}\ (ג)\enskip חפשו שני מספרים אי-רציונליים שהחלק האי-רציונלי שלהם מתבטל בסכום.\par\smallskip
+\noindent \bknum{6}\ (ג)\enskip בחרו מספר עשרוני סופי קטן מ-$1.415$, והראו שהוא גדול מ-$\sqrt2$ בעזרת העלאה בריבוע.\par\smallskip
+\noindent \bknum{7}\ (ב)\enskip בשלב המעבר השוו את $\frac{2^{n+1}}{(n+1)^3}$ ל-$\frac{2^n}{n^3}$, והשתמשו ב-$n\geq10$ כדי לחסום את היחס $\frac{n^3}{(n+1)^3}$ מלמטה.\par\smallskip
+\noindent \bknum{7}\ (ג)\enskip בשלב המעבר כתבו $(n+1)!=n!\cdot(n+1)$ והשתמשו בהנחת האינדוקציה.\par\smallskip
+\noindent \bknum{7}\ (ה)\enskip נסחו את הטענה כהצגה $n=3a+5b$ עם $a,b$ שלמים אי-שליליים. בשלב המעבר החליפו כמה מטבעות בהצגה של $n$ כך שהסכום יגדל באחד, ופצלו למקרים לפי סוגי המטבעות שיש בה.\par\smallskip
+
+\subsection*{סדרות}
+\noindent \bknum{9}\ (א)\enskip התחילו מהסדרה $(-1)^n$ והפעילו עליה פעולות חשבון פשוטות.\par\smallskip
+\noindent \bknum{9}\ (ב)\enskip שימו לב לסימן המתחלף, ובדקו פי כמה גדלים המונה והמכנה מאיבר לאיבר.\par\smallskip
+\noindent \bknum{10}\enskip לכל מספר פתרו את המשוואה שבה $a_n$ שווה לו, ובדקו אילו מהפתרונות הם מספרים טבעיים.\par\smallskip
+\noindent \bknum{11}\ (א)\enskip פשטו את המרחק בין איבר הסדרה לגבול לשבר אחד, ובדקו עבור אילו $n$ הוא קטן מ-$\varepsilon$.\par\smallskip
+\noindent \bknum{11}\ (ג)\enskip חסמו את הביטוי מלמעלה בביטוי פשוט יותר: השתמשו ב-$|\sin n|\le1$ והקטינו את המכנה.\par\smallskip
+\noindent \bknum{11}\ (ד)\enskip פשטו את המרחק בין איבר הסדרה ל-$\frac52$ לשבר אחד. כדי לקבל בחירה פשוטה של $N$ אפשר לחסום אותו מלמעלה בביטוי מהצורה $\frac{c}{n}$.\par\smallskip
+\noindent \bknum{11}\ (ה)\enskip נסחו את שלילת הגדרת הגבול, ופשטו את המרחק בין איבר הסדרה ל-$\frac32$: האם הוא נשאר רחוק מאפס עבור $n$ גדולים?\par\smallskip
+\noindent \bknum{12}\ (א)\enskip בצעד האינדוקציה כתבו $2^{n+1}=2\cdot2^n$ והשתמשו בהנחת האינדוקציה.\par\smallskip
+\noindent \bknum{12}\ (ב)\enskip השתמשו בסעיף הקודם כדי לחסום את $\frac{1}{2^n}$ מלמעלה בביטוי פשוט יותר.\par\smallskip
+\noindent \bknum{13}\ (א)\enskip השתמשו באי-שוויון המשולש ההפוך $||x|-|y||\le |x-y|$.\par\smallskip
+\noindent \bknum{13}\ (ב)\enskip חשבו על סדרה שהערך המוחלט שלה מתכנס אבל הסימן שלה משתנה.\par\smallskip
+\noindent \bknum{13}\ (ד)\enskip נסו לחשוב על סדרה שלא מתכנסת, אבל העלאה שלה בריבוע „מסדרת” אותה והופכת אותה למתכנסת.\par\smallskip
+\noindent \bknum{16}\ (א)\enskip השתמשו באי-שוויון המשולש.\par\smallskip
+\noindent \bknum{16}\ (ב)\enskip היעזרו בכך ש-$|xy|=|x|\cdot|y|$.\par\smallskip
+\noindent \bknum{16}\ (ג)\enskip מה קורה למנה כשהמכנה מתקרב לאפס?\par\smallskip
+\noindent \bknum{16}\ (ד)\enskip מה ההבדל בין התנאי כאן לתנאי בסעיף הקודם? מה הוא מונע מהמכנה לעשות?\par\smallskip
+\noindent \bknum{17}\ (ב)\enskip כתבו את האיברים הראשונים, והשוו בין איברים סמוכים לפי הזוגיות של $n$.\par\smallskip
+\noindent \bknum{17}\ (ד)\enskip היעזרו ב-$0\le x-\lfloor x\rfloor<1$. למונוטוניות, בדקו את ערכי הסדרה כאשר $n$ הוא ריבוע שלם.\par\smallskip
+\noindent \bknum{18}\ (א)\enskip הסתכלו על $a_{n+1}-a_n$.\par\smallskip
+\noindent \bknum{18}\ (ב)\enskip השתמשו בזהות $(a-b)^2=a^2-2ab+b^2\ge0$.\par\smallskip
+\noindent \bknum{20}\ (א)\enskip בדקו אם ההתנהגות הלא-מתכנסת של שתי סדרות יכולה להתבטל בסכום. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{20}\ (ב)\enskip חשבו מה הייתם יכולים להסיק על $b_n$ אילו $a_n+b_n$ הייתה מתכנסת, בעזרת אריתמטיקה של גבולות. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{20}\ (ג)\enskip מהי השלילה של ״לפחות אחת מהסדרות מתכנסת״?\par\smallskip
+\noindent \bknum{20}\ (ד)\enskip נסחו את הטענה השקולה לה (קונטרה-פוזיטיב) ובדקו אותה בעזרת אריתמטיקה של גבולות.\par\smallskip
+\noindent \bknum{21}\ (א)\enskip היזכרו מה ידוע על חסימות של סדרה מתכנסת, ובדקו מה הקשר בין חסימות של $|a_n|$ לחסימות של $a_n$.\par\smallskip
+\noindent \bknum{21}\ (ב)\enskip בדקו אם מכפלה יכולה להתכנס גם כששני הגורמים אינם מתכנסים. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{21}\ (ד)\enskip השוו בין מה שההגדרה של $a_n\to\infty$ דורשת לבין ההגדרה של סדרה לא חסומה. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{21}\ (ה)\enskip נסחו את הטענה השקולה לה (קונטרה-פוזיטיב) ובדקו אותה בעזרת אריתמטיקה של גבולות.\par\smallskip
+\noindent \bknum{21}\ (ו)\enskip השוו בין ההגדרה של $a_n\to\infty$ להגדרה של סדרה עולה. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{21}\ (ז)\enskip בדקו איך הגודל של $a_nb_n$ יכול להתחלק בין שתי הסדרות. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{21}\ (ח)\enskip עברו על המקרים האפשריים לגבולות של $a_n$ ו-$b_n$, ובדקו מה אומרת אריתמטיקה של גבולות במובן הרחב בכל אחד מהם.\par\smallskip
+\noindent \bknum{21}\ (ט)\enskip בדקו מה חסימות של $a_n$ נותנת לכם על $a_n+b_n$. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{21}\ (י)\enskip השוו לסעיף הקודם: האם חסימות של $a_n$ מספיקה גם כשמדובר במכפלה? אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{22}\ (א)\enskip יש כאן הפרש שורשים מהצורה $\infty-\infty$: הכפילו וחלקו בצמוד.\par\smallskip
+\noindent \bknum{22}\ (ב)\enskip כתבו את הסדרה כמכפלה של $\sin n$ בסדרה אחרת. מה ידוע על $\sin n$, ולאן שואפת הסדרה האחרת?\par\smallskip
+\noindent \bknum{22}\ (ד)\enskip זהו את המחובר הדומיננטי, חסמו את הביטוי מלמעלה ומלמטה בעזרתו והשתמשו בכלל הסנדוויץ'.\par\smallskip
+\noindent \bknum{22}\ (ה)\enskip השתמשו במבחן המנה: חשבו את הגבול של $\frac{a_{n+1}}{a_n}$.\par\smallskip
+\noindent \bknum{22}\ (ו)\enskip השתמשו במבחן המנה: חשבו את הגבול של $\frac{a_{n+1}}{a_n}$.\par\smallskip
+\noindent \bknum{22}\ (ח)\enskip השתמשו במבחן המנה. הגבול של $\frac{a_{n+1}}{a_n}$ קשור לגבול המגדיר את $e$.\par\smallskip
+\noindent \bknum{22}\ (ט)\enskip חסמו את הסכום מלמעלה ומלמטה על ידי החלפת כל המחוברים במחובר הגדול ביותר ובקטן ביותר, והשתמשו בכלל הסנדוויץ'.\par\smallskip
+\noindent \bknum{22}\ (י)\enskip מה הגורם הדומיננטי במונה? ובמכנה?\par\smallskip
+\noindent \bknum{23}\enskip חסמו את המכנה מלמטה על ידי החלפת כל מחובר במחובר הקטן ביותר.\par\smallskip
+\noindent \bknum{24}\ (א)\enskip הגורם $2-(-1)^n$ חסום מלרע על ידי מספר חיובי. השתמשו בזה כדי להשוות לסדרה פשוטה יותר.\par\smallskip
+\noindent \bknum{24}\ (ב)\enskip זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) והשתמשו בגבול המגדיר את $e$.\par\smallskip
+\noindent \bknum{24}\ (ג)\enskip פרקו את המונה והמכנה לגורמים וצמצמו, ואז המשיכו כמו בסעיף הקודם.\par\smallskip
+\noindent \bknum{24}\ (ד)\enskip חלקו את המונה והמכנה בחזקה הגבוהה ביותר של $n$ שמופיעה במכנה (שימו לב לחזקות השבריות שבתוך השורשים).\par\smallskip
+\noindent \bknum{24}\ (ו)\enskip זהו מצב $\infty-\infty$ עם הפרש שורשים: הכפילו וחלקו בצמוד.\par\smallskip
+\noindent \bknum{24}\ (ז)\enskip שני המחוברים שואפים לאינסוף. כנסו למכנה משותף לפני חישוב הגבול.\par\smallskip
+\noindent \bknum{24}\ (ח)\enskip חלקו את המונה והמכנה ב-$n$, ושימו לב שהסדרה $\cos(n)$ חסומה.\par\smallskip
+\noindent \bknum{24}\ (ט)\enskip זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) וסדרו את החזקה כך שתופיע בה ההופכית של אותו ביטוי.\par\smallskip
+\noindent \bknum{24}\ (י)\enskip זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) וסדרו את החזקה כך שתופיע בה ההופכית של אותו ביטוי, כמו בסעיפים הקודמים.\par\smallskip
+\noindent \bknum{24}\ (יא)\enskip השתמשו בחוקי הלוגריתמים כדי לכתוב את הסדרה כ-$\ln$ של ביטוי מהצורה $1^\infty$, כמו בסעיפים הקודמים.\par\smallskip
+\noindent \bknum{25}\ (א)\enskip הוכיחו באינדוקציה מונוטוניות וחסימות. כדי לנחש חסם, הניחו שהגבול $L$ קיים והציבו אותו בשני אגפי נוסחת הנסיגה.\par\smallskip
+\noindent \bknum{25}\ (ב)\enskip לחסימות, נסו להוכיח באינדוקציה חסם כללי $M$ ובדקו איזה תנאי על $M$ נדרש כדי שצעד האינדוקציה יעבוד.\par\smallskip
+\noindent \bknum{25}\ (ג)\enskip מצאו את המספר שעבורו $a_{n+1}=a_n$, ופצלו למקרים לפי מיקומו של $a_1$ ביחס אליו. בכל מקרה בדקו מונוטוניות וחסימות.\par\smallskip
+\noindent \bknum{26}\ (א)\enskip השתמשו באינדוקציה ובאי-שוויון הממוצעים $\sqrt{xy}\le\frac{x+y}{2}$ לכל $x,y>0$.\par\smallskip
+\noindent \bknum{26}\ (ג)\enskip השאיפו את $n$ לאינסוף בשני האגפים של נוסחת הנסיגה של $a_{n+1}$.\par\smallskip
+\noindent \bknum{27}\ (א)\enskip חשבו כמה איברים ראשונים ושימו לב שהסדרה מחזורית. מה אורך המחזור?\par\smallskip
+\noindent \bknum{27}\ (ג)\enskip פצלו לפי הזוגיות של $n$.\par\smallskip
+\noindent \bknum{27}\ (ד)\enskip טפלו בכל מחובר בנפרד. את $\sqrt[n!]{n^{100}}$ חסמו בעזרת $\sqrt[n]{n}$ והשתמשו בכלל הסנדוויץ', ואז פצלו לפי הזוגיות של $n$.\par\smallskip
+\noindent \bknum{27}\ (ה)\enskip השתמשו בסעיף הקודם, ובדקו את הגבול של כל גורם בנפרד.\par\smallskip
+\noindent \bknum{27}\ (ו)\enskip פצלו לפי הזוגיות של $n$ ובדקו מה קורה למחובר הראשון בכל מקרה.\par\smallskip
+\noindent \bknum{28}\ (א)\enskip חשבו על סדרה שבה המקומות הזוגיים והאי-זוגיים מתנהגים אחרת. זכרו שגבול חלקי במובן הרחב יכול להיות גם $\infty$.\par\smallskip
+\noindent \bknum{28}\ (ב)\enskip נסו סדרה מחזורית.\par\smallskip
+\noindent \bknum{28}\ (ג)\enskip נסו לבנות סדרה שבה כל מספר טבעי מופיע אינסוף פעמים.\par\smallskip
+\noindent \bknum{29}\ (א)\enskip כתבו את $\cos(\pi n)$ בצורה פשוטה יותר, ובדקו בנפרד את תת-הסדרה של המקומות הזוגיים ואת זו של האי-זוגיים.\par\smallskip
+\noindent \bknum{29}\ (ב)\enskip בדקו בנפרד את תת-הסדרה של המקומות הזוגיים ואת זו של האי-זוגיים.\par\smallskip
+\noindent \bknum{29}\ (ג)\enskip חלקו את המונה והמכנה בחזקה הגבוהה ביותר של $n$, ובדקו לאן שואף האיבר שבו מופיע $(-1)^n$.\par\smallskip
+\noindent \bknum{30}\ (א)\enskip חפשו סדרה ששואפת לאינסוף לאט יותר מ-$n$. לחישוב ההפרש היעזרו בכפל בצמוד.\par\smallskip
+\noindent \bknum{30}\ (ג)\enskip נסו להוסיף לסדרה פשוטה ששואפת לאינסוף איבר חסום שמתנודד.\par\smallskip
+
+\subsection*{פונקציות}
+\noindent \bknum{32}\enskip חשבו על פונקציה שקבוצת היעד שלה גדולה יותר מאוסף הערכים שהיא מקבלת בפועל.\par\smallskip
+\noindent \bknum{33}\ (ב)\enskip דרשו ש-$x\geq0$ וש-$\sin(\sqrt x)\geq0$. פתרו קודם עבור $t=\sqrt x$ ואחר כך העלו בריבוע.\par\smallskip
+\noindent \bknum{33}\ (ג)\enskip דרשו שהביטוי שבתוך הלוגריתם יהיה חיובי ושהלוגריתם עצמו יהיה אי-שלילי, והיעזרו במחזוריות של $\tan$.\par\smallskip
+\noindent \bknum{34}\ (ד)\enskip בדקו קודם אם תחום ההגדרה סימטרי ביחס ל-$0$. אם נראה לכם שתכונה מסוימת לא מתקיימת, מספיק להראות נקודה אחת שבה היא נכשלת.\par\smallskip
+\noindent \bknum{35}\enskip חשבו את $f_1(-x)$ ואת $f_2(-x)$ ישירות מההגדרה, וסדרו מחדש את המחוברים במונה.\par\smallskip
+\noindent \bknum{36}\ (א)\enskip כדי לבדוק אם ערך $y$ שייך לתמונה, פתרו את המשוואה $f(x)=y$ עבור $x$ ובדקו מתי יש לה פתרון ממשי.\par\smallskip
+\noindent \bknum{36}\ (ב)\enskip השלימו לריבוע את הביטוי שתחת השורש, ובדקו בין אילו ערכים הוא נע בתחום ההגדרה.\par\smallskip
+\noindent \bknum{37}\ (א)\enskip הניחו שקיים מחזור $T>0$ ובדקו מה אומר התנאי $f(x+T)=f(x)$ בנקודה פשוטה, למשל $x=0$.\par\smallskip
+\noindent \bknum{37}\ (ד)\enskip מצאו את המחזור של כל מחובר בנפרד, ובדקו אם יש מספר חיובי שהוא כפולה שלמה של שניהם.\par\smallskip
+\noindent \bknum{37}\ (ה)\enskip בדקו כיצד משתנים ערכי $\lfloor x\rfloor$ כאשר $x$ גדל: האם הפונקציה יכולה לחזור על ערכיה באופן מחזורי?\par\smallskip
+\noindent \bknum{37}\ (ו)\enskip בדקו מה קורה ל-$\lfloor x\rfloor$ ול-$x$ כאשר מוסיפים ל-$x$ מספר שלם.\par\smallskip
+\noindent \bknum{38}\ (ח)\enskip שימו לב שהמכנה אי-שלילי, ולכן סימן השבר נקבע לפי המונה. אל תשכחו לדרוש שהמכנה לא יתאפס.\par\smallskip
+\noindent \bknum{39}\ (א)\enskip השתמשו בכך ש-$|\sin t|\leq1$ לכל $t$ ובאי-שוויון המשולש.\par\smallskip
+\noindent \bknum{39}\ (ב)\enskip נסו לחסום את $|x|$ בעזרת $x^2+1$; אי-שוויון שנובע מביטוי מהצורה $(\ldots)^2\geq0$ יכול לעזור.\par\smallskip
+\noindent \bknum{40}\ (ה)\enskip בדקו עבור אילו מספרים $T$ מובטח ש-$x$ ו-$x+T$ הם מאותו סוג (רציונלי או אי-רציונלי) לכל $x$.\par\smallskip
+\noindent \bknum{40}\ (ו)\enskip אם נראה לכם שהפונקציה מחזורית, מצאו מחזור; אחרת חפשו תכונה של $\cosh$ שסותרת את $f(x+T)=f(x)$ לכל $x$.\par\smallskip
+\noindent \bknum{40}\ (ז)\enskip הפרידו בין המקרה $a=1$ לשאר הערכים של $a$, ובכל מקרה בדקו את המונוטוניות של הפונקציה.\par\smallskip
+\noindent \bknum{41}\ (ד)\enskip חשבו את $f(-x)$ והיעזרו בתכונות הלוגריתם.\par\smallskip
+\noindent \bknum{41}\ (ה)\enskip חשבו את $f(-x)$ והיעזרו בזוגיות או באי-הזוגיות של $\sin$ ושל $\cos$.\par\smallskip
+\noindent \bknum{42}\ (א)\enskip הציבו באגף ימין את ההגדרות בעזרת $e^x$ ו-$e^y$, פתחו סוגריים וכנסו איברים.\par\smallskip
+\noindent \bknum{42}\ (ג)\enskip כתבו את $x$ ואת $y$ כסכום וכהפרש של $\frac{x+y}{2}$ ו-$\frac{x-y}{2}$, והשתמשו בסעיף הקודם.\par\smallskip
+\noindent \bknum{43}\ (א)\enskip חפשו את $g$ ואת $h$ כצירופים של $f(x)$ ושל $f(-x)$.\par\smallskip
+\noindent \bknum{43}\ (ב)\enskip כתבו את $f(-x)$ בשתי דרכים: פעם לפי הזוגיות ופעם לפי האי-זוגיות.\par\smallskip
+\noindent \bknum{43}\ (ה)\enskip העבירו אגפים כך שבצד אחד תתקבל פונקציה זוגית ובצד השני פונקציה אי-זוגית, והשתמשו בסעיף ב'.\par\smallskip
+\noindent \bknum{44}\enskip השתמשו בנוסחאות לחלק הזוגי ולחלק האי-זוגי של פונקציה מהשאלה על פירוק פונקציה לסכום של זוגית ואי-זוגית.\par\smallskip
+\noindent \bknum{45}\ (ג)\enskip שימו לב ש-$g$ היא פונקציה קבועה.\par\smallskip
+\noindent \bknum{45}\ (ד)\enskip שימו לב לתחום ההגדרה של כל הרכבה: $\ln$ מוגדר רק עבור ארגומנט חיובי.\par\smallskip
+\noindent \bknum{47}\enskip הניחו ש-$f(x_1)=f(x_2)$ והגיעו ל-$x_1=x_2$ (למשל בכפל בהצלבה).\par\smallskip
+\noindent \bknum{48}\enskip סמנו $y=f(x)$, הפעילו $\log_2$ על שני האגפים ובודדו את $x$. אל תשכחו לבדוק אילו ערכים של $y$ מתקבלים.\par\smallskip
+\noindent \bknum{49}\ (ב)\enskip מצאו את הקודקוד של הפרבולה ובדקו הפיכות בכל צד שלו בנפרד.\par\smallskip
+\noindent \bknum{49}\ (ג)\enskip השלימו לריבוע ופעלו כמו בסעיף הקודם.\par\smallskip
+\noindent \bknum{49}\ (ה)\enskip בכל קטע מהצורה $[n,n+1)$ עם $n$ שלם, כתבו את $f$ בלי סימן הערך השלם.\par\smallskip
+\noindent \bknum{49}\ (ו)\enskip כתבו את $f$ כהרכבה של הפונקציה $2^x$ עם עצמה, והשתמשו במונוטוניות שלה.\par\smallskip
+\noindent \bknum{49}\ (ז)\enskip כתבו את $f$ כהרכבה של $1+x^2$ עם $\log_{0.5}$, ושימו לב לכיוון המונוטוניות של כל אחת מהן.\par\smallskip
+\noindent \bknum{49}\ (ח)\enskip בדקו את המונוטוניות של כל אחד משני המחוברים בהגדרת $\sinh$. כדי לבודד את $x$, הציבו $t=e^x$ וקבלו משוואה ריבועית ב-$t$.\par\smallskip
+\noindent \bknum{50}\ (ב)\enskip אם נראה לכם שהפונקציה מחזורית, מצאו מחזור; אחרת חפשו תכונה שלה (אפשר להיעזר בסעיף ד') שסותרת את $f(x+T)=f(x)$ לכל $x$.\par\smallskip
+\noindent \bknum{50}\ (ד)\enskip כתבו את $f(x)$ כסכום של שני איברים פשוטים, ובדקו את המונוטוניות של כל אחד מהם בכל צד של $0$ בנפרד.\par\smallskip
+\noindent \bknum{50}\ (ה)\enskip בדקו חד-חד ערכיות על כל תחום ההגדרה, ואם צריך היעזרו בסעיף ד' כדי לבחור תחום מתאים.\par\smallskip
+
+\subsection*{גבולות ורציפות של פונקציות}
+\noindent \bknum{51}\ (א)\enskip פרקו את $|f(x)-17|$ למכפלה שאחד מגורמיה הוא $|x-2|$, והגבילו מראש את $\delta$ כדי לחסום את הגורם השני.\par\smallskip
+\noindent \bknum{51}\ (ב)\enskip השתמשו באי-שוויון המשולש ההפוך $\big||a|-|b|\big|\le|a-b|$.\par\smallskip
+\noindent \bknum{51}\ (ג)\enskip הביאו את $\frac{3x+5}{2x+4}-1$ למכנה משותף. כדי לחסום את המכנה מלמטה, הגבילו מראש את $\delta$.\par\smallskip
+\noindent \bknum{52}\enskip הציבו בהגדרת הגבול $\varepsilon$ מתאים, כך שהקרבה של $f(x)$ ל-$7$ תבטיח את אי-השוויון.\par\smallskip
+\noindent \bknum{53}\ (ב)\enskip בדקו לאן שואפת $f(a_n)$ עבור סדרות $a_n\to0$ מימין ומשמאל, והשוו.\par\smallskip
+\noindent \bknum{53}\ (ג)\enskip בדקו מהו $\lfloor x\rfloor$ לאורך סדרות ששואפות ל-$1$ מימין ומשמאל, והשוו.\par\smallskip
+\noindent \bknum{53}\ (ד)\enskip מה קורה ל-$\frac1x$ כאשר מתקרבים ל-$0$ מכל צד, ומה ידוע על $\arctan$ בפלוס ומינוס אינסוף?\par\smallskip
+\noindent \bknum{53}\ (ה)\enskip בחרו סדרות $a_n\to0$ שעבורן $\frac1{a_n}$ הן נקודות שבהן ערך הקוסינוס ידוע במדויק, והשוו את הגבולות.\par\smallskip
+\noindent \bknum{53}\ (ו)\enskip טפלו בכל גורם בנפרד: חשבו את הגבול של הגורם הראשון, ועבור $\sin\frac1{x^2}$ בחרו סדרות שבהן ערך הסינוס ידוע במדויק.\par\smallskip
+\noindent \bknum{54}\ (ב)\enskip פרקו את $64-x^3$ בנוסחת הפרש חזקות שלישיות ועברו למכנה משותף.\par\smallskip
+\noindent \bknum{54}\ (ג)\enskip במונה יש הפרש עם שורש: הכפילו וחלקו בצמוד.\par\smallskip
+\noindent \bknum{55}\ (ב)\enskip אחדו את שני האיברים לשבר אחד לפני השאיפה לאינסוף.\par\smallskip
+\noindent \bknum{55}\ (ד)\enskip מה ידוע על מכפלה של פונקציה חסומה בפונקציה ששואפת לאפס?\par\smallskip
+\noindent \bknum{55}\ (ה)\enskip מה ידוע על מכפלה של פונקציה חסומה בפונקציה ששואפת לאפס?\par\smallskip
+\noindent \bknum{55}\ (ו)\enskip הוציאו את $x^2$ מתוך השורש ושימו לב ש-$\sqrt{x^2}=|x|$. מה הסימן של $x$ כאן?\par\smallskip
+\noindent \bknum{55}\ (ז)\enskip זהו ביטוי מהצורה $\infty-\infty$ עם שורשים: הכפילו וחלקו בצמוד.\par\smallskip
+\noindent \bknum{56}\ (א)\enskip מה הערך של $\lfloor x\rfloor$ כאשר $x$ קרוב ל-$0$ מימין?\par\smallskip
+\noindent \bknum{56}\ (ג)\enskip בין אילו ערכים נמצא $\sin x$ כאשר $x$ שלילי וקרוב ל-$0$?\par\smallskip
+\noindent \bknum{57}\enskip חשבו את שני הגבולות החד-צדדיים ודרשו שיהיו שווים. שימו לב גם לתחום ההגדרה של $\ln$.\par\smallskip
+\noindent \bknum{58}\ (א)\enskip שימו לב שסביבה נקובה של $1$ כוללת את שני הצדדים שלה, ובדקו מה הנתון אומר על כל צד. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{58}\ (ב)\enskip בדקו מה כל אחד מהגבולות החד-צדדיים אומר על ערכי $f$ בצד שלו. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{58}\ (ג)\enskip בדקו מה הגדרת הגבול החד-צדדי (עם $\varepsilon$ קבוע) אומרת על ערכי $f$ בכל צד. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית.\par\smallskip
+\noindent \bknum{58}\ (ד)\enskip בדקו כיצד מתנהגת $\lfloor t\rfloor$ כאשר $t$ קרוב לערך הגבול, ונסו את הטענה על פונקציות פשוטות.\par\smallskip
+\noindent \bknum{58}\ (ה)\enskip בדקו מה הגבול אומר על ערכי $f$ בסביבה נקובה של $-2$, ומה נובע מכך על $\lfloor f(x)\rfloor$.\par\smallskip
+\noindent \bknum{58}\ (ו)\enskip אם נראה לכם שהטענה נכונה, נסו להביע את $f$ בעזרת $f+g$ ו-$g$. אחרת, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{59}\ (ב)\enskip השתמשו בגבול $\lim_{t\to0}\frac{1-\cos t}{t^2}$ (או בזהות $1-\cos t=2\sin^2\frac t2$), והכפילו וחלקו כך שיופיעו הגבולות המופלאים.\par\smallskip
+\noindent \bknum{59}\ (ג)\enskip הציבו $t=x-\pi$ כדי לעבור לגבול ב-$0$, ופרקו את $1-\cos^3t$ כהפרש חזקות שלישיות.\par\smallskip
+\noindent \bknum{59}\ (ד)\enskip הכפילו וחלקו כך שיופיעו הגבולות המופלאים של $\ln(1+t)$ ושל $(1+t)^{1/2}$.\par\smallskip
+\noindent \bknum{59}\ (ו)\enskip זהו גבול מהצורה $1^\infty$: התאימו את המעריך כדי להשתמש בגבול $\lim_{t\to0}(1+t)^{1/t}=e$.\par\smallskip
+\noindent \bknum{59}\ (ז)\enskip הוציאו את $e^{bx}$ כגורם משותף מהמונה.\par\smallskip
+\noindent \bknum{59}\ (ח)\enskip זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס), וחשבו את גבול המעריך בעזרת הגבול של $\frac{1-\cos t}{t^2}$.\par\smallskip
+\noindent \bknum{59}\ (ט)\enskip זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס), ופרקו לגורמים את מה שמתקבל במעריך.\par\smallskip
+\noindent \bknum{59}\ (י)\enskip כתבו $\tan x=\frac{\sin x}{\cos x}$ והוציאו גורם משותף במונה.\par\smallskip
+\noindent \bknum{59}\ (יא)\enskip השתמשו בחוקי הלוגריתמים כדי לכתוב את הביטוי כ-$\ln$ של חזקה, ושימו לב שבתוך ה-$\ln$ יש גבול מהצורה $1^\infty$.\par\smallskip
+\noindent \bknum{59}\ (יב)\enskip הציבו $t=1-x$ והשתמשו בזהות $\tan(\frac\pi2-\theta)=\cot\theta$.\par\smallskip
+\noindent \bknum{59}\ (יג)\enskip הציבו $y=\arcsin x$.\par\smallskip
+\noindent \bknum{59}\ (יד)\enskip הוסיפו והחסירו $1$ במונה, והשתמשו בגבול $\lim_{t\to0}\frac{(1+t)^a-1}{t}=a$.\par\smallskip
+\noindent \bknum{60}\ (א)\enskip אחדו את הפרש הלוגריתמים ללוגריתם אחד והביאו את הביטוי לצורה של הגבול המופלא $\lim_{x\to0}\frac{\ln(1+x)}{x}$.\par\smallskip
+\noindent \bknum{60}\ (ב)\enskip כתבו את המכנה כלוגריתם אחד, ואז הכפילו וחלקו כך שיופיעו הגבולות המופלאים של $\frac{1-\cos x}{x^2}$ ושל $\frac{\ln(1+x)}{x}$.\par\smallskip
+\noindent \bknum{61}\ (א)\enskip בדקו אם החסם התחתון של $g$ מאפשר להשוות את $f+g$ לפונקציה ששואפת לאינסוף; אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{61}\ (ב)\enskip חשבו מה קורה למכפלה כש-$g$ מקבלת ערכים מסוגים שונים ליד $3$. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{61}\ (ג)\enskip חשבו מה החסם התחתון החיובי של $g$ נותן למכפלה $f\cdot g$ ליד $-2$; אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{61}\ (ד)\enskip השוו לסעיף הקודם: האם חיוביות של $g$ נותנת את מה שהחסם התחתון החיובי נתן שם? אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{61}\ (ה)\enskip נסו מכפלות של חזקות של $x$ ששואפות לאינסוף ובדקו את הגבול של כל גורם בנפרד; אם הטענה נכונה בכל הדוגמאות, נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{61}\ (ו)\enskip השוו לסעיף הקודם. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{61}\ (ז)\enskip חשבו באילו דרכים מנה יכולה לשאוף לאינסוף, ומה כל אחת מהן אומרת על ההפרש. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{61}\ (ח)\enskip נסו להוציא את $g$ כגורם משותף מ-$f-g$ ובדקו לאן שואף כל גורם; אם זה לא מוביל לתשובה, חפשו דוגמה נגדית.\par\smallskip
+\noindent \bknum{62}\ (א)\enskip בדקו רציפות בנקודות התפר. ב-$0$ יש גבול מהצורה $1^\infty$, וב-$3$ המונה והמכנה מתאפסים ולכן יש לפרק אותם לגורמים.\par\smallskip
+\noindent \bknum{62}\ (ב)\enskip בדקו רציפות בנקודות התפר: משמאל ל-$-1$ אחדו את השברים וצמצמו, ומימין ל-$0$ יש גבול מהצורה $1^\infty$.\par\smallskip
+\noindent \bknum{62}\ (ג)\enskip כדי שהגבול מימין ל-$1$ יהיה סופי, המונה חייב להתאפס ב-$1$. היעזרו בזה כדי לפרק את המונה לגורמים.\par\smallskip
+\noindent \bknum{62}\ (ד)\enskip בדקו את נקודות התפר: ב-$0$ השתמשו בגבולות המופלאים של $\tan t$ ושל $e^t-1$, וב-$2$ אחדו את השברים וצמצמו.\par\smallskip
+\noindent \bknum{62}\ (ה)\enskip בדקו את נקודות התפר: ב-$1$ יש גבול מהצורה $1^\infty$. שימו לב שגם תחום ההגדרה של הלוגריתם מגביל את $b$.\par\smallskip
+\noindent \bknum{62}\ (ו)\enskip הוציאו את אחד השורשים כגורם משותף והשתמשו בגבול המופלא $\lim_{t\to0}\frac{(1+t)^{\alpha}-1}{t}=\alpha$; משמאל ל-$0$ השתמשו בגבולות המופלאים של $\sin$ ו-$\cos$.\par\smallskip
+\noindent \bknum{63}\ (א)\enskip בדקו את הטענה עבור סוגים שונים של קטעים (סגור, פתוח, לא חסום); אם נראה לכם שהיא לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{63}\ (ב)\enskip חשבו על פונקציות לא רציפות שאתם מכירים ובדקו אם הן חסומות; אם הטענה נכונה, נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{63}\ (ג)\enskip מה ידוע על פונקציה רציפה בקטע סגור, ומה הקשר בין $[a,b]$ ל-$(a,b)$? אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{63}\ (ד)\enskip הפרידו בין שתי ההכלות: האם $[2,5]$ מוכל בתמונה, והאם התמונה מוכלת ב-$[2,5]$? אם אחת מהן נכשלת, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{63}\ (ה)\enskip בדקו שוב את שתי ההכלות בין התמונה ל-$[2,5]$, והפעם שימו לב מה המונוטוניות מוסיפה.\par\smallskip
+\noindent \bknum{63}\ (ו)\enskip נסו לצייר גרפים שונים שעומדים בכל הדרישות, ובדקו אם כולם חייבים להיות מונוטוניים.\par\smallskip
+\noindent \bknum{63}\ (ז)\enskip השוו לסעיף ב׳, שבו הכיוון הפוך. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{63}\ (ח)\enskip בדקו אם חסימות לבדה מבטיחה שהחסם העליון מושג. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{64}\ (ג)\enskip כדי לחשב את הגבול ב-$0$ היעזרו בכך ש-$\sin$ חסומה.\par\smallskip
+\noindent \bknum{64}\ (ד)\enskip חשבו בנפרד את הגבולות החד-צדדיים ב-$1$: לאן שואף $\frac1{x-1}$ מכל צד?\par\smallskip
+\noindent \bknum{66}\enskip הפעילו את משפט ערך הביניים פעמיים, על שני קטעים זרים שבכל אחד מהם הפונקציה מחליפה סימן.\par\smallskip
+\noindent \bknum{67}\enskip לפני שמנסים את משפט ערך הביניים, שימו לב שהביטוי בסוגריים הוא ריבוע שלם.\par\smallskip
+\noindent \bknum{68}\enskip הגדירו פונקציית עזר: ההפרש בין הגובה ביום ראשון לגובה ביום שני באותה שעה, ובדקו את הסימן שלה בקצוות.\par\smallskip
+\noindent \bknum{69}\enskip הגדירו פונקציית עזר $g(x)=f(x)-(9-3x)$ ומצאו, בעזרת החסם על $f$, נקודות שבהן הסימן של $g$ ידוע.\par\smallskip
+\noindent \bknum{71}\ (א)\enskip חקו את ההוכחה שסדרה מתכנסת היא חסומה: מהגבול קבלו חסם על קרן, ועל הקטע הסגור שנשאר השתמשו במשפט ויירשטראס.\par\smallskip
+\noindent \bknum{71}\ (ב)\enskip משפט ויירשטראס דורש קטע סגור, ו-$[a,\infty)$ אינו כזה. אם נראה לכם שהתשובה חיובית נסו להוכיח אותה; אחרת חפשו דוגמה נגדית פשוטה.\par\smallskip
+
+\subsection*{נגזרות}
+\noindent \bknum{72}\ (א)\enskip הביאו את המונה של מנת ההפרשים למכנה משותף ופתחו את $(x+h)^3$, כך שיהיה אפשר לצמצם ב-$h$.\par\smallskip
+\noindent \bknum{72}\ (ב)\enskip השתמשו בזהות להפרש קוסינוסים כדי להגיע לגבול המופלא $\frac{\sin t}{t}\to1$.\par\smallskip
+\noindent \bknum{72}\ (ג)\enskip כתבו את הפרש הלוגריתמים כלוגריתם של מנה מהצורה $1+t$ עם $t\to0$, והשתמשו בגבול $\frac{\ln(1+t)}{t}\to1$.\par\smallskip
+\noindent \bknum{72}\ (ד)\enskip הוציאו את $e^{\sin x}$ כגורם משותף והשתמשו בגבול $\frac{e^t-1}{t}\to1$, כאשר $t$ הוא הפרש ערכי הסינוס.\par\smallskip
+\noindent \bknum{73}\enskip רשמו לכל פונקציה את מנת ההפרשים ב-$0$ לפי ההגדרה, פשטו, ובדקו אם יש לה גבול כאשר $h\to0$.\par\smallskip
+\noindent \bknum{74}\ (א)\enskip חשבו את $f'(0)$ לפי ההגדרה ואת $f'(x)$ ל-$x\neq0$ לפי כללי הגזירה, ובדקו אם $\lim_{x\to0}f'(x)=f'(0)$; בדקו כל מחובר של $f'(x)$ בנפרד.\par\smallskip
+\noindent \bknum{74}\ (ב)\enskip בדקו קודם לאילו $\alpha$ קיימת $f'(0)$ לפי ההגדרה, ואז לאילו מהם $f'(x)\to f'(0)$. השוו את החזקות של $x$ שמופיעות.\par\smallskip
+\noindent \bknum{75}\ (א)\enskip פרקו את הביטוי שבתוך הערך המוחלט לגורמים, וכתבו את $f$ ללא ערך מוחלט משני צדי הנקודה.\par\smallskip
+\noindent \bknum{75}\ (ב)\enskip חשבו כל נגזרת חד-צדדית לפי הנוסחה של הצד המתאים, ואל תשכחו לבדוק רציפות בנקודה.\par\smallskip
+\noindent \bknum{76}\enskip פונקציה גזירה בנקודה היא רציפה בה: דרשו רציפות ב-$x_0$ וגם שוויון של הנגזרות החד-צדדיות.\par\smallskip
+\noindent \bknum{77}\enskip מחוץ לנקודת התפר הפונקציה גזירה (למה?). בנקודת התפר דרשו רציפות וגם שוויון של הנגזרות החד-צדדיות.\par\smallskip
+\noindent \bknum{78}\enskip בדקו בנקודת התפר את כל התנאים הדרושים לגזירות, לא רק את הנגזרות של שני הענפים.\par\smallskip
+\noindent \bknum{79}\ (י)\enskip כדאי לפשט קודם בעזרת $\ln\sqrt{u}=\frac12\ln u$, ובסוף להשתמש בזהות $\sin^2x+\cos^2x=1$.\par\smallskip
+\noindent \bknum{79}\ (יא)\enskip השתמשו בכלל המכפלה לשלושה גורמים, או גזרו את $\ln f(x)$ (גזירה לוגריתמית).\par\smallskip
+\noindent \bknum{79}\ (יב)\enskip אחרי הגזירה בכלל השרשרת, סמנו $s=\sqrt{1+x^2}$ ופשטו בעזרת $s^2=1+x^2$.\par\smallskip
+\noindent \bknum{81}\ (א)\enskip בחרו פונקציה ונקודה קרובה לביטוי שבה קל לחשב את ערך הפונקציה ואת נגזרתה, והשתמשו בקירוב $f(x_0+h)\approx f(x_0)+f'(x_0)h$.\par\smallskip
+
+\subsection*{שימושי הנגזרת}
+\noindent \bknum{82}\enskip חפשו פונקציית עזר שנגזרתה היא כפולה של $f(x)f'(x)+x$, וסדרו את הנתון כך שיראה שערכיה בקצות הקטע שווים.\par\smallskip
+\noindent \bknum{83}\enskip כתבו את הנתון כשוויון בין שתי מנות הפרשים, על שני חצאי הקטע. מה נותן משפט לגרנז' על כל חצי, ועל איזו פונקציה כדאי להפעיל אחר כך את משפט רול?\par\smallskip
+\noindent \bknum{84}\ (א)\enskip השוו את הנתונים לתנאי משפט רול. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{84}\ (ב)\enskip השוו את הנתונים לתנאי משפט רול, וזכרו שהמשפט נותן תנאי מספיק בלבד. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה; אחרת נסו להוכיח אותה.\par\smallskip
+\noindent \bknum{84}\ (ג)\enskip נסו לזהות את $x^2f'(x)+2xf(x)$ כנגזרת של פונקציה, ובדקו אם פונקציה זו מקיימת את תנאי משפט רול. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{84}\ (ד)\enskip נסו לזהות את $e^xf(x)+e^xf'(x)$ כנגזרת של פונקציה, ובדקו אם פונקציה זו מקיימת את תנאי משפט רול. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.\par\smallskip
+\noindent \bknum{85}\ (א)\enskip חלקו ב-$x$ וזהו את הביטוי האמצעי כמנת הפרשים של $\arctan$. איזה משפט מקשר מנת הפרשים לנגזרת?\par\smallskip
+\noindent \bknum{85}\ (ב)\enskip הפעילו את משפט לגרנז' על פונקציה מתאימה בקטע שבין $x$ ל-$y$, והשתמשו בחסם על הנגזרת שלה.\par\smallskip
+\noindent \bknum{85}\ (ג)\enskip שימו לב ש-$\ln\frac ba=\ln b-\ln a$. איזה משפט עוסק בהפרש ערכי פונקציה בקצות קטע?\par\smallskip
+\noindent \bknum{86}\enskip העבירו אגפים והגדירו פונקציית עזר. בדקו את ערכה ב-$x=1$ ואת סימן הנגזרת שלה (ייתכן שתצטרכו לגזור פעמיים).\par\smallskip
+\noindent \bknum{87}\ (ב)\enskip שימו לב לנקודה שבה הפונקציה אינה גזירה: גם בה צריך לבדוק את סימן הנגזרת משני הצדדים.\par\smallskip
+\noindent \bknum{87}\ (ו)\enskip הפונקציה מחזורית. פרקו את הנגזרת לגורמים בעזרת $\sin2x=2\sin x\cos x$ וחקרו את סימנה בתוך מחזור אחד.\par\smallskip
+\noindent \bknum{88}\ (א)\enskip בדקו קודם את הזוגיות: לפונקציה זוגית מספיק לחקור את $x\ge0$. כדי למצוא את אפסי הנגזרת הציבו $t=x^2$.\par\smallskip
+\noindent \bknum{88}\ (ד)\enskip בדקו בנפרד את הגבולות החד-צדדיים ב-$0$. בחיפוש אסימפטוטה משופעת היעזרו בגבול $\lim_{t\to0}\frac{e^t-1}{t}$.\par\smallskip
+\noindent \bknum{89}\enskip נקודת התפר היא מועמדת נוספת לקיצון, לצד קצוות הקטע והנקודות שבהן הנגזרת מתאפסת. טפלו בכל אחד מהקטעים שמשני צדיה בנפרד.\par\smallskip
+\noindent \bknum{91}\enskip בטאו את הגובה באמצעות צלע הבסיס בעזרת נתון הנפח, וקבלו את שטח הפנים כפונקציה של משתנה אחד. התחום אינו קטע סגור, לכן בדקו גם את התנהגות הפונקציה בקצותיו.\par\smallskip
+\noindent \bknum{92}\enskip תארו את נקודות הפרבולה בעזרת $y$ בלבד, ומזערו את ריבוע המרחק במקום את המרחק עצמו.\par\smallskip
+\noindent \bknum{93}\ (א)\enskip זהו גבול מהצורה $\frac00$. כדי לגזור את $x^x$ כתבו אותו כ-$e^{x\ln x}$; ייתכן שתצטרכו להפעיל את כלל לופיטל יותר מפעם אחת.\par\smallskip
+\noindent \bknum{93}\ (ג)\enskip הפעילו את כלל לופיטל, ולאחר מכן הוציאו מהגבול גורמים ששואפים לגבול סופי ושונה מאפס לפני שממשיכים.\par\smallskip
+\noindent \bknum{93}\ (ד)\enskip זהו גבול מהצורה $1^\infty$: כתבו את הביטוי כ-$e$ בחזקת מכפלה, והציגו את המכפלה כמנה שמתאימה לכלל לופיטל.\par\smallskip
+\noindent \bknum{93}\ (ה)\enskip כתבו את $\cot x$ כמנה ואחדו את שני השברים למכנה משותף.\par\smallskip
+\noindent \bknum{93}\ (ו)\enskip כתבו את הביטוי כ-$e^{x\ln\left(\ln\frac1x\right)}$, והציגו את המעריך (מהצורה $0\cdot\infty$) כמנה כדי להשתמש בכלל לופיטל.\par\smallskip
+\noindent \bknum{94}\ (א)\enskip השתמשו במשפט ערך הביניים: חפשו שתי נקודות שבהן לביטוי יש סימנים שונים.\par\smallskip
+\noindent \bknum{95}\enskip העבירו אגפים וחקרו את הפונקציה שמתקבלת בתחום. אם נראה לכם שיש פתרון, חפשו החלפת סימן; אחרת הראו שהסימן שלה קבוע.\par\smallskip
+\noindent \bknum{96}\ (ג)\enskip כתבו $\cos x=1+t$ כאשר $t\to0$, והציבו בפיתוח של $\ln(1+t)$. שימו לב לזוגיות של הפונקציה.\par\smallskip
+\noindent \bknum{96}\ (ד)\enskip כתבו את הפונקציה כ-$e^{\sin(3x)\ln(\cos(2x))}$, פתחו קודם את המעריך והציבו בפיתוח של $e^t$. בדקו לאיזה סדר צריך לפתח כל גורם.\par\smallskip
+\noindent \bknum{97}\enskip פתחו כל גורם רק עד הסדר הדרוש כדי לקבל במכפלה את כל החזקות עד $x^{27}$, וזכרו שהמקדם של $x^{n}$ בפולינום מקלורן הוא $\frac{f^{(n)}(0)}{n!}$.\par\smallskip
+\noindent \bknum{98}\ (ג)\enskip הציבו $t=\frac1x$ כדי לעבור לגבול ב-$0$, ואז השתמשו בפיתוח של $\ln(1+t)$.\par\smallskip
+\noindent \bknum{98}\ (ד)\enskip הציבו $t=\frac1x$ כדי לעבור לגבול ב-$0$, ואז השתמשו בפיתוח של $e^t$.\par\smallskip
+\noindent \bknum{99}\enskip עברו לגבול של פונקציה ב-$0$ בעזרת ההצבה $x=\frac1n$ (משפט היינה), והשתמשו בפיתוח של $\ln(1+x)$.\par\smallskip
+\noindent \bknum{100}\ (א)\enskip פתחו את כל הפונקציות עד סדר $3$ ודרשו שהמקדמים של החזקות הנמוכות מ-$x^3$ במונה יתאפסו.\par\smallskip
+\noindent \bknum{100}\ (ב)\enskip פתחו את המונה עד סדר $5$, והשתמשו בכך ש-$\frac{\sin x}{x}\to1$ כדי להחליף את המכנה ב-$x^5$. דרשו שהמקדמים של החזקות הנמוכות יתאפסו.\par\smallskip
+\noindent \bknum{100}\ (ד)\enskip פתחו את $\sqrt{1+t}$ עם $t=x^2$, ומצאו את החזקה הנמוכה ביותר של $x$ שמקדמה במונה אינו מתאפס.\par\smallskip
+\noindent \bknum{101}\enskip השתמשו בשארית לגרנז' של פולינום מקלורן של $\ln(1+x)$, חסמו אותה, ומצאו את הסדר הקטן ביותר שמבטיח את הדיוק הנדרש.\par\smallskip
+\noindent \bknum{102}\enskip השתמשו בשארית לגרנז' וחסמו את הנגזרות של $\sin$ בערך מוחלט. שימו לב שבפיתוח של $\sin$ מופיעות רק חזקות אי-זוגיות.\par\smallskip
+\noindent \bknum{103}\enskip להערכת השגיאה השתמשו בשארית לגרנז' וחסמו את $|f''|$ בקטע שבין $0$ לנקודה שמצאתם.\par\smallskip
+
+\subsection*{אינטגרלים}
+\noindent \bknum{104}\enskip פצלו את $e^{2x}$ למכפלה של שני גורמים ונסו הצבה; האינטגרל שיתקבל נפתר באינטגרציה בחלקים.\par\smallskip
+\noindent \bknum{105}\enskip פרקו את המכנה לגורמים (הפרש ריבועים) והשתמשו בפירוק לשברים חלקיים.\par\smallskip
+\noindent \bknum{106}\enskip השתמשו בזהות טריגונומטרית שמורידה את החזקה של $\cos$.\par\smallskip
+\noindent \bknum{108}\enskip נסו הצבה טריגונומטרית שתהפוך את $1-x^2$ לריבוע שלם.\par\smallskip
+\noindent \bknum{109}\enskip כתבו את $\tan x$ כמנה ושימו לב שהמונה הוא, עד כדי סימן, הנגזרת של המכנה.\par\smallskip
+\noindent \bknum{110}\enskip השתמשו באינטגרציה בחלקים פעמיים, ובכל פעם גזרו את החזקה של $x$.\par\smallskip
+\noindent \bknum{112}\enskip הציבו את הלוגריתם כמשתנה חדש. באינטגרל שיתקבל, אינטגרציה בחלקים פעמיים מחזירה את האינטגרל המקורי, ואז העבירו אגפים.\par\smallskip
+\noindent \bknum{113}\enskip פרקו את המכנה כסכום חזקות שלישיות ופרקו לשברים חלקיים. בחלק עם הגורם הריבועי הפרידו את נגזרת המכנה והשלימו לריבוע.\par\smallskip
+\noindent \bknum{114}\enskip אינטגרציה בחלקים פעמיים תחזיר את האינטגרל המקורי; העבירו אגפים.\par\smallskip
+\noindent \bknum{115}\enskip פצלו את המונה לנגזרת המכנה ועוד קבוע. בחלק שנשאר השלימו את המכנה לריבוע.\par\smallskip
+\noindent \bknum{116}\enskip השתמשו באינטגרציה בחלקים פעמיים, ובכל פעם גזרו את החזקה של $x$.\par\smallskip
+\noindent \bknum{118}\enskip כתבו את האינטגרנד כמכפלה ב-$1$ והשתמשו באינטגרציה בחלקים.\par\smallskip
+\noindent \bknum{120}\enskip כתבו את האינטגרנד כמכפלה ב-$1$ והשתמשו באינטגרציה בחלקים; האינטגרל שנשאר נפתר בהצבה.\par\smallskip
+\noindent \bknum{122}\enskip נסו הצבה שתפטר מהשורש כולו, ואז פרקו לשברים חלקיים.\par\smallskip
+\noindent \bknum{123}\enskip הפרידו גורם אחד מהחזקה האי-זוגית של $\sin$, הביעו את השאר בעזרת $\cos$ והציבו.\par\smallskip
+\noindent \bknum{124}\enskip מצאו את כל הפונקציות הקדומות (אינטגרציה בחלקים פעמיים), ואז קבעו את הקבוע לפי התנאי.\par\smallskip
+\noindent \bknum{125}\enskip השתמשו באינטגרציה בחלקים פעמיים, ובכל פעם גזרו את הגורם הלוגריתמי.\par\smallskip
+\noindent \bknum{126}\enskip נסו הצבה שהופכת את $\arcsin x$ למשתנה החדש, ואז אינטגרציה בחלקים פעמיים.\par\smallskip
+\noindent \bknum{128}\enskip נסו הצבה שתהפוך את המכנה לפולינום ריבועי במשתנה החדש, ואז פרקו לשברים חלקיים.\par\smallskip
+\noindent \bknum{129}\enskip הציבו את הביטוי שבתוך הפונקציות הטריגונומטריות והשתמשו בזהות למכפלה $\sin\cdot\cos$; אחר כך אינטגרציה בחלקים.\par\smallskip
+\noindent \bknum{130}\enskip נסו הצבה שתפטר מהשורש, ואז אינטגרציה בחלקים.\par\smallskip
+\noindent \bknum{131}\enskip הוציאו מהמכנה חזקה מתאימה של $\cos x$ כך שיישאר ביטוי ב-$\tan x$ בלבד, ונסו הצבה.\par\smallskip
+\noindent \bknum{133}\enskip פרקו לשברים חלקיים, ושימו לב לגורם החוזר במכנה.\par\smallskip
+\noindent \bknum{134}\enskip השתמשו באינטגרציה בחלקים, וגזרו את הגורם הלוגריתמי. שימו לב לערך של $n$ שדורש טיפול נפרד.\par\smallskip
+
+\newpage
+\section*{פתרונות}
+\addcontentsline{toc}{section}{פתרונות}
+\renewcommand{\hint}[1]{}   % the hints were listed above
+\setcounter{section}{0}
+
+
+\bookq[\section{מספרים ממשיים}]{questions/01-functions/func-025}
+\bookq[]{questions/01-functions/func-001}
+\bookq[]{questions/01-functions/func-027}
+\bookq[]{questions/01-functions/func-011}
+\bookq[]{questions/01-functions/func-026}
+\bookq[]{questions/01-functions/func-028}
+\bookq[]{questions/01-functions/func-002}
+
+
+\bookq[\section{סדרות}]{questions/02-sequences/seq-017}
+\bookq[]{questions/02-sequences/seq-018}
+\bookq[]{questions/02-sequences/seq-019}
+\bookq[]{questions/02-sequences/seq-001}
+\bookq[]{questions/02-sequences/seq-002}
+\bookq[]{questions/02-sequences/seq-005}
+\bookq[]{questions/02-sequences/seq-021}
+\bookq[]{questions/02-sequences/seq-020}
+\bookq[]{questions/02-sequences/seq-025}
+\bookq[]{questions/02-sequences/seq-003}
+\bookq[]{questions/02-sequences/seq-004}
+\bookq[]{questions/02-sequences/seq-022}
+\bookq[]{questions/02-sequences/seq-006}
+\bookq[]{questions/02-sequences/seq-009}
+\bookq[]{questions/02-sequences/seq-007}
+\bookq[]{questions/02-sequences/seq-008}
+\bookq[]{questions/02-sequences/seq-010}
+\bookq[]{questions/02-sequences/seq-011}
+\bookq[]{questions/02-sequences/seq-012}
+\bookq[]{questions/02-sequences/seq-013}
+\bookq[]{questions/02-sequences/seq-016}
+\bookq[]{questions/02-sequences/seq-014}
+\bookq[]{questions/02-sequences/seq-015}
+
+
+\bookq[\section{פונקציות}]{questions/01-functions/func-003}
+\bookq[]{questions/01-functions/func-004}
+\bookq[]{questions/01-functions/func-005}
+\bookq[]{questions/01-functions/func-006}
+\bookq[]{questions/01-functions/func-007}
+\bookq[]{questions/01-functions/func-008}
+\bookq[]{questions/01-functions/func-009}
+\bookq[]{questions/01-functions/func-012}
+\bookq[]{questions/01-functions/func-013}
+\bookq[]{questions/01-functions/func-014}
+\bookq[]{questions/01-functions/func-019}
+\bookq[]{questions/01-functions/func-020}
+\bookq[]{questions/01-functions/func-021}
+\bookq[]{questions/01-functions/func-022}
+\bookq[]{questions/01-functions/func-015}
+\bookq[]{questions/01-functions/func-023}
+\bookq[]{questions/01-functions/func-016}
+\bookq[]{questions/01-functions/func-017}
+\bookq[]{questions/01-functions/func-018}
+\bookq[]{questions/01-functions/func-024}
+
+
+\bookq[\section{גבולות ורציפות של פונקציות}]{questions/03-limits-continuity/lim-001}
+\bookq[]{questions/03-limits-continuity/lim-002}
+\bookq[]{questions/03-limits-continuity/lim-003}
+\bookq[]{questions/03-limits-continuity/lim-004}
+\bookq[]{questions/03-limits-continuity/lim-010}
+\bookq[]{questions/03-limits-continuity/lim-005}
+\bookq[]{questions/03-limits-continuity/lim-006}
+\bookq[]{questions/03-limits-continuity/lim-007}
+\bookq[]{questions/03-limits-continuity/lim-008}
+\bookq[]{questions/03-limits-continuity/lim-009}
+\bookq[]{questions/03-limits-continuity/lim-011}
+\bookq[]{questions/03-limits-continuity/lim-012}
+\bookq[]{questions/03-limits-continuity/lim-020}
+\bookq[]{questions/03-limits-continuity/lim-021}
+\bookq[]{questions/03-limits-continuity/lim-013}
+\bookq[]{questions/03-limits-continuity/lim-014}
+\bookq[]{questions/03-limits-continuity/lim-015}
+\bookq[]{questions/03-limits-continuity/lim-016}
+\bookq[]{questions/03-limits-continuity/lim-017}
+\bookq[]{questions/03-limits-continuity/lim-018}
+\bookq[]{questions/03-limits-continuity/lim-019}
+
+
+\bookq[\section{נגזרות}]{questions/04-derivatives/der-001}
+\bookq[]{questions/04-derivatives/der-002}
+\bookq[]{questions/04-derivatives/der-005}
+\bookq[]{questions/04-derivatives/der-006}
+\bookq[]{questions/04-derivatives/der-007}
+\bookq[]{questions/04-derivatives/der-008}
+\bookq[]{questions/04-derivatives/der-009}
+\bookq[]{questions/04-derivatives/der-003}
+\bookq[]{questions/04-derivatives/der-004}
+\bookq[]{questions/04-derivatives/der-010}
+
+
+\bookq[\section{שימושי הנגזרת}]{questions/05-derivative-applications/app-001}
+\bookq[]{questions/05-derivative-applications/app-002}
+\bookq[]{questions/05-derivative-applications/app-011}
+\bookq[]{questions/05-derivative-applications/app-003}
+\bookq[]{questions/05-derivative-applications/app-005}
+\bookq[]{questions/05-derivative-applications/app-004}
+\bookq[]{questions/05-derivative-applications/app-022}
+\bookq[]{questions/05-derivative-applications/app-006}
+\bookq[]{questions/05-derivative-applications/app-007}
+\bookq[]{questions/05-derivative-applications/app-008}
+\bookq[]{questions/05-derivative-applications/app-009}
+\bookq[]{questions/05-derivative-applications/app-010}
+\bookq[]{questions/05-derivative-applications/app-012}
+\bookq[]{questions/05-derivative-applications/app-013}
+\bookq[]{questions/05-derivative-applications/app-014}
+\bookq[]{questions/05-derivative-applications/app-015}
+\bookq[]{questions/05-derivative-applications/app-016}
+\bookq[]{questions/05-derivative-applications/app-017}
+\bookq[]{questions/05-derivative-applications/app-018}
+\bookq[]{questions/05-derivative-applications/app-019}
+\bookq[]{questions/05-derivative-applications/app-020}
+\bookq[]{questions/05-derivative-applications/app-021}
+
+
+\bookq[\section{אינטגרלים}]{questions/06-integrals/int-001}
+\bookq[]{questions/06-integrals/int-002}
+\bookq[]{questions/06-integrals/int-003}
+\bookq[]{questions/06-integrals/int-004}
+\bookq[]{questions/06-integrals/int-005}
+\bookq[]{questions/06-integrals/int-006}
+\bookq[]{questions/06-integrals/int-007}
+\bookq[]{questions/06-integrals/int-008}
+\bookq[]{questions/06-integrals/int-009}
+\bookq[]{questions/06-integrals/int-010}
+\bookq[]{questions/06-integrals/int-011}
+\bookq[]{questions/06-integrals/int-012}
+\bookq[]{questions/06-integrals/int-013}
+\bookq[]{questions/06-integrals/int-014}
+\bookq[]{questions/06-integrals/int-015}
+\bookq[]{questions/06-integrals/int-016}
+\bookq[]{questions/06-integrals/int-017}
+\bookq[]{questions/06-integrals/int-018}
+\bookq[]{questions/06-integrals/int-019}
+\bookq[]{questions/06-integrals/int-020}
+\bookq[]{questions/06-integrals/int-021}
+\bookq[]{questions/06-integrals/int-022}
+\bookq[]{questions/06-integrals/int-023}
+\bookq[]{questions/06-integrals/int-024}
+\bookq[]{questions/06-integrals/int-025}
+\bookq[]{questions/06-integrals/int-026}
+\bookq[]{questions/06-integrals/int-027}
+\bookq[]{questions/06-integrals/int-028}
+\bookq[]{questions/06-integrals/int-029}
+\bookq[]{questions/06-integrals/int-030}
+\bookq[]{questions/06-integrals/int-031}
+
+\end{document}

@@ -1,0 +1,29 @@
+% ==================================================================
+% id:       int-001
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int e^{2x}\sin\lr{e^x}\,dx$
+\hint{פצלו את $e^{2x}$ למכפלה של שני גורמים ונסו הצבה; האינטגרל שיתקבל נפתר באינטגרציה בחלקים.}
+\begin{solbox}
+נבצע הצבה $t=e^x$ ואז $dt=e^x\,dx$.
+\begin{align*}
+\int e^{2x}\sin\lr{e^x}\,dx
+&=\int e^x\cdot e^x\sin\lr{e^x}\,dx
+=\int t\sin t\,dt
+\end{align*}
+
+נמשיך באינטגרציה בחלקים עם
+$t=u,\ v'=\sin t$
+כלומר
+$v=-\cos t$.
+\begin{align*}
+\int t\sin t\,dt
+&=t\lr{-\cos t}-\int \lr{-\cos t}\,dt\\
+&=-t\cos t+\int \cos t\,dt\\
+&=-t\cos t+\sin t+C
+\end{align*}
+ולכן $$.\ds \int e^{2x}\sin\lr{e^x}\,dx=-e^x\cos\lr{e^x}+\sin\lr{e^x}+C$$
+\end{solbox}

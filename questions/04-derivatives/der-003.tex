@@ -1,0 +1,214 @@
+% ==================================================================
+% id:       der-003
+% topic:    נגזרות
+% subtopic: כללי גזירה
+% solution: full
+% ==================================================================
+\textbf{חשבו את הנגזרות של הפונקציות הבאות, תוך שימוש בכללי חישוב הנגזרת ובטבלת הנגזרות הבסיסיות שלמדתם בשיעור:}
+\bE\bMs{2}
+\item $f(x)=2x^2\cos(3x)$
+\begin{solbox}
+נשתמש כאן בכלל המכפלה
+$$.(fg)'=f'g+fg'$$
+מתקיים
+\begin{align*}
+    \left(2x^2\cos(3x)\right)'&=\ (2x^2)'\cos(3x)+2x^2(\cos(3x))'\\
+    &\overset{(\ast)}{=}\ 4x\cos(3x)-2x^2\cdot3\sin(3x)\\
+    &=\ 4x\cos(3x)-6x^2\sin(3x).
+\end{align*}
+$(\ast)$
+יש כאן שימוש בכלל השרשרת:
+$$.(\cos(3x))'=\cos'(3x)\cdot(3x)'=-\sin(3x)\cdot3=-3\sin(3x)$$
+\end{solbox}
+\item $f(x)=e^{2x}\sin(5x)$
+\begin{solbox}
+ננהג כמו בסעיף הקודם
+\begin{align*}
+    \left(e^{2x}\sin(5x)\right)'&=\ (e^{2x})'\sin(5x)+e^{2x}(\sin(5x))'\\
+    &\overset{(\ast)}{=}\ e^{2x}\cdot2\cdot\sin(5x)+e^{2x}\cdot5\cdot\cos(5x)\\
+    &=\ e^{2x}(2\sin(5x)+5\cos(5x)).
+\end{align*}
+$(\ast)$
+כמו בסעיף הקודם, יש כאן שימוש בכלל השרשרת.
+\end{solbox}
+\item $f(x)=3x^5\ln(1+x^2)+x\arctan x$
+\begin{solbox}
+בגזירה של הפונקציה הנתונה נשתמש בכלל החיבור והכפל וגם בכלל השרשרת. מתקיים
+\begin{align*}
+    (3x^5\ln(1+x^2)+x\arctan x)'&=\ (3x^5\ln(1+x^2))'+(x\arctan x)'\\
+    &=\ (3x^5)'\ln(1+x^2)+3x^5(\ln(1+x^2))'\\
+    &\quad\ \ +\ (x)'\arctan x+x(\arctan x)'\\
+    &\overset{(\ast)}{=}\ 15x^4\ln(1+x^2)+3x^5\cdot\frac{2x}{1+x^2}\\
+    &\quad\ +\ \arctan x+x\cdot\frac{1}{1+x^2}\\
+    &=\ 15x^4\ln(1+x^2)+\frac{6x^6}{1+x^2}\\
+    &\quad\ +\ \arctan x+\frac{x}{1+x^2}.
+\end{align*}
+$(\ast)$
+כאן השתמשנו בכלל שרשרת
+$$.(\ln(1+x^2))'=\ln'(x+x^2)\cdot(1+x^2)'=\frac{1}{1+x^2}\cdot 2x=\frac{2x}{1+x^2}$$
+\end{solbox}
+\item $\ds{f(x) = (5 + 2x)^{10}(3 - 4x)^{20}}$
+\begin{solbox}
+מתקיים
+\begin{align*}
+    ((5 + 2x)^{10}(3 - 4x)^{20})'&=\ ((5 + 2x)^{10})'(3 - 4x)^{20}+(5 + 2x)^{10}((3 - 4x)^{20})'\\
+    &\overset{(\ast)}{=}\ 10(5+2x)^9\cdot2\cdot(3-4x)^{20}\\
+    &\quad\ \ +\ (5+2x)^{10}\cdot20(3-4x)^{19}\cdot(-4)\\
+    &=\ (5+2x)^9(3-4x)^{19}(20(3-4x)-80(5+2x))\\
+    &=\ (5+2x)^9(3-4x)^{19}(-240x-340).
+\end{align*}
+$(\ast)$
+היה כאן שימוש פעמיים בכלל שרשרת
+(איפה?).
+\end{solbox}
+\item $\ds{f(x) = \frac{x}{(1 - x)^2(1 + x)^3}}$
+\begin{solbox}
+נשתמש בכלל המנה
+$$.\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}$$
+מתקיים
+\begin{align*}
+    \left(\frac{x}{(1 - x)^2(1 + x)^3}\right)'&=\ \frac{(x)'[(1 - x)^2(1 + x)^3]-x[(1 - x)^2(1 + x)^3]'}{\left((1 - x)^2(1 + x)^3\right)^2}\\
+    &=\ \frac{(x)'[(1 - x)^2(1 + x)^3]}{\left((1 - x)^2(1 + x)^3\right)^2}-\frac{x[(1 - x)^2(1 + x)^3]'}{\left((1 - x)^2(1 + x)^3\right)^2}\\
+    &=\ \frac{(1 - x)^2(1 + x)^3}{\left((1 - x)^2(1 + x)^3\right)^2}\\
+    &\quad\ -\ \frac{x[2(1 - x)(-1)(1 + x)^3+(1-x)^2\cdot3(1+x)^2]}{\left((1 - x)^2(1 + x)^3\right)^2}\\
+    &=\ \cdots\\
+    &=\ \frac{4x^2-x+1}{(1-x)^3(1+x)^4}.
+\end{align*}
+מה הכללים שהשתמשנו בהם כאן?
+\end{solbox}
+\item $\ds{f(x) = \sqrt[3]{1 + \sqrt[3]{1 + \sqrt[3]{x}}}}$
+\begin{solbox}
+נציג
+$$,f(x)=g\left(1+\sqrt[3]{1+\sqrt[3]{x}}\right)$$
+כאשר
+$$.g(x)=\sqrt[3]{x}$$
+נסמן
+$$,h(x)=1+\sqrt[3]{x}$$
+ואז
+$$.f(x)=g(h(h(x)))$$
+עתה נגזור בהסתבך על כלל השרשרת:
+\begin{align*}
+    f'(x)&=\ g'(h(h(x)))\cdot (h(h(x)))'\\
+    &=\ g'(h(h(x)))\cdot h'(h(x))\cdot h'(x)\\
+    &=\ \frac{1}{3}(h(k(x)))^{-\frac{2}{3}}\cdot\frac{1}{3}(k(x))^{-\frac{2}{3}}\cdot\frac{1}{3}x^{-\frac{2}{3}}\\
+    &=\ \frac{1}{27}\left(1+\sqrt[3]{1+\sqrt[3]{x}}\right)^{-\frac{2}{3}}\cdot\left(1+\sqrt[3]{x}\right)^{-\frac{2}{3}}\cdot x^{-\frac{2}{3}}.
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \cos(1 - \pi x) \cdot \sqrt{1 - e^{2x}}}$
+\begin{solbox}
+מתקיים
+\begin{align*}
+    \left(\cos(1 - \pi x) \cdot \sqrt{1 - e^{2x}}\right)'&=\ \left(\cos(1 - \pi x)\right)'\cdot \sqrt{1 - e^{2x}}\\
+    &\quad\ +\ \cos(1 - \pi x) \cdot \left(\sqrt{1 - e^{2x}}\right)'\\
+    &=\ -\sin(1-\pi x)\cdot(-\pi)\cdot\sqrt{1 - e^{2x}}\\
+    &\quad\ +\ \cos(1-\pi x)\cdot\frac{1}{2}(1-e^{2x})^{-\frac{1}{2}}\cdot(1-e^{2x})'\\
+    &=\ \pi\sin(1-\pi x)\sqrt{1-e^{2x}}+\cos(1-\pi x)\cdot\frac{-2e^{2x}}{2\sqrt{1-e^{2x}}}\\
+    &=\ \pi\sin(1-\pi x)\sqrt{1-e^{2x}}-\cos(1-\pi x)\cdot\frac{e^{2x}}{\sqrt{1-e^{2x}}}
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \sin\lr{\cos^2\lr{\tan^3 x}}}$
+\begin{solbox}
+נציג
+$$,f(x)=g(h(k(x)))$$
+כאשר
+$$,g(x)=\sin x,\ h(x)=\cos^2 x,\ k(x)=\tan^3 x$$
+ונשתמש בכלל שרשרת:
+\begin{align*}
+    f'(x)&=\ g'(h(k(x)))\cdot(h(k(x)))'\\
+    &=\ g'(h(k(x)))\cdot h'(k(x))\cdot k'(x)\\
+    &=\ \cos(\cos^2(\tan^3 x))\cdot 2\cos(\tan^3x)\cdot(-\sin(\tan^3x))\cdot3\tan^2x\cdot\frac{1}{\cos^2x}\\
+    &=\ -6\,\cos\!\big(\cos^2(\tan^3 x)\big)\,\sin(\tan^3 x)\,\cos(\tan^3 x)\,\tan^2 x\cdot \frac{1}{\cos^2 x}.
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \arcsin(2 \ln^3 x)}$
+\begin{solbox}
+נציג
+$f(x)=g(h(x))$
+כאשר
+$$.g(x)=\arcsin x,\ h(x)=2\ln^3x$$
+נזכיר כי
+$$.g'(x)=\frac{1}{\sqrt{1-x^2}}$$
+ונשתמש בכלל שרשרת:
+\begin{align*}
+    f'(x)&=\ g'(h(x))\cdot h'(x)\\&=\ \frac{1}{\sqrt{1-(2\ln^3x)^2}}\cdot2\cdot3\ln^2x\cdot(\ln x)'\\
+    &=\ \frac{6\ln^2 x}{x\sqrt{1-4\ln^6x}}.
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \ln\sqrt{\frac{1 + \cos x}{\sin x}} - \frac{\cos x}{2 \sin^2 x}}$
+\hint{כדאי לפשט קודם בעזרת $\ln\sqrt{u}=\frac12\ln u$, ובסוף להשתמש בזהות $\sin^2x+\cos^2x=1$.}
+\begin{solbox}
+נגזור תחילה את המחובר הראשון. לשם כך נציג
+$$,\ln\sqrt{\frac{1 + \cos x}{\sin x}}=g(h(k(x)))$$
+כאשר
+$$.g(x)=\ln x,\ h(x)=\sqrt{x},\ k(x)=\frac{1 + \cos x}{\sin x}$$
+מתקיים
+\begin{align*}
+    \left(\ln\sqrt{\frac{1 + \cos x}{\sin x}}\right)'&=\ g'(h(k(x)))\cdot h'(k(x))\cdot k'(x)\\
+    &=\ \frac{1}{\sqrt{\frac{1 + \cos x}{\sin x}}}\cdot\frac{1}{2}\left(\frac{1 + \cos x}{\sin x}\right)^{-\frac{1}{2}}\cdot\left(\frac{1 + \cos x}{\sin x}\right)'\\
+    &=\ \frac{1}{2}\cdot\frac{1}{\frac{1 + \cos x}{\sin x}}\cdot\left(\frac{1 + \cos x}{\sin x}\right)'\\
+    &=\ \frac{1}{2}\cdot\frac{1}{\frac{1 + \cos x}{\sin x}}\cdot\frac{-\sin x\cdot\sin x-(1+\cos x)\cos x}{\sin^2x}\\
+    &=\ \frac{1}{2}\cdot\frac{1}{\frac{1 + \cos x}{\sin x}}\cdot\frac{-1-\cos x}{\sin^2x}\\
+    &=\ -\frac{1}{2\sin x}.
+\end{align*}
+נעבור עתה לגזירה של המחובר השני
+\begin{align*}
+    \left(\frac{\cos x}{2 \sin^2 x}\right)'&=\ \frac{-\sin x\cdot2\sin^2x-\cos x\cdot4\sin x\cos x}{4\sin^4x}\\
+    &=\ -\frac{\sin^2x+2\cos^2x}{2\sin^3x}.
+\end{align*}
+לבסוף,
+$$.f'(x)=-\frac{1}{2\sin x}+\frac{\sin^2x+2\cos^2x}{2\sin^3x}=\frac{\cos^2x}{\sin^3x}$$
+באילו כללים השתמשנו בגזירה?
+\end{solbox}
+\item $\ds{f(x) = \lr{\frac{a}{b}}^x\lr{\frac{b}{x}}^a\lr{\frac{x}{a}}^b}$
+\hint{השתמשו בכלל המכפלה לשלושה גורמים, או גזרו את $\ln f(x)$ (גזירה לוגריתמית).}
+\begin{solbox}
+נציג
+$$,f(x)=g(x)\cdot h(x)\cdot k(x)$$
+מתקיים
+\begin{align*}
+    f'(x)=\left(g(x)\cdot h(x)\cdot k(x)\right)'
+    &=\ \left(g(x)\cdot h(x)\right)'\cdot k(x)+g(x)\cdot h(x)\cdot k'(x)\\
+    &=\ \left(f'(x)\cdot g(x)+f(x)\cdot g'(x)\right)k(x)\\
+    &\quad\ +\ f(x)\cdot g(x)\cdot k'(x)\\
+    &=\ f'(x)\cdot g(x)\cdot k(x)+f(x)\cdot g'(x)\cdot k(x)\\
+    &\quad\ +\ f(x)\cdot g(x)\cdot k'(x)\\
+    &=\ \left(\frac{a}{b}\right)^x\ln\frac{a}{b}\cdot\left(\frac{b}{x}\right)^a\cdot\left(\frac{x}{a}\right)^b\\
+    &\quad\ +\ \left(\frac{a}{b}\right)^x\cdot a\left(\frac{b}{x}\right)^{a-1}\cdot\left(\frac{b}{x}\right)'\cdot\left(\frac{x}{a}\right)^b\\
+    &\quad\ +\ \left(\frac{a}{b}\right)^x\cdot \left(\frac{b}{x}\right)^{a}\cdot b\left(\frac{x}{a}\right)^{b-1}\cdot\left(\frac{x}{a}\right)'\\
+    &=\ \left(\frac{a}{b}\right)^x\ln\frac{a}{b}\cdot\left(\frac{b}{x}\right)^a\cdot\left(\frac{x}{a}\right)^b\\
+    &\quad\ -\ \frac{ab}{x^2}\cdot\left(\frac{a}{b}\right)^x\cdot\left(\frac{b}{x}\right)^{a-1}\cdot\left(\frac{x}{a}\right)^b\\
+    &\quad\ +\ \frac{b}{a}\cdot\left(\frac{a}{b}\right)^x\cdot \left(\frac{b}{x}\right)^{a}\cdot\left(\frac{x}{a}\right)^{b-1}\\
+    &=\ \cdots\\
+    &=\ \left(\frac{a}{b}\right)^x\left(\frac{b}{x}\right)^a\left(\frac{x}{a}\right)^b
+\left(\ln\frac{a}{b}+\frac{b-a}{x}\right).
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \arctan\lr{x + \sqrt{1 + x^2}}}$
+\hint{אחרי הגזירה בכלל השרשרת, סמנו $s=\sqrt{1+x^2}$ ופשטו בעזרת $s^2=1+x^2$.}
+\begin{solbox}
+מתקיים
+\begin{align*}
+    f'(x)&=\ \frac{1}{1+(x+\sqrt{1+x^2})^2}\cdot\left(x+\sqrt{1+x^2}\right)'\\
+    &=\ \frac{1}{1+(x+\sqrt{1+x^2})^2}\cdot\left(1+\frac{x}{\sqrt{1+x^2}}\right).
+\end{align*}
+את הביטוי האחרון שקיבלנו ניתן לפשט.
+נסמן
+$$,s=\sqrt{1+x^2}$$
+אז
+$$,1+\frac{x}{\sqrt{1+x^2}}=1+\frac{x}{s}=\frac{x+s}{s}$$
+כמוכן
+$$,1+\left(x+\sqrt{1+x^2}\right)^2=1+(x+s)^2=1+x^2+2sx+s^2=2s(s+x)$$
+מכאן
+\begin{align*}
+\frac{1}{1+(x+\sqrt{1+x^2})^2}\cdot\left(1+\frac{x}{\sqrt{1+x^2}}\right)&=\ \frac{1}{2s(x+s)}\cdot\frac{x+s}{s}\\
+&=\ \frac{1}{2s^2}\\
+&=\frac{1}{2}\cdot\frac{1}{1+x^2}.
+\end{align*}
+\end{solbox}
+\item $\ds{f(x) = \sqrt[3]{x} \quad (x > 0)}$
+\begin{solbox}
+מתקיים
+$$.\left(\sqrt[3]{x}\right)'=\left(x^{\frac{1}{3}}\right)'=\frac{1}{3}x^{-\frac{2}{3}}=\frac{1}{3\sqrt[3]{x^2}}$$
+\end{solbox}
+\eMs
+\eE

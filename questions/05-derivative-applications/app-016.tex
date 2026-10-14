@@ -1,0 +1,122 @@
+% ==================================================================
+% id:       app-016
+% topic:    שימושי הנגזרת
+% subtopic: פולינום טיילור
+% solution: full
+% ==================================================================
+\textbf{חשבו תוך שימוש בפיתוחי מקלורן:}
+\bE\bMs{2}
+\item $\ds{\lim_{x \to 0} \frac{e^x \sin x - x(x+1)}{x^3}} $
+\begin{solbox}
+בגלל שבמכנה מופיע
+$x^3$,
+נפתח
+\[
+e^x=1+x+\frac{x^2}{2}+\frac{x^3}{6}+o(x^3),\qquad
+\sin x=x-\frac{x^3}{6}+o(x^3).
+\]
+נכפול בינהם
+\[
+,e^x\sin x=x+x^2+\frac{1}{3}x^3+o(x^3)
+\]
+כאשר כל המחוברים שיש בהם
+$x$
+בחזקה גבוהה מ-
+$3$
+"הוכנסו" ל-
+$o(x^3)$.
+ולכן
+\begin{align*}
+\lim_{x\to0}\frac{e^x\sin x-x(x+1)}{x^3}&=\lim_{x\to0}\frac{x+x^2+\frac{1}{3}x^3+o(x^3)-x(x+1)}{x^3}\\
+&=\lim_{x\to0}\frac{\frac{1}{3}x^3+o(x^3)}{x^3}
+=\lim_{x\to0}\frac{1}{3}+\frac{o(x^3)}{x^3}=\ \frac13.
+\end{align*}
+\end{solbox}
+\item $\ds{\lim_{x \to 0} \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}}$
+\begin{solbox}
+נרשום
+\[
+.\cos x=1-\frac{x^2}{2}+\frac{x^4}{24}+o(x^4)
+\]
+נפתח את
+$g(t)=\sqrt{1+t}$
+עד סדר
+$2$.
+מתקיים
+$$,g'(x)=\frac{1}{2\sqrt{1+t}},\ g''(x)=-\frac{1}{4\sqrt{(1+t)^3}}$$
+מכאן
+$$,g(0)=1,\ g'(0)=\frac{1}{2},\ g''(0)=\frac{1}{4}$$
+נציב
+$t=x^2$:
+\begin{align*}
+    g(t)=\ 1+\frac{t}{2}-\frac{t^2}{8}+o(x^4)
+    =\ 1+\frac{x^2}{2}-\frac{x^4}{8}+o(x^4).
+\end{align*}
+נכפול את התוצאות
+\[
+\cos x\sqrt{1+x^2}\overset{(\ast)}{=}1-\frac{1}{3}x^4+o(x^4),
+\]
+מתקיים
+\begin{align*}
+    \lim_{x \to 0} \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}=\ \lim_{x \to 0} \frac{\frac{1}{3}x^4+o(x^4)}{x^4}
+    =\ \lim_{x \to 0}\frac{1}{3}+\frac{o(x^4)}{x^4}
+    =\ \frac{1}{3}.
+\end{align*}
+$(\ast)$ כל המחוברים שכללו חזקות גדולות מ-
+$4$
+"הוכנסו" ל-
+$o(x^4)$.
+
+להלן דרך חלופית אשר לא מצריכה פיתוחים "מסתוריים".
+מתקיים
+\begin{align*}
+    \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}&=\ \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}{\color{red}\cdot\frac{1+\cos x\cdot\sqrt{1+x^2}}{1+\cos x\cdot\sqrt{1+x^2}}}\\
+    &=\ \frac{1-\cos^2x(1+x^2)}{x^4(1+\cos x\cdot\sqrt{1+x^2})},
+\end{align*}
+נשים לב כי
+$$,\lim_{x\to0}\frac{1}{1+\cos x\cdot\sqrt{1+x^2}}=\frac{1}{2}$$
+מכאן
+\begin{align*}
+    \lim_{x\to0}\frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}&=\ \lim_{x\to0}\frac{1-\cos^2x(1+x^2)}{x^4(1+\cos x\cdot\sqrt{1+x^2})}\\
+    &=\ \lim_{x\to0}\frac{1-\cos^2x(1+x^2)}{x^4}\cdot\lim_{x\to0}\frac{1}{1+\cos x\cdot\sqrt{1+x^2}}\\
+    &=\ \frac{1}{2}\cdot\lim_{x\to0}\frac{1-\left(1-\frac{x^2}{2}+\frac{x^4}{4!}+o(x^4)\right)^2(1+x^2)}{x^4}\\
+    &=\ \frac{1}{2}\cdot\lim_{x\to0}\frac{\frac{2x^4}{3}+o(x^4)}{x^4}
+    =\ \frac{1}{3}.
+\end{align*}
+\end{solbox}
+\item $\ds{\lim_{x \to +\infty} \left( x - x^2 \ln\left(1 + \frac{1}{x}\right) \right)}$
+\hint{הציבו $t=\frac1x$ כדי לעבור לגבול ב-$0$, ואז השתמשו בפיתוח של $\ln(1+t)$.}
+\begin{solbox}
+אין פיתוחי טיילור באינסוף, אבל מכיוון שמופיע ביטוי
+$\frac{1}{x}$,
+אם נציב
+$t=\frac{1}{x}$,
+אז המשתנה החדש ישאף ל-
+$0$
+ונוכל לפתור את התרגיל ע"י שימוש בפיתוחי מקלורן.
+כאמור,
+נסמן \(t=\frac1x\).
+מתקיים
+\begin{align*}
+    \lim_{x \to +\infty} \left( x - x^2 \ln\left(1 + \frac{1}{x}\right) \right)&=\ \lim_{t\to0^+}\left(\frac{1}{t}+\frac{1}{t^2}\ln(1+t)\right)\\
+    &=\ \lim_{t \to 0^+}\frac{t-\ln(1+t)}{t^2}\\
+    &=\ \lim_{t \to 0^+}\frac{t-(t-\frac{t^2}{2}+o(t^2))}{t^2}\\
+    &=\ \lim_{t \to 0^+}\frac{\frac{t^2}{2}+o(t^2)}{t^2}\\
+    &=\ \lim_{t \to 0^+}\left(\frac{1}{2}+\frac{o(t^2)}{t^2}\right)\\
+    &=\ \frac{1}{2}.
+\end{align*}
+\end{solbox}
+\item $\ds{\lim_{x\to\infty}x^3\lr{e^{\frac1x}-1-\frac1x-\frac{1}{2x^2}}}$
+\hint{הציבו $t=\frac1x$ כדי לעבור לגבול ב-$0$, ואז השתמשו בפיתוח של $e^t$.}
+\begin{solbox}
+נסמן \(t=\frac1x\). אז
+\begin{align*}
+    \lim_{x\to\infty}x^3\lr{e^{\frac1x}-1-\frac1x-\frac{1}{2x^2}}&=\ \lim_{t\to0^+}\frac{e^t-1-t-\frac{t^2}{2}}{t^3}\\
+    &=\ \lim_{t\to0^+}\frac{1+t+\frac{t^2}{2}+\frac{t^3}{3!}+o(t^3)-1-t-\frac{t^2}{2}}{t^3}\\
+    &=\ \lim_{t\to0^+}\frac{\frac{t^3}{6}+o(t^3)}{t^3}\\
+    &=\ \lim_{t\to0^+}\left(\frac{1}{6}+\frac{o(t^3)}{t^3}\right)\\
+    &=\ \frac{1}{6}.
+\end{align*}
+\end{solbox}
+\eMs
+\eE

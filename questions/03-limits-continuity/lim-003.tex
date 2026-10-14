@@ -1,0 +1,217 @@
+% ==================================================================
+% id:       lim-003
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: משפט היינה
+% solution: full
+% ==================================================================
+\textbf{
+בכל אחד מהסעיפים הבאים, השתמשו במשפט היינה וקבעו האם קיים הגבול. \\
+נמקו את תשובתכם/ן:}
+
+\begin{enumerate}\bMs{2}
+\item ${\displaystyle\lim_{x\to5}}(2x^2-3x+5)$
+\ifsol
+\begin{solbox}
+נראה כי הגבול קיים. נשתמש במשפט היינה. לשם כך נקבע סדרה
+$(a_n)_{n=1}^\infty$
+כך ש-
+$\displaystyle\lim_{n\to\infty}a_n=5$.
+מתקיים
+\begin{align*}
+    \lim_{n\to\infty}f(a_n)&=\ \lim_{n\to\infty}\left(2a_n^2-3a_n+5\right)\\
+    &\overset{(\ast)}{=}\ 2\cdot5^2-3\cdot5+5\\
+    &=\ 40,
+\end{align*}
+נסיק כי הגבול המבוקש קיים ושווה ל-
+$40$.
+
+$(\ast)$ שימו לב, כי יש כאן שימוש באריתמטיקה של גבולות של סדרות.
+\end{solbox}
+\fi
+
+\item $\ds{\lim_{x \to 0} e^{\frac{1}{x}}}$
+\ifsol
+\hint{בדקו לאן שואפת $f(a_n)$ עבור סדרות $a_n\to0$ מימין ומשמאל, והשוו.}
+\begin{solbox}
+נראה כי הגבול לא קיים.
+תהיינה
+$(a_n)_{n=1}^\infty$
+ו-
+$(b_n)_{n=1}^\infty$
+שתי סדרות כך ש-
+$$,\lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n=0$$
+ו-
+$a_n>0$, $b_n<0$
+לכל
+$n\in\mathbb{N}$.
+מתקיים
+$$,\displaystyle\lim_{n\to\infty}f(a_n)=\lim_{n\to\infty}e^{\frac{1}{a_n}}
+=\infty$$
+מאחר והגבול במעריך הוא אינסוף.
+מצד שני
+$$,\displaystyle\lim_{n\to\infty}f(b_n)=\lim_{n\to\infty}e^{\frac{1}{b_n}}=0$$
+מאחר והגבול במעריך הוא מינוס אינסוף.
+התקבלו שתי תוצאות שונות, משמעו אין גבול.
+\end{solbox}
+\fi
+
+\item ${\displaystyle\lim_{x\to1}}(x-\lfloor x\rfloor)$
+\ifsol
+\hint{בדקו מהו $\lfloor x\rfloor$ לאורך סדרות ששואפות ל-$1$ מימין ומשמאל, והשוו.}
+\begin{solbox}
+נפריך את קיום הגבול ע"פ ההגדרה של גבול של היינה.
+נבחר שתי סדרות - הראשונה שמתכנסת ל-
+$1$
+בעליה, והשניה - בירידה.
+לדוגמא,
+$a_n=1-\tfrac{1}{n}$
+ו-
+$b_n=1+\tfrac{1}{n}$.
+מתקיים
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(a_n)
+&=\ \displaystyle\lim_{n\to\infty}(a_n-\lfloor a_n\rfloor)\\
+&=\ \displaystyle\lim_{n\to\infty}(1-\tfrac{1}{n}-\lfloor 1-\tfrac{1}{n}\rfloor)\\
+&=\ 1-0\\
+&=\ 1,
+\end{align*}
+מצד שני
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(b_n)
+&=\ \displaystyle\lim_{n\to\infty}(b_n-\lfloor b_n\rfloor)\\
+&=\ \displaystyle\lim_{n\to\infty}(1+\tfrac{1}{n}-\lfloor 1+\tfrac{1}{n}\rfloor)\\
+&=\ 1-1\\
+&=\ 0,
+\end{align*}
+התקבלו שני גבולות שונים, לכן הגבול המבוקש לא קיים.
+\end{solbox}
+\fi
+
+\item $\ds{\lim_{x \to 0} \arctan\lr{ \frac{1}{x} } }$
+\ifsol
+\hint{מה קורה ל-$\frac1x$ כאשר מתקרבים ל-$0$ מכל צד, ומה ידוע על $\arctan$ בפלוס ומינוס אינסוף?}
+\begin{solbox}
+שוב נראה כי הגבול לא קיים. נבחר שתי סדרות - הראשונה שמתכנסת ל-
+$0$
+מלמעלה, והשניה - מלמטה.
+לדוגמא,
+$a_n=-\tfrac{1}{n}$
+ו-
+$b_n=\tfrac{1}{n}$.
+מתקיים
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(a_n)
+&=\ \displaystyle\lim_{n\to\infty}\arctan(-n)\\
+&=\ -\frac{\pi}{2},
+\end{align*}
+מצד שני
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(b_n)
+&=\ \displaystyle\lim_{n\to\infty}\arctan(n)\\
+&=\ \frac{\pi}{2},
+\end{align*}
+התקבלו שני גבולות שונים, לכן הגבול המבוקש לא קיים
+(ע"פ היינה).
+\end{solbox}
+\fi
+
+\item $\ds{\lim_{x \to 0} \cos\lr{\frac{1}{x} }}$
+\ifsol
+\hint{בחרו סדרות $a_n\to0$ שעבורן $\frac1{a_n}$ הן נקודות שבהן ערך הקוסינוס ידוע במדויק, והשוו את הגבולות.}
+\begin{solbox}
+נפריך את קיום הגבול בעזרת משפט היינה.
+יש חששות רבים לגבי התכנסותו
+של
+$\cos\left(\frac{1}{x}\right)$
+אשר נובעים מכך שבאינסוף אין לקוסינוס התנהגות "יציבה".
+
+נבחר שתי סדרות ששואפות ל-
+$0$.
+כאן, בניגוד לסעיפים הקודמים, אין לנו יותר מדי חופש בבחירת סדרות שתפרכנה את קיום הגבול, אנו חייבים להתייחס ל"קפריזות" של קוסינוס, כלומר, עלינו לבחור סדרות בחוכמה:
+
+שתי הסדרות חייבות לשאוף ל-
+$0$,
+ולאחר הרכבת הקוסינוס על הסדרות האלה כדאי לנו לדעת מה הם הערכים שיתקבלו
+(הרי קוסינוס היא פונקציה "מסובכת" ואין לנו מידע לגבי ערכיה המדויקים פרט לכמה נקודות בודדות).
+יודעים כי
+$\cos(x)=1$
+אמ"מ
+$2\pi n$, $n\in\mathbb{Z}$,
+ו-
+$\cos(x)=0$
+אמ"מ
+$x=\tfrac{\pi}{2}+2\pi n$, $n\in\mathbb{Z}$.
+לכן נבחר
+$$a_n=\frac{1}{\tfrac{\pi}{2}+2\pi n},\quad b_n=\frac{1}{2\pi n}$$
+בבירור, שתיהן שואפות ל-
+$0$.
+מתקיים
+\begin{align*}
+f(a_n)
+=\cos\left(\frac{1}{a_n}\right)
+= \cos\left(\tfrac{\pi}{2}+2\pi n\right)
+= 0,
+\end{align*}
+ולכן
+$\ds{\lim_{n\to\infty}}f(a_n)=0$.
+מצד שני
+\begin{align*}
+f(b_n)
+= \cos\left(\frac{1}{b_n}\right)
+=\cos\left(2\pi n\right)
+= 1,
+\end{align*}
+ולכן
+$\ds{\lim_{n\to\infty}}f(b_n)=1$.
+התקבלו שני גבולות שונים, לכן הגבול המבוקש לא קיים.
+\end{solbox}
+\fi
+
+\item $\ds{\lim_{x \to 0} \lr{ \frac{x^2+4}{x+2} } \cdot \sin\lr{ \frac{1}{x^2} } }$
+\ifsol
+\hint{טפלו בכל גורם בנפרד: חשבו את הגבול של הגורם הראשון, ועבור $\sin\frac1{x^2}$ בחרו סדרות שבהן ערך הסינוס ידוע במדויק.}
+\begin{solbox}
+נשים לב תחילה כי
+$\displaystyle\lim_{x\to0}\frac{x^2+4}{x+2}=2$,
+אכן, תהא
+$(c_n)_{n=1}^\infty$
+סדרה ששואפת ל-
+$0$.
+מתקיים
+\begin{align*}
+    \lim_{n\to\infty}f(c_n)=\lim_{n\to\infty}\frac{c_n^2+4}{c_n+2}
+    \overset{(\ast)}{=} \frac{0+4}{0+2}
+    &=\ 2,
+\end{align*}
+כאשר המעבר
+$(\ast)$
+מוצדק ע"י אריתמטיקה של גבולות של סדרות.
+בדומה לסעיף הקודם, נבחר
+$$.a_n=\frac{1}{\sqrt{\tfrac{\pi}{2}+2\pi n}}
+,\quad b_n=\frac{1}{\sqrt{\pi+2\pi n}}$$
+בבירור, שתיהן שואפות ל-
+$0$.
+מתקיים
+\begin{align*}
+f(a_n)
+&=\ \frac{a_n^2+4}{a_n+2}  \cdot \sin\lr{ \frac{1}{a_n^2} }\\
+&=\ \frac{a_n^2+4}{a_n+2} \cdot \sin\lr{\tfrac{\pi}{2}+2\pi n}
+= \frac{a_n^2+4}{a_n+2},
+\end{align*}
+ולכן
+$\ds{\lim_{n\to\infty}}f(a_n)=2$.
+מצד שני
+\begin{align*}
+f(b_n)
+&=\ \frac{b_n^2+4}{b_n+2} \cdot \sin\lr{ \frac{1}{b_n^2} }\\
+&=\ \frac{b_n^2+4}{b_n+2}  \cdot \sin\lr{\pi+2\pi n}
+= 0,
+\end{align*}
+ולכן
+$\ds{\lim_{n\to\infty}}f(b_n)=0$.
+התקבלו שני גבולות שונים, לכן הגבול המבוקש לא קיים
+())ע"פ היינה).
+\end{solbox}
+\fi
+\eMs
+\end{enumerate}

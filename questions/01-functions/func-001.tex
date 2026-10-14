@@ -1,0 +1,82 @@
+% ==================================================================
+% id:       func-001
+% topic:    מספרים ממשיים
+% subtopic: אי־שוויונות וערך מוחלט
+% solution: full
+% ==================================================================
+\textbf{פתרו את אי השיוויונות הבאים:}
+\begin{enumerate}\bMs{2}
+\item  $|x + 2| < 0.3$
+\begin{solbox}
+לכל $a>0$ מתקיים
+$|t|<a$
+אם ורק אם
+$-a<t<a$.
+נציב $t=x+2$ ו-$a=0.3$:
+$$|x+2|<0.3\Longleftrightarrow-0.3<x+2<0.3\Longleftrightarrow-2.3<x<-1.7.$$
+לכן קבוצת הפתרונות היא הקטע
+$(-2.3,-1.7)$.
+\end{solbox}
+\item $|5 - \frac{1}{x}| \leq 1$
+\hint{כתבו את אי-השוויון כאי-שוויון כפול עבור $\frac{1}{x}$, ורק אחר כך עברו ל-$x$ (שימו לב לסימן לפני שהופכים).}
+\begin{solbox}
+אי-השוויון מוגדר עבור $x\neq0$.
+לכל $a\ge0$ מתקיים
+$|t|\le a$
+אם ורק אם
+$-a\le t\le a$,
+ולכן
+$$\left|5-\frac1x\right|\le1\Longleftrightarrow-1\le5-\frac1x\le1\Longleftrightarrow-6\le-\frac1x\le-4\Longleftrightarrow4\le\frac1x\le6.$$
+מכאן $\frac1x>0$, כלומר $x>0$.
+עבור $x>0$ אפשר לכפול ב-$x$ בלי לשנות את כיוון אי-השוויונות:
+$$4\le\frac1x\Longleftrightarrow x\le\frac14,\qquad\frac1x\le6\Longleftrightarrow x\ge\frac16.$$
+לכן קבוצת הפתרונות היא הקטע
+$\left[\frac16,\frac14\right]$.
+\end{solbox}
+\item $|x + 2| + |x - 2| \leq 10$
+\hint{חלקו את הישר לתחומים לפי הנקודות שבהן הביטויים שבתוך הערכים המוחלטים מחליפים סימן, ופתרו בכל תחום בנפרד.}
+\begin{solbox}
+נפריד למקרים:
+\begin{itemize}
+\item
+$x - 2 < x + 2 \leq 0$,
+כלומר
+$x \leq -2$:
+במקרה זה
+$$|x + 2| + |x - 2| \leq 10 \Longleftrightarrow -x -2 -x +2 \leq 10 \Longleftrightarrow -2x \leq 10 \Longleftrightarrow x \geq -5$$
+ובסך הכל
+$ -5 \leq x \leq -2$
+\item
+$x - 2 \leq 0 \leq x + 2 $,
+כלומר
+$-2 \leq x \leq 2$:
+במקרה זה
+$$|x + 2| + |x - 2| \leq 10 \Longleftrightarrow x + 2 -x +2 \leq 10 \Longleftrightarrow 4 \leq 10 $$
+וזה מתקיים. לכן כל $x$ בתחום זה הוא פתרון.
+\item
+$0 \leq x - 2 < x + 2 $,
+כלומר
+$x \geq 2$:
+במקרה זה
+$$|x + 2| + |x - 2| \leq 10 \Longleftrightarrow x + 2 + x - 2 \leq 10 \Longleftrightarrow 2x \leq 10 \Longleftrightarrow x \leq 5$$
+ובסך הכל
+$ 2 \leq x \leq 5$
+\end{itemize}
+ומאיחוד הפתרונות נקבל
+$[-5, 5]$.
+\end{solbox}
+\item $|x^2-x-6|>x^2-x-6$
+\hint{מתי מתקיים $|a|>a$? השתמשו בתשובה עם $a=x^2-x-6$.}
+\begin{solbox}
+נשים לב כי אם
+$x^2-x-6\geq0$,
+אז
+$|x^2-x-6|=x^2-x-6$,
+ואז אי-השוויון בבירור לא מתקיים. לכן אי-השוויון הנתון יתקיים אם ורק אם
+$x^2-x-6<0$,
+כלומר, אם ורק אם
+$-2<x<3$
+(חשבו בעצמכם מאין הגיעו המספרים האלה!).
+\end{solbox}
+\eMs
+\end{enumerate}

@@ -1,0 +1,27 @@
+% ==================================================================
+% id:       int-002
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% verified: no
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \frac{dx}{x^{4}-1}$
+\hint{פרקו את המכנה לגורמים (הפרש ריבועים) והשתמשו בפירוק לשברים חלקיים.}
+\begin{solbox}
+\unverified
+נפרק לשברים חלקיים. מכיוון ש-$x^4-1=(x^2-1)(x^2+1)$,
+$$,\frac{1}{x^4-1}=\frac12\lr{\frac{1}{x^2-1}-\frac{1}{x^2+1}}$$
+ובנוסף
+$$.\frac{1}{x^2-1}=\frac{1}{(x-1)(x+1)}=\frac12\lr{\frac{1}{x-1}-\frac{1}{x+1}}$$
+לכן
+\begin{align*}
+\int\frac{dx}{x^4-1}
+&=\frac14\int\frac{dx}{x-1}-\frac14\int\frac{dx}{x+1}-\frac12\int\frac{dx}{x^2+1}\\
+&=\frac14\ln|x-1|-\frac14\ln|x+1|-\frac12\arctan x+C.
+\end{align*}
+כלומר
+\begin{align*}
+\boxed{\int\frac{dx}{x^4-1}=\frac14\ln\abs{\frac{x-1}{x+1}}-\frac12\arctan x+C}
+\end{align*}
+\end{solbox}

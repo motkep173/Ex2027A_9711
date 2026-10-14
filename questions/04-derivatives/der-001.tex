@@ -1,0 +1,120 @@
+% ==================================================================
+% id:       der-001
+% topic:    נגזרות
+% subtopic: הגדרת הנגזרת וגזירות
+% solution: full
+% ==================================================================
+\textbf{עבור כל אחת מהפונקציות הבאות, חשבו את הנגזרת שלה, בכל נקודה בתחום ההגדרה,  ע"פ הגדרת הנגזרת, ללא שימוש בכללי חישוב נגזרת:}
+\bE\bMs{2}
+\item $\ds{f(x)=\frac{1}{x^3}}$
+\hint{הביאו את המונה של מנת ההפרשים למכנה משותף ופתחו את $(x+h)^3$, כך שיהיה אפשר לצמצם ב-$h$.}
+\item $\ds{f(x)=\cos(5x)}$
+\hint{השתמשו בזהות להפרש קוסינוסים כדי להגיע לגבול המופלא $\frac{\sin t}{t}\to1$.}
+\item $\ds{f(x)=\ln\lr{1 + x^2}}$
+\hint{כתבו את הפרש הלוגריתמים כלוגריתם של מנה מהצורה $1+t$ עם $t\to0$, והשתמשו בגבול $\frac{\ln(1+t)}{t}\to1$.}
+\item $\ds{f(x)=e^{\sin x}}$
+\hint{הוציאו את $e^{\sin x}$ כגורם משותף והשתמשו בגבול $\frac{e^t-1}{t}\to1$, כאשר $t$ הוא הפרש ערכי הסינוס.}
+\eMs
+\eE
+\ifsol
+\begin{solbox}
+\bE
+\item
+מתקיים
+\begin{align*}
+    f'(x)&=\ \lim_{h\to0}\frac{f(x+h)-f(x)}{h}\\
+    &=\ \lim_{h\to0}\frac{\tfrac{1}{(x+h)^3}-\tfrac{1}{x^3}}{h},
+\end{align*}
+לפני שנחשב את הגבול, נפשט:
+\begin{align*}
+    \frac{\tfrac{1}{(x+h)^3}-\tfrac{1}{x^3}}{h}&=\ \frac{x^3-(x+h)^3}{hx^3(x+h)^3}\\
+    &=\ \frac{-3x^2h-3xh^2-h^3}{hx^3(x+h)^3}\\
+    &=\ \frac{-3x^2-3xh-h^2}{x^3(x+h)^3},
+\end{align*}
+מכאן
+\begin{align*}
+    f'(x)&=\ \lim_{h\to0}\frac{-3x^2-3xh-h^2}{x^3(x+h)^3}\\
+    &=\ \frac{-3x^2-3x\cdot0-0^2}{x^3(x+0)^3}= -\frac{3}{x^4}.
+\end{align*}
+
+\item
+מתקיים
+\begin{align*}
+    f'(x_0)&=\ \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\\
+    &=\ \lim_{x\to x_0}\frac{\cos(5x)-\cos(5x_0)}{x-x_0},
+\end{align*}
+נזכר בזהות
+$$.\cos\alpha-\cos\beta=-2\sin(\tfrac{\alpha-\beta}{2})\sin(\tfrac{\alpha+\beta}{2})$$
+נפשט
+\begin{align*}
+    \frac{\cos(5x)-\cos(5x_0)}{x-x_0}&=\ -2\frac{\sin(\tfrac{5x-5x_0}{2})\sin(\tfrac{5x+5x_0}{2})}{x-x_0}\\
+    &=\ -5\cdot\frac{\sin(\tfrac{5(x-x_0)}{2})}{\tfrac{5(x-x_0)}{2}}\cdot\sin(\tfrac{5x+5x_0}{2}),
+\end{align*}
+מכאן
+\begin{align*}
+    f'(x_0)&=\ -5\lim_{x\to x_0}\frac{\sin(\tfrac{5(x-x_0)}{2})}{\tfrac{5(x-x_0)}{2}}\cdot\sin(\tfrac{5x+5x_0}{2})\\
+    &\overset{(\ast)}{=}\ -5\cdot1\cdot\sin(\tfrac{10x_0}{2})\\
+    &=\ -5\sin(5x_0).
+\end{align*}
+$(\ast)$
+יש כאן שימוש בגבול מופלא
+$\displaystyle\lim_{t\to0}\frac{\sin t}{t}=1$.
+\item
+מתקיים
+\begin{align*}
+    f'(x)&=\ \lim_{h\to0}\frac{f(x+h)-f(x)}{h}\\
+    &=\ \lim_{h\to0}\frac{\ln(1+(x+h)^2)-\ln(1+x^2)}{h},
+\end{align*}
+לפני שנחשב את הגבול, נפשט:
+\begin{align*}
+    \frac{\ln(1+(x+h)^2)-\ln(1+x^2)}{h}&=\ \frac{\ln\left(\tfrac{1+(x+h)^2}{1+x^2}\right)}{h}\\
+    &=\ \frac{\ln\left(1+\tfrac{2xh+h^2}{1+x^2}\right)}{h},
+\end{align*}
+נשים לב כי
+$$,\lim_{h\to 0}\frac{2xh+h^2}{1+x^2}=0$$
+ונמשיך
+\begin{align*}
+    \frac{\ln\left(1+\tfrac{2xh+h^2}{1+x^2}\right)}{h}&=\ \frac{\ln\left(1+\tfrac{2xh+h^2}{1+x^2}\right)}{h{\color{red}\cdot\frac{2xh+h^2}{1+x^2}}}{\color{red}\cdot\frac{2xh+h^2}{1+x^2}}\\
+    &=\ \frac{\ln\left(1+\tfrac{2xh+h^2}{1+x^2}\right)}{{\frac{2xh+h^2}{1+x^2}}}{\cdot\frac{2x+h}{1+x^2}}\\
+\end{align*}
+מכאן
+\begin{align*}
+    f'(x)&=\ \lim_{h\to0}\frac{\ln\left(1+\tfrac{2xh+h^2}{1+x^2}\right)}{{\frac{2xh+h^2}{1+x^2}}}{\cdot\frac{2x+h}{1+x^2}}\\
+    &\overset{(\ast)}{=}\ 1\cdot\frac{2x+0}{1+x^2}\\
+    &=\ \frac{2x}{1+x^2}.
+\end{align*}
+
+$(\ast)$
+יש כאן שימוש בגבול מופלא
+$\displaystyle\lim_{t\to0}\frac{\ln(1+t)}{t}=1$.
+\item
+מתקיים
+\begin{align*}
+    f'(x)&=\ \lim_{h\to0}\frac{f(x+h)-f(x)}{h}\\
+    &=\ \lim_{h\to0}\frac{e^{\sin(x+h)}-e^{\sin x}}{h},
+\end{align*}
+לפני שנחשב את הגבול, נפשט:
+\begin{align*}
+    \frac{e^{\sin(x+h)}-e^{\sin x}}{h}&=\ e^{\sin x}\cdot\frac{e^{\sin(x+h)-\sin x}-1}{h},
+\end{align*}
+נשים לב כי
+$$,\lim_{h\to0}(\sin(x+h)-\sin x)=0$$
+נמשיך לפשט
+\begin{align*}
+    e^{\sin x}\cdot\frac{e^{\sin(x+h)-\sin x}-1}{h}&=\ e^{\sin x}\cdot\frac{e^{\sin(x+h)-\sin x}-1}{{\color{red}(\sin(x+h)-\sin x)\cdot}h}{\color{red}\cdot(\sin(x+h)-\sin x)}\\
+    &=\ e^{\sin x}\cdot\frac{e^{\sin(x+h)-\sin x}-1}{{\color{red}(\sin(x+h)-\sin x)\cdot}}\cdot\frac{{\sin(x+h)-\sin x}}{h}
+\end{align*}
+מכאן
+\begin{align*}
+    f'(x)&=\ e^{\sin x}\cdot\lim_{h\to0}\frac{e^{\sin(x+h)-\sin x}-1}{{\color{red}(\sin(x+h)-\sin x)\cdot}}\cdot\frac{{\sin(x+h)-\sin x}}{h}\\
+    &\overset{(\ast)}{=}\ e^{\sin x}\cdot1\cdot\cos x\\
+    &=\ e^{\sin x}\cdot\cos x.
+\end{align*}
+ $(\ast)$
+ יש כאן שימוש בגבול מופלא
+ $\lim_{t\to0}(1+t)^{\frac{1}{t}}=e$.
+ כמוכן, שימו לב כי
+ $$\displaystyle\lim_{h\to 0}\frac{{\sin(x+h)-\sin x}}{h}=\sin'(x)=\cos x$$
+\eE
+\end{solbox}
+\fi
