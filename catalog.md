@@ -2,7 +2,7 @@
 
 נוצר אוטומטית ע"י `make_bank.py`. סה"כ **134** שאלות.
 
-**פתרונות שטרם נבדקו (15):** [seq-022](questions/02-sequences/seq-022.tex), [seq-006](questions/02-sequences/seq-006.tex), [seq-010](questions/02-sequences/seq-010.tex), [func-020](questions/01-functions/func-020.tex), [der-010](questions/04-derivatives/der-010.tex), [app-022](questions/05-derivative-applications/app-022.tex), [app-012](questions/05-derivative-applications/app-012.tex), [app-013](questions/05-derivative-applications/app-013.tex), [int-002](questions/06-integrals/int-002.tex), [int-004](questions/06-integrals/int-004.tex), [int-010](questions/06-integrals/int-010.tex), [int-019](questions/06-integrals/int-019.tex), [int-025](questions/06-integrals/int-025.tex), [int-028](questions/06-integrals/int-028.tex), [int-030](questions/06-integrals/int-030.tex)
+**פתרונות שטרם נבדקו (12):** [func-020](questions/01-functions/func-020.tex), [der-010](questions/04-derivatives/der-010.tex), [app-022](questions/05-derivative-applications/app-022.tex), [app-012](questions/05-derivative-applications/app-012.tex), [app-013](questions/05-derivative-applications/app-013.tex), [int-002](questions/06-integrals/int-002.tex), [int-004](questions/06-integrals/int-004.tex), [int-010](questions/06-integrals/int-010.tex), [int-019](questions/06-integrals/int-019.tex), [int-025](questions/06-integrals/int-025.tex), [int-028](questions/06-integrals/int-028.tex), [int-030](questions/06-integrals/int-030.tex)
 
 
 ## מספרים ממשיים (7)
@@ -32,12 +32,12 @@
 | [seq-025](questions/02-sequences/seq-025.tex) | חסימות של סדרות | מלא | {תהיינה $(a_n)_{n=1}^{\infty}$ ו-$(b_n)_{n=1}^{\infty}$ סדרות חסומות. … |
 | [seq-003](questions/02-sequences/seq-003.tex) | סדרות מונוטוניות וחסומות | מלא | {עבור כל אחת מהסדרות הבאות, קבעו האם היא:} חסומה / מלעיל ולא מלרע / מל… |
 | [seq-004](questions/02-sequences/seq-004.tex) | סדרות מונוטוניות וחסומות | מלא | {נתונה הסדרה $a_n=\frac{n}{n^2+1}$.} הראו כי הסדרה מונוטונית. הראו כי … |
-| [seq-022](questions/02-sequences/seq-022.tex) | חישוב גבולות בעזרת אריתמטיקה של גבולות | מלא ⚠️ טרם נבדק | {חשבו את הגבולות הבאים:} \bMs{2} $ \limn\frac{2n^2-3n}{5n^2+1}$ $ \lim… |
-| [seq-006](questions/02-sequences/seq-006.tex) | אריתמטיקה של גבולות — הוכח או הפרך | מלא ⚠️ טרם נבדק | {תהיינה $(a_n),(b_n)$ סדרות. הוכיחו או הפריכו כל אחת מהטענות הבאות:} א… |
+| [seq-022](questions/02-sequences/seq-022.tex) | חישוב גבולות בעזרת אריתמטיקה של גבולות | מלא | {חשבו את הגבולות הבאים:} \bMs{2} $ \limn\frac{2n^2-3n}{5n^2+1}$ $ \lim… |
+| [seq-006](questions/02-sequences/seq-006.tex) | אריתמטיקה של גבולות — הוכח או הפרך | מלא | {תהיינה $(a_n),(b_n)$ סדרות. הוכיחו או הפריכו כל אחת מהטענות הבאות:} א… |
 | [seq-009](questions/02-sequences/seq-009.tex) | אריתמטיקה של גבולות — הוכח או הפרך | מלא | {הוכיחו או הפריכו:} אם $(\|a_n\|)$ מתכנסת, אז $(a_n)$ חסומה. אם $(a_nb_n… |
 | [seq-007](questions/02-sequences/seq-007.tex) | חישוב גבולות של סדרות | מלא | {לכל אחת מהסדרות הבאות, מצאו את הגבול $\limn a_n$:} \bMs{2} $ {\limn n… |
 | [seq-008](questions/02-sequences/seq-008.tex) | חישוב גבולות של סדרות | מלא | חשבו את גבול הסדרה הבאה: .\limn \frac1{\frac1{\sqrt1} + \frac1{\sqrt2}… |
-| [seq-010](questions/02-sequences/seq-010.tex) | חישוב גבולות של סדרות | מלא ⚠️ טרם נבדק | {חשבו את גבול הסדרות הבאות ונמקו את צעדיכם.} \bMs{2} $ \lim_{n \to \in… |
+| [seq-010](questions/02-sequences/seq-010.tex) | חישוב גבולות של סדרות | מלא | {חשבו את גבול הסדרות הבאות ונמקו את צעדיכם.} \bMs{2} $ \lim_{n \to \in… |
 | [seq-011](questions/02-sequences/seq-011.tex) | סדרות מונוטוניות וסדרות נסיגה | מלא | {הוכיחו כי הסדרות הבאות מתכנסות וחשבו את גבולותיהן:} $.a_1 = \sqrt2, \… |
 | [seq-012](questions/02-sequences/seq-012.tex) | סדרות מונוטוניות וסדרות נסיגה | מלא | {יהיו $a_1\ge b_1$ מספרים חיוביים. נגדיר ברקורסיה שתי סדרות באופן הבא:… |
 | [seq-013](questions/02-sequences/seq-013.tex) | גבולות חלקיים | מלא | {בכל אחד מהסעיפים הבאים, מצאו את כל הגבולות החלקיים במובן הרחב של הסדר… |
