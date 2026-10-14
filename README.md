@@ -37,7 +37,9 @@
 
 ## עדכון החוברת והאתר
 
-אחרי כל שינוי בשאלה:
+**אוטומטית:** GitHub Action (`.github/workflows/build.yml`) בונה את החוברות ואת האתר בכל PR ובכל מיזוג ל-`main`. ב-PR הוא רק בודק שהכול נבנה, וה-PDF-ים מצורפים להרצה (Actions ← ההרצה ← Artifacts). אחרי מיזוג ל-`main` הוא מבצע commit של `index.html`, `booklet.pdf`, `solutions.pdf` וקובצי ה-tex שנוצרו, ו-GitHub Pages מפרסם אותם. מספיק לשנות את קובצי השאלות.
+
+**ידנית**, למשל כדי לראות את התוצאה לפני push:
 
 ```
 python3 make_bank.py

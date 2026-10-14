@@ -13,9 +13,9 @@
 
 ## אחרי כל שינוי בשאלה
 
-- `python3 make_bank.py`, `python3 make_site.py --check`.
-- קומפילציה של `booklet.tex` ושל `solutions.tex`, שתי ריצות של xelatex לכל אחת.
-- ה-commit כולל את קובצי ה-tex, את `index.html` ואת שני ה-PDF, כדי שהאתר והחוברות יתאימו למקור.
+- GitHub Action (`.github/workflows/build.yml`) בונה את החוברות ואת האתר בכל PR ובכל מיזוג ל-`main`. במיזוג הוא מבצע commit של `index.html`, קובצי ה-tex שנוצרו ושני ה-PDF בחזרה ל-`main`. לכן ב-PR מספיק לשנות את קובצי השאלות.
+- לפני push מריצים `python3 make_bank.py` ו-`python3 make_site.py --check`, כדי לתפוס שגיאות מוקדם. אם ה-Action נכשל ב-PR, מתקנים לפני המיזוג.
+- לפני עבודה חדשה עושים fetch, כי ה-Action מוסיף commits ל-`main`.
 
 ## עבודה עם git
 
