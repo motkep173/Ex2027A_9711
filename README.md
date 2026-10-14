@@ -113,6 +113,10 @@ python3 make_bank.py --with-suggested ../exercises-9711/exercises/suggested    #
 
 כדי לאשר שאלה: מעבירים את הקובץ מ-`exercises/suggested/<נושא>/` ב-repo הפרטי ל-`questions/<נושא>/` כאן. מוחקים ממנו את `\begin{suggested}`, `\end{suggested}` ו-`% suggested: yes`, ומעבירים את שדות ה-`source`/`file`/`note` שלו ל-`exercises/metadata.md`. אחרי בדיקת הפתרונות מוחקים גם את `\unverified` ואת `% verified: no`. אחר כך בונים מחדש.
 
+## דף הבדיקה של הצוות
+
+`tools/build_review.py` ו-`tools/review-template.html` בונים את דף הבדיקה הפרטי, שבו המרצה האחראי מאשר כל רמז ופתרון. הדף מתפרסם כ-artifact פרטי ב-claude.ai ולא באתר, כי הוא כולל את המקורות ואת השאלות המוצעות מה-repo הפרטי. ההסבר המלא ב-`CLAUDE.md`.
+
 ## הרכבת דף תרגילים
 
 1. בוחרים שאלות ב-`catalog.md`.

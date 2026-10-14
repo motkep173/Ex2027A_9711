@@ -34,8 +34,10 @@ def read_question(path):
     with open(path, encoding='utf-8') as f:
         for line in f:
             m = re.match(r'%\s*(\w+):\s*(.*)', line)
-            if m and m.group(1) in FIELDS and not body:
-                meta[m.group(1)] = m.group(2).strip()
+            if m and not body:
+                # header fields this repo does not use (source, file, note in the private copies) are skipped
+                if m.group(1) in FIELDS:
+                    meta[m.group(1)] = m.group(2).strip()
             elif re.match(r'%\s*=+\s*$', line) and not body:
                 continue
             else:
