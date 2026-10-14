@@ -17,6 +17,19 @@
 - לפני push מריצים `python3 make_bank.py` ו-`python3 make_site.py --check`, כדי לתפוס שגיאות מוקדם. אם ה-Action נכשל ב-PR, מתקנים לפני המיזוג.
 - לפני עבודה חדשה עושים fetch, כי ה-Action מוסיף commits ל-`main`.
 
+## דף הבדיקה
+
+- דף פרטי ב-claude.ai (בחשבון האישי של המרצה האחראי): https://claude.ai/artifact/515sbgsiyAeNpymwnhnBt5. בו הוא מאשר כל רמז וכל פתרון, רשמי או כזה שכתב Claude.
+- הסימונים נשמרים במסד הנתונים של הדף, באוסף `reviews`, מסמך לכל כרטיס (מזהה הכרטיס כמו באתר, למשל `seq-007b`). השדות: `status` (ok / problem / unsure / fixed / remove), `comment`, `hintStatus` (ok / problem / fixed), `hintComment`, ו-`claudeNote` / `hintClaudeNote` להסבר מה תוקן.
+- **בנייה:** `python3 tools/build_review.py ../exercises-9711 <קובץ>`, ופרסום לאותה כתובת (`url`). הקובץ כולל מקורות ושאלות מוצעות, ולכן לא נשמר ב-git.
+- **"תיישם את הסימונים":**
+  1. קוראים את `reviews`.
+  2. לכל `problem` / `unsure` עם הערה, ולכל רמז `problem`, מתקנים את קובץ השאלה (מוצעת: ב-repo הפרטי).
+  3. אחרי תיקון: `status: fixed` (או `hintStatus: fixed`) ו-`claudeNote` (או `hintClaudeNote`) שמסביר מה שונה. משאירים את ההערה של המרצה.
+  4. פתרון שכתב Claude ומסומן `ok`: מוחקים את `\unverified` ואת `% verified: no`.
+  5. PR ומיזוג; בונים מחדש את הדף, מפרסמים, ומריצים `python3 tools/build_review.py ../exercises-9711 --snapshot` (ב-repo הפרטי נשמר מה המרצה ראה).
+- כרטיס מאושר שהתוכן שלו השתנה בלי הערה של המרצה (`--changed` מראה אותם): מסמנים `fixed` עם `claudeNote`, כדי שלא יישאר נעול.
+
 ## עבודה עם git
 
 - עובדים על ענף, ופותחים PR ל-`main`. מותר למזג בלי לחכות לאישור המרצה האחראי.
