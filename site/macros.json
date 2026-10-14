@@ -1,0 +1,20 @@
+{
+  "rr": "\\mathbb{R}", "RR": "\\mathbb{R}", "nn": "\\mathbb{N}", "zz": "\\mathbb{Z}", "ZZ": "\\mathbb{Z}",
+  "qq": "\\mathbb{Q}", "QQ": "\\mathbb{Q}", "cc": "\\mathbb{C}", "CC": "\\mathbb{C}", "Q": "\\mathbb{Q}",
+  "limn": "\\lim_{n\\to\\infty}",
+  "goes": "\\longrightarrow",
+  "ds": "\\displaystyle",
+  "ga": "\\alpha",
+  "eps": "\\varepsilon",
+  "f": "\\frac",
+  "e": "\\operatorname{e}",
+  "sgn": "\\operatorname{sgn}",
+  "ol": "\\overline",
+  "lvec": "\\overrightarrow",
+  "abs": ["\\left|#1\\right|", 1],
+  "lr": ["\\left(#1\\right)", 1],
+  "lsr": ["\\left[#1\\right]", 1],
+  "floor": ["\\left\\lfloor#1\\right\\rfloor", 1],
+  "case": ["\\left\\{\\begin{array}{#1} #2 \\end{array}\\right.", 2],
+  "R": ["\\text{#1}", 1]
+}

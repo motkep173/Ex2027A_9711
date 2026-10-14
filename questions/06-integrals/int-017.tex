@@ -1,0 +1,32 @@
+% ==================================================================
+% id:       int-017
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \arctan(2x)dx$
+\hint{כתבו את האינטגרנד כמכפלה ב-$1$ והשתמשו באינטגרציה בחלקים; האינטגרל שנשאר נפתר בהצבה.}
+\begin{solbox}
+בדומה לשאלה
+\qref{int-015}
+נבצע אינטגרציה בחלקים עם $$,u=\arctan\lr{2x},\ v'=1$$
+מכאן
+$$.u'=\frac{2}{1+4x^2},\ v=x$$
+נקבל
+\begin{align*}
+\int \arctan\lr{2x}\,dx
+&=x\arctan\lr{2x}-\int \frac{2x}{1+4x^2}\,dx
+\end{align*}
+עבור האינטגרל האחרון נבצע הצבה $$.u=1+4x^2$$
+מכאן
+$u'=8x$.
+לכן
+\begin{align*}
+,\int \frac{2x}{1+4x^2}\,dx=\frac{1}{4}\int\frac{du}{u}=\frac14\ln|u|+C=\frac14\ln\lr{1+4x^2}+C
+\end{align*}
+ולכן
+\begin{align*}
+\boxed{\int \arctan\lr{2x}\,dx=x\arctan\lr{2x}-\frac14\ln\lr{1+4x^2}+C}
+\end{align*}
+\end{solbox}

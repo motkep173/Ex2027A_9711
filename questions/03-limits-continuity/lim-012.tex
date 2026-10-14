@@ -1,0 +1,412 @@
+% ==================================================================
+% id:       lim-012
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: רציפות ונקודות אי־רציפות
+% solution: full
+% ==================================================================
+\textbf{
+בכל אחד מהסעיפים הבאים,
+מצאו את  ערכי
+$a,b$
+עבורם הפונקציה רציפה בתחום הגדרתה.}
+\begin{enumerate}
+
+\item
+$$\ds{f(x)=\case{ccc}{\lr{\frac{1+\tan x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}} & x<0 \\ ax+b & 0\leq x\leq 3 \\ \frac{2x^3-9x^2+27}{2x^3-17x^2+48x-45} & x>3}}$$
+\hint{בדקו רציפות בנקודות התפר. ב-$0$ יש גבול מהצורה $1^\infty$, וב-$3$ המונה והמכנה מתאפסים ולכן יש לפרק אותם לגורמים.}
+\begin{solbox}
+נציג
+\begin{align*}
+    \lr{\frac{1+\tan x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}}&=\ \lr{\frac{1{\color{red}+\sin x-\sin x}+\tan x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}}\\
+    &=\ \lr{1+\frac{\tan x-\sin x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}}.
+\end{align*}
+נשים לב
+(מאריתמטיקה ורציפות)
+כי
+$$.\lim_{x\to0}\frac{\tan x-\sin x}{1+\sin x}=0$$
+נמשיך לפשט
+    $$,\lr{1+\frac{\tan x-\sin x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}}
+    =\left[\lr{1+\frac{\tan x-\sin x}{1+\sin x}}^{\color{red}\frac{1+\sin x}{\tan x-\sin x}}\right]^{{\color{red}\cdot\frac{\tan x-\sin x}{1+\sin x}\cdot}\frac{\ln 9}{\sin^3x}}$$
+הביטוי בבסיס מתכנס ל-
+$e$,
+לכן נבדוק מה גבולה של הפונקציה במעריך.
+נציג
+\begin{align*}
+    \frac{\tan x-\sin x}{1+\sin x}\cdot\frac{\ln 9}{\sin^3x}&=\ \frac{\frac{\tan x}{\color{red}\sin x}-\frac{\sin x}{\color{red}\sin x}}{{1}+{\sin x}}\cdot\frac{\ln 9}{\frac{\sin^3x}{\color{red}\sin x}}\\
+    &=\ \frac{\frac{1}{\cos x}-1}{1+\sin x}\cdot\frac{\ln 9}{\sin^2x}\\
+    &=\ \ln 9\cdot\frac{1-\cos x}{\sin^2 x\cos x(1+\sin x)}\\
+    &=\ \ln 9\cdot\frac{1-\cos x}{\color{red}x^2}\cdot\frac{\color{red}x^2}{{\sin^2 x}}\cdot\frac{1}{\cos x(1+\sin x)},
+\end{align*}
+מכאן
+\begin{align*}
+\lim_{x\to 0}\frac{\tan x-\sin x}{1+\sin x}\cdot\frac{\ln 9}{\sin^3x}&=\ \ln 9\cdot\lim_{x\to0}\frac{1-\cos x}{x^2}\cdot\left(\frac{x}{{\sin x}}\right)^2\cdot\frac{1}{\cos x(1+\sin x)}\\
+&\overset{(\ast)}{=}\ \ln 9\cdot\frac{1}{2}\cdot1\cdot1\\
+&=\ \ln3,
+\end{align*}
+לכן
+$$.\lim_{x\to0^-}f(x)=\lim_{x\to0^-}\lr{\frac{1+\tan x}{1+\sin x}}^{\frac{\ln 9}{\sin^3x}}\overset{(\ast)}{=}\e^{\ln3}=3$$
+מצד שני
+$$.\lim_{x\to0^+}f(x)=\lim_{x\to0^+}(ax+b)=b$$
+לכן לרציפותה של
+$f$
+ב-
+$x=0$,
+נדרוש כי
+$b=3$.
+
+$(\ast)$
+השתמשנו כאן בגבולות המופלאים
+$$.\lim_{t\to 0}\frac{\sin t}{t}=1,\ \lim_{t\to 0}\frac{1-\cos t}{t^2}=\frac{1}{2},\ \lim_{t\to 0}(1+t)^{\frac{1}{t}}=e$$
+
+נעבור לדיון ברציפות של
+$f$
+בנקודה
+$x=3$.
+מתקיים
+$$.\lim_{x\to3^-}f(x)=\lim_{x\to3^-}(ax+b)=3a+3$$
+מצד שני נציג
+\begin{align*}
+    \frac{2x^3-9x^2+27}{2x^3-17x^2+48x-45}&\overset{(\ast)}{=}\ \frac{(x-3)^2(2x+3)}{(x-3)^2(2x-5)}\\
+    &=\ \frac{2x+3}{2x-5},
+    \end{align*}
+לכן
+\begin{align*}
+    \lim_{x\to3^+}f(x)&=\ \lim_{x\to3^+}\frac{2x^3-9x^2+27}{2x^3-17x^2+48x-45}\\
+    &=\ \lim_{x\to3^+}\frac{2x+3}{2x-5}\\
+    &=\ 9.
+\end{align*}
+$(\ast)$
+נשים לב כי הפולינומים במונה ובמכנה מתאפסים ב-
+$x=3$,
+לכן ניתן להציגם כ-
+$(x-3)(ax^2+bx+c)$.
+לדוגמא, עבור המונה
+$$,2x^3-9x^2+27=(x-3)(ax^2+bx+c)$$
+לאחר פתיחת סוגריים נקבל
+$$.2x^3-9x^2+27=ax^3+(b-3a)x^2+(c-3b)x-3c$$
+לאחר השוואת המקדמים נקבל כי
+$$,a=2,\ -9=b-3a,\ c-3b=0,\ -3c=27$$
+כלומר
+$$.a=2,\ b=-3,\ c=-9$$
+כך ננהג גם עם המכנה.
+
+שיטה זו נקראת חילוק פולינומים, נעסוק בה בהרחבה בשלבים מתקדמים של הקורס.
+לכן לרציפותה של
+$f$
+ב-
+$x=3$
+נדרוש ש-
+$3a+3=9$,
+כלומר
+$a=2$.
+לסיכום,
+$$.a=2,\ b=3$$
+\end{solbox}
+
+\item $$\ds{f(x)=\case{ccc}{\frac{3x^2-9x-4}{x^2-1}-\frac{3x-5}{2x+2} & x<-1 \\ ax+b & -1\leq x\leq 0 \\ \lr{1+x\cdot\sin(2x)}^{\frac{4\ln 8}{\cos x-\cos (5x)}} & x>0}}$$
+\hint{בדקו רציפות בנקודות התפר: משמאל ל-$-1$ אחדו את השברים וצמצמו, ומימין ל-$0$ יש גבול מהצורה $1^\infty$.}
+\begin{solbox}
+נציג
+\begin{align*}
+    \frac{3x^2-9x-4}{x^2-1}-\frac{3x-5}{2x+2}&=\ \frac{3x^2-10x-13}{2(x-1)(x+1)}\\
+    &=\ \frac{(x+1)(3x-13)}{2(x-1)(x+1)}\\
+    &=\ \frac{3x-13}{2(x-1)}.
+\end{align*}
+לכן
+\begin{align*}
+    \lim_{x\to-1^-}f(x)&=\ \lim_{x\to-1^-}\left(\frac{3x^2-9x-4}{x^2-1}-\frac{3x-5}{2x+2}\right)\\
+    &=\ \lim_{x\to-1^-}\frac{3x-13}{2(x-1)}\\
+    &=\ 4.
+\end{align*}
+מצד שני
+$$.\lim_{x\to-1^+}f(x)=\lim_{x\to-1^+}(ax+b)=-a+b$$
+לרציפותה של
+$f$
+בנקודה
+$x=-1$
+נדרוש
+$-a+b=4$.
+
+נעבור לדיון ברציפות בנקודה
+$x=0$.
+נציג
+\begin{align*}
+    \lr{1+x\cdot\sin(2x)}^{\frac{4\ln 8}{\cos x-\cos (5x)}}&=\ \lr{1+x\cdot\sin(2x)}^{\frac{4\ln 8}{\cos x-\cos (5x)}{\color{red}\cdot\frac{x\cdot\sin(2x)}{x\cdot\sin(2x)}}}\\
+    &=\ \lr{1+x\cdot\sin(2x)}^{\frac{1}{{x\cdot\sin(2x)}}\cdot\frac{4\ln 8\cdot x\cdot\sin(2x)}{\cos x-\cos (5x)}}.
+\end{align*}
+נשים לב כי
+\begin{align*}
+    \frac{4\ln 8\cdot x\cdot\sin(2x)}{\cos x-\cos (5x)}&=\ 4\ln 8\cdot\frac{ x\cdot\sin(2x)}{\cos x{\color{red}-1+1}-\cos (5x)}\\
+    &=\ 4\ln 8\cdot\frac{\frac{x}{\color{red}x}\cdot{\color{red}2\cdot}\frac{\sin(2x)}{\color{red}2x}}{\frac{\cos x-1}{\color{red}x^2}+{\color{red}25\cdot}\frac{1-\cos (5x)}{\color{red}(5x)^2}},
+\end{align*}
+לכן
+\begin{align*}
+    \lim_{x\to0}\frac{4\ln 8\cdot x\cdot\sin(2x)}{\cos x-\cos (5x)}&=\ 8\ln 8\cdot\lim_{x\to0}\frac{\frac{\sin(2x)}{2x}}{\frac{\cos x-1}{x^2}+{25\cdot}\frac{1-\cos (5x)}{(5x)^2}}\\
+    &\overset{(\ast)}{=}\ \frac{2\ln 8}{3},
+\end{align*}
+מכאן
+\begin{align*}
+    \lim_{x\to0^+}f(x)&=\ \lim_{x\to0^+}\lr{1+x\cdot\sin(2x)}^{\frac{4\ln 8}{\cos x-\cos (5x)}}\\
+    &=\ \lim_{x\to0^+}\left[\lr{1+x\cdot\sin(2x)}^{\frac{1}{x\cdot\sin(2x)}}\right]^{\frac{4\ln 8\cdot x\cdot\sin(2x)}{\cos x-\cos (5x)}}\\
+    &\overset{(\ast)}{=}\ e^\frac{2\ln 8}{3}\\
+    &=\ 4,
+\end{align*}
+מצד שני
+$$.\lim_{x\to0^-}f(x)=\lim_{x\to0^-}(ax+b)=b$$
+לכן לרציפותה של
+$f$
+ב-
+$x=0$
+נדרוש
+$b=4$.
+בסה"כ קיבלנו
+$-a+b=4$
+ו-
+$b=4$,
+כלומר
+$$. a=0,\ b=4$$
+
+$(\ast)$ יש כאן שוב שימוש בגבולות מופלאים
+אשר צוטטו בסעיף הקודם.
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+
+\item $$\ds{f(x)=\case{cc}{\frac{x^2+ax+b}{x-1} & x>1 \\ e^{2x}-x^2 & x\leq 1}}$$
+\hint{כדי שהגבול מימין ל-$1$ יהיה סופי, המונה חייב להתאפס ב-$1$. היעזרו בזה כדי לפרק את המונה לגורמים.}
+\begin{solbox}
+הפונקציה
+$g(x)=\frac{x^2+ax+b}{x-1}$
+רציפה לכל
+$x\neq 1$,
+הפונקציה
+$h(x)=e^{2x}-x^2$
+רציפה לכל
+$x\in\mathbb{R}$.
+לכן לרציפותה של
+$f(x)$
+יש לדרוש רציפות ב"נקודת תפר", דהיינו ב-
+$x=1$.
+נדרוש
+$$.\lim_{x\to1^+}\frac{x^2+ax+b}{x-1}=\lim_{x\to1^+}f(x)=\lim_{x\to1^-}f(x)=\lim_{x\to1^-}e^{2x}-x^2$$
+מתקיים
+\begin{equation}\label{first-condition-ex7}
+    \lim_{x\to1^-}(e^{2x}-x^2)=e^2-1
+\end{equation}
+נשים לב כי
+$$,\lim_{x\to1^+}(x^2+ax+b)=1+a+b$$
+אם
+$1+a+b\neq 0$,
+אז
+$$\lim_{x\to1^+}\frac{x^2+ax+b}{x-1}=\infty$$
+או
+$$,\lim_{x\to1^+}\frac{x^2+ax+b}{x-1}=-\infty$$
+בפרט,
+הפונקציה הנתונה לא רציפה בנקודה
+$x=1$.
+לכן נדרוש כי
+\begin{equation}\label{third-condition-ex7}
+    a+b+1=0
+\end{equation}
+לכן
+ניתן להציג
+$$,x^2+ax+b=(x-1)(x-x_0)$$
+לאחר השוואת המקדמים בשני האגפים נקבל כי
+$$.x^2+ax+b=(x-1)(x-b)$$
+מכאן נסיק כי
+$$\frac{x^2+ax+b}{x-1}=\frac{(x-1)(x-b)}{x-1}=x-b$$
+ולכן
+\begin{equation}\label{second-condition-ex7}
+    .\lim_{x\to1^+}\frac{x^2+ax+b}{x-1}=\lim_{x\to1^+}(x-b)=1-b
+\end{equation}
+לאחר איסוף הממצאים שב-
+)\ref{first-condition-ex7}(, )\ref{third-condition-ex7}(, )\ref{second-condition-ex7}(,
+נקבל מערכת משוואות
+\[
+,\begin{cases}
+a+b=-1,\\
+b=2-e^{2}.
+\end{cases}
+\]
+אשר פתרונה הוא
+$$.a=-3+e^2,\ b=2-e^2$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+
+\item $$\ds{f(x)=\case{cc}{\frac{\tan\lr{x^3}\cos\lr{\frac\pi3e^x}}{e^{x^3}-1} & x<0 \\ ax+b & 0\leq x\leq 2 \\ \frac{8x}{x^2-4}-\frac{8x+4}{2x^2-3x-2} & x>2}}$$
+\hint{בדקו את נקודות התפר: ב-$0$ השתמשו בגבולות המופלאים של $\tan t$ ושל $e^t-1$, וב-$2$ אחדו את השברים וצמצמו.}
+\begin{solbox}
+הפונקציה
+$g(x)=\frac{\tan\lr{x^3}\cos\lr{\frac\pi3e^x}}{e^{x^3}-1}$
+רציפה לכל
+$x\neq 0$,
+הפונקציה
+$h(x)=ax+b$
+רציפה לכל
+$x\in\mathbb{R}$,
+והפונקציה
+$k(x)=\frac{8x}{x^2-4}-\frac{8x+4}{2x^2-3x-2}$
+רציפה לכל
+$x\neq 2$
+ו-
+$x\neq-\frac{1}{2}$.
+היות ו-
+$f(x)=k(x)$
+לכל
+$x>2$,
+אז הנקודה
+$x=-\frac{1}{2}$
+לא רלוונטית לדיון.
+אנו רואים שדי לדרוש את הרציפות של
+$f$
+בנקודות תפר, זאת אומרת בנקודות
+$x=0$
+ו-
+$x=2$.
+נציג
+    $$,\frac{\tan\lr{x^3}\cos\lr{\frac\pi3e^x}}{e^{x^3}-1}=\frac{\color{red}x^3}{e^{x^3}-1}\cdot\frac{\tan(x^3)}{\color{red}x^3}\cdot\cos(\tfrac{\pi}{3}e^x)$$
+    לכן
+\begin{align*}
+    \lim_{x\to0^-}f(x)&=\ \lim_{x\to0^-}\frac{\tan\lr{x^3}\cos\lr{\frac\pi3e^x}}{e^{x^3}-1}\\&=\ \lim_{x\to0^-}\frac{x^3}{e^{x^3}-1}\cdot\frac{\sin(x^3)}{x^3}\cdot\cos(\tfrac{\pi}{3}e^x)\cdot\frac{1}{\cos(x^3)}\\
+    &=\ 1\cdot1\cdot\frac{1}{2}\cdot1\\
+    &=\ \frac{1}{2},
+\end{align*}
+מצד שני
+$$.\lim_{x\to0^+}f(x)=\lim_{x\to0^+}(ax+b)=b$$
+אז לרציפותה של
+$f$
+ב-
+$x=0$
+נדרוש
+\begin{equation}\label{f-cond-ex7}
+    .b=\frac{1}{2}
+\end{equation}
+נעבור לדיון ברציפות ב-
+$x=2$.
+נציג
+\begin{align*}
+    \frac{8x}{x^2-4}-\frac{8x+4}{2x^2-3x-2}&=\ \frac{8x}{(x-2)(x+2)}-\frac{8x+4}{2(x-2)(x+\tfrac{1}{2})}\\
+    &=\ \cdots\\
+    &=\ \frac{4}{x+2},
+\end{align*}
+לכן
+
+    $$,\lim_{x\to2^+}f(x)=\lim_{x\to2^+}\frac{4}{x+2}=1$$
+מצד שני
+$$,\lim_{x\to2^-}f(x)=\lim_{x\to2^-}(ax+b)=2a+b$$
+אז לרציפותה של
+$f$
+ב-
+$x=2$
+נדרוש
+\begin{equation}\label{s-cond-ex7}
+    .1=2a+b
+\end{equation}
+נאחד את התנאים
+(\ref{f-cond-ex7})
+ו-
+(\ref{s-cond-ex7}),
+ונקבל
+$$,b=\frac{1}{2},\ 2a+b=1$$
+כלומר
+$$.a=\frac{1}{4},\ b=\frac{1}{2}$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+
+\item $$\ds{f(x)=\case{cc}{e^{ax} & x\geq 1 \\ \lr{2-x^2}^{\frac2{x-1}} & x\in[-1,1) \\ \ln\lr{-3x+b} & x<-1}}$$
+\hint{בדקו את נקודות התפר: ב-$1$ יש גבול מהצורה $1^\infty$. שימו לב שגם תחום ההגדרה של הלוגריתם מגביל את $b$.}
+\begin{solbox}
+הפונקציה
+$g(x)=e^{ax}$
+רציפה
+לכל
+$x\in\mathbb{R}$,
+הפונקציה
+$h(x)=(2-x^2)^{\frac{2}{x-1}}$
+רציפה בתחום
+$[-1,1)$,
+הפונקציה
+$k(x)=\ln(-3x+b)$
+רציפה
+ב-
+$(-\infty,-1)$
+אם
+$b>-3$.
+בדומה לסעיפים הקודמים נבדוק את הרציפות בנקודות תפר:
+$x=1$
+ו-
+$x=-1$.
+מתקיים
+$$,\lim_{x\to1^+}f(x)=\lim_{x\to1^+}e^{ax}=e^a$$
+מצד שני
+    $$\lim_{x\to1^-}f(x)=\lim_{x\to1^-}\lr{2-x^2}^{\frac2{x-1}}$$
+נציג
+\begin{align*}
+    \lr{2-x^2}^{\frac2{x-1}}&=\ ({\color{red}1}-(x^2{\color{red}-1}))^{\frac{2}{x-1}}\\
+    &=\ (1-(x^2-1))^{{\color{red}\frac{-1}{x^2-1}}\cdot\frac{2{\color{red}(1-x^2)}}{x-1}}\\
+    &=\ (1-(x^2-1))^{{\frac{1}{x^2-1}}\cdot(-2)(x+1)},
+\end{align*}
+לכן
+\begin{align*}
+    \lim_{x\to1^-}f(x)&=\ \lim_{x\to1^-}(1-(x^2-1))^{{\frac{1}{x^2-1}}\cdot(-2)(x+1)}\\
+    &=\ e^{-4}.
+\end{align*}
+מכאן נסיק כי
+$a=-4$.
+נעבור לדיון ברציפות בנקודה
+$x=-1$.
+מתקיים
+$$,\lim_{x\to-1^+}f(x)=\lim_{x\to-1^+}(2-x^2)^{\frac{2}{x-1}}=1$$
+מצד שני
+$$,\lim_{x\to-1^-}f(x)=\lim_{x\to-1^-}\ln(-3x+b)=\ln(3+b)$$
+נדרוש
+$$,1=\ln(3+b),\ b> -3$$
+כלומר
+$$.b=e-3$$
+לסיכום,
+$$.a=-4,\ b=e-3$$
+\end{solbox}
+
+\item $$\ds{f(x)=\case{cc}{\frac{\sqrt[5]{1+2x+x^3}-\sqrt[5]{1+2x^2+x^3}}{ax-bx^2} & x\geq 0  \\ \frac{\sin^2(3x)}{1-\cos(x)} & x<0}}$$
+\hint{הוציאו את אחד השורשים כגורם משותף והשתמשו בגבול המופלא $\lim_{t\to0}\frac{(1+t)^{\alpha}-1}{t}=\alpha$; משמאל ל-$0$ השתמשו בגבולות המופלאים של $\sin$ ו-$\cos$.}
+\begin{solbox}
+נתמקד כרגע בחקירת רציפות בנקודה
+$x=0$.
+נסמן
+$$.g(x)=\frac{\sqrt[5]{1+2x+x^3}-\sqrt[5]{1+2x^2+x^3}}{ax-bx^2},\ h(x)=\frac{\sin^2(3x)}{1-\cos(x)}$$
+נציג
+\begin{align*}
+    g(x)&=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\frac{\sqrt[5]{1+2x+x^3}}{\sqrt[5]{1+2x^2+x^3}}-1}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\sqrt[5]{\frac{1+2x+x^3}{{1+2x^2+x^3}}}-1}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(\frac{1+2x+x^3}{{1+2x^2+x^3}}\right)^{\frac{1}{5}}-1}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(\frac{1{\color{red}+2x^2}+x^3+2x{\color{red}-2x^2}}{{1+2x^2+x^3}}\right)^{\frac{1}{5}}-1}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(1+\frac{2x-2x^2}{1+2x^2+x^3}\right)^{\frac{1}{5}}-1}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(1+\frac{2x-2x^2}{1+2x^2+x^3}\right)^{\frac{1}{5}}-1}{\color{red}\frac{2x-2x^2}{1+2x^2+x^3}}\cdot\frac{\color{red}\frac{2x-2x^2}{1+2x^2+x^3}}{ax-bx^2}\\
+    &=\ \sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(1+\frac{2x-2x^2}{1+2x^2+x^3}\right)^{\frac{1}{5}}-1}{\frac{2x-2x^2}{1+2x^2+x^3}}\cdot\frac{\frac{2-2x}{1+2x^2+x^3}}{a-bx},
+\end{align*}
+מכיוון ש-
+$$\lim_{x\to0}\frac{2x-2x^2}{1+2x^2+x^3}=0$$
+נסיק כי
+$$,\lim_{x\to0}\frac{\left(1+\frac{2x-2x^2}{1+2x^2+x^3}\right)^{\frac{1}{5}}-1}{\frac{2x-2x^2}{1+2x^2+x^3}}=\frac{1}{5}$$
+ולכן
+\begin{align*}
+    \lim_{x\to0^+}f(x)&=\ \lim_{x\to0}g(x)\\
+    &=\ \lim_{x\to0}\sqrt[5]{1+2x^2+x^3}\cdot\frac{\left(1+\frac{2x-2x^2}{1+2x^2+x^3}\right)^{\frac{1}{5}}-1}{\frac{2x-2x^2}{1+2x^2+x^3}}\cdot\frac{\frac{2-2x}{1+2x^2+x^3}}{a-bx}\\
+    &=\ 1\cdot\frac{1}{5}\cdot\frac{2}{a}\\
+    &=\ \frac{2}{5a}.
+\end{align*}
+נטפל עתה בגבול משמאל.
+נציג
+    $$\frac{\sin^2(3x)}{1-\cos(x)}=\frac{\sin^2(3x)}{\color{red}(3x)^2}\cdot\frac{\color{red}x^2}{1-\cos x}{\color{red}\cdot9}$$
+מכאן
+\begin{align*}
+\lim_{x\to0^-}f(x)&=\ 9\cdot\lim_{x\to0}\frac{\sin^2(3x)}{(3x)^2}\cdot\frac{x^2}{1-\cos x}\\
+&=\ 9\cdot1\cdot2\\
+&=\ 18.
+\end{align*}
+מכאן נדרוש כי
+$$,18=\frac{2}{5a}$$
+כלומר,
+$$.a=\frac{1}{45},\ b\in\mathbb{R}$$
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
+\end{solbox}
+\end{enumerate}

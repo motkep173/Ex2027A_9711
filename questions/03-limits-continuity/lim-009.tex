@@ -1,0 +1,96 @@
+% ==================================================================
+% id:       lim-009
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: גבולות מופלאים
+% solution: full
+% ==================================================================
+\textbf{בכל אחד מהסעיפים הבאים, חשבו את גבול הסדרה:}
+\begin{enumerate}\bMs{2}
+\item
+$\limn n(\ln(n+2)-\ln(n))$
+
+\ifsol
+\hint{אחדו את הפרש הלוגריתמים ללוגריתם אחד והביאו את הביטוי לצורה של הגבול המופלא $\lim_{x\to0}\frac{\ln(1+x)}{x}$.}
+\begin{solbox}
+נציג
+\begin{align*}
+    n(\ln(n+2)-\ln n)
+    =\ n\ln\left(\frac{n+2}{n}\right)
+    = {\color{red}2}\cdot
+    \frac{\ln\left(1+\frac{2}{n}\right)}{\color{red}\frac{2}{n}}.
+\end{align*}
+כאשר
+$n\to\infty$,
+מתקיים
+$a_n=\frac{2}{n}\to0$.
+לכן לפי הגבול המופלא
+$$,\lim_{x\to0}\frac{\ln(1+x)}{x}=1$$
+בעזרתו של היינה
+נקבל
+\begin{align*}
+    \limn n(\ln(n+2)-\ln(n))
+    = 2\cdot
+    \limn
+    \frac{\ln\left(1+\frac{2}{n}\right)}{\frac{2}{n}}
+    = 2\cdot1
+    = 2.
+\end{align*}
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של מכפלה של פונקציות מתכנסות שווה למכפלת הגבולות.
+\end{solbox}
+\fi
+
+\item
+$\displaystyle\limn \frac{n\left(1-\cos\left(\frac{1}{n}\right)\right)}{\ln(n+1)-\ln(n)}$
+
+\ifsol
+\hint{כתבו את המכנה כלוגריתם אחד, ואז הכפילו וחלקו כך שיופיעו הגבולות המופלאים של $\frac{1-\cos x}{x^2}$ ושל $\frac{\ln(1+x)}{x}$.}
+\begin{solbox}
+ראשית,
+\[
+    .\ln(n+1)-\ln(n)
+    =
+    \ln\left(\frac{n+1}{n}\right)
+    =
+    \ln\left(1+\frac{1}{n}\right)
+\]
+לכן
+\begin{align*}
+    \frac{n\left(1-\cos\left(\frac{1}{n}\right)\right)}{\ln(n+1)-\ln(n)}
+    =
+    \frac{n\left(1-\cos\left(\frac{1}{n}\right)\right)}
+    {\ln\left(1+\frac{1}{n}\right)}
+    =
+    \frac{1-\cos\left(\frac{1}{n}\right)}
+    {\color{red}\left(\frac{1}{n}\right)^2}
+    \cdot
+    \frac{\color{red}\frac{1}{n}}
+    {\ln\left(1+\frac{1}{n}\right)}.
+\end{align*}
+כאשר
+$n\to\infty$,
+מתקיים
+$a_n=\frac{1}{n}\to0$.
+לכן משילוב כוחות של היינה עם הגבולות המופלאים
+$$,\lim_{x\to0}\frac{1-\cos x}{x^2}=\frac12
+\qquad
+,\lim_{x\to0}\frac{\ln(1+x)}{x}=1$$
+נסיק
+\begin{align*}
+    \limn
+    \frac{n\left(1-\cos\left(\frac{1}{n}\right)\right)}
+    {\ln(n+1)-\ln(n)}
+    =
+    \limn
+    \frac{1-\cos\left(\frac{1}{n}\right)}
+    {\left(\frac{1}{n}\right)^2}
+    \cdot
+    \frac{\frac{1}{n}}
+    {\ln\left(1+\frac{1}{n}\right)}
+    = \frac12\cdot1
+    = \frac12.
+\end{align*}
+הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של מכפלה של פונקציות מתכנסות שווה למכפלת הגבולות.
+\end{solbox}
+\fi
+\eMs
+\end{enumerate}

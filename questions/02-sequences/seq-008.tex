@@ -1,0 +1,37 @@
+% ==================================================================
+% id:       seq-008
+% topic:    סדרות
+% subtopic: חישוב גבולות של סדרות
+% solution: full
+% ==================================================================
+חשבו את גבול הסדרה הבאה:
+\begin{equation*}
+  .\limn \frac1{\frac1{\sqrt1} + \frac1{\sqrt2} + \frac1{\sqrt3} +\cdots+ \frac1{\sqrt{n}}}
+\end{equation*}
+
+\hint{חסמו את המכנה מלמטה על ידי החלפת כל מחובר במחובר הקטן ביותר.}
+\begin{solbox}
+    ננסה לחסום את הסדרה הנתונה, ולשם כך
+נסמן
+ב-
+$(a_n)_{n=1}^\infty$
+את הסדרה במכנה, כלומר,
+$$.a_n=\frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} +\cdots+ \frac{1}{\sqrt{n}}$$
+
+נשים לב כי
+\begin{align*}
+a_n=\ \frac{1}{\sqrt{1}} + \cdots + \frac{1}{\sqrt{n}}
+\overset{(\ast)}{\geq}\
+\frac{1}{\sqrt{n}} +  \frac{1}{\sqrt{n}} + \cdots + \frac{1}{\sqrt{n}}
+=\ n\cdot\frac{1}{\sqrt{n}}=\ \sqrt{n},
+\end{align*}
+לכן נצליח לחסום את הסדרה המקורית באופן הבא
+$$.\frac1{\frac1{\sqrt1} + \frac1{\sqrt2} + \frac1{\sqrt3} +\cdots+ \frac1{\sqrt{n}}}=\frac{1}{a_n}\leq\frac{1}{\sqrt{n}}\goes0$$
+כאשר מצד שני הסדרה אי-שלילית ולכן חסומה מלמטה על ידי
+$0$.
+מכלל הסנדביץ׳ נסיק כי הגבול של הסדרה הוא
+$0$.
+
+$(\ast)$
+טריק זה כבר הופיע בסעיף ט' של שאלה \qref{seq-007}.
+\end{solbox}

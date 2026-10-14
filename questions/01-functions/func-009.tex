@@ -1,0 +1,44 @@
+% ==================================================================
+% id:       func-009
+% topic:    פונקציות
+% subtopic: תחום הגדרה ותכונות של פונקציות
+% solution: full
+% ==================================================================
+\textbf{עבור כל אחת מהפונקציות הבאות, קבעו האם הפונקציה מחזורית, ואם כן, חשבו את המחזור שלה.}
+\begin{enumerate}
+  \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=x^2$}
+\hint{הניחו שקיים מחזור $T>0$ ובדקו מה אומר התנאי $f(x+T)=f(x)$ בנקודה פשוטה, למשל $x=0$.}
+\begin{solbox}
+לא מחזורית
+\end{solbox}
+ %\item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(x)$}
+ \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(3x)$}
+\begin{solbox}
+ מחזורית, בעלת מחזור
+ $T = \frac{2 \pi}{3}$.
+\end{solbox}
+ \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\cos(\frac{x}{4})$}
+\begin{solbox}
+ מחזורית, בעלת מחזור
+ $T = 8 \pi$.
+\end{solbox}
+ \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(3x) + \cos(\frac{x}{4})$}
+\hint{מצאו את המחזור של כל מחובר בנפרד, ובדקו אם יש מספר חיובי שהוא כפולה שלמה של שניהם.}
+\begin{solbox}
+ מחזורית, בעלת מחזור
+ $T = 8 \pi$.
+\end{solbox}
+ \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\lfloor x \rfloor$}
+
+ פונקציה זו נקראת `''פונקציית הערך השלם'', והיא מתאימה לכל מספר ממשי את המספר השלם המקסימלי הקטן או שווה לו.
+\hint{בדקו כיצד משתנים ערכי $\lfloor x\rfloor$ כאשר $x$ גדל: האם הפונקציה יכולה לחזור על ערכיה באופן מחזורי?}
+\begin{solbox}
+ לא מחזורית.
+\end{solbox}
+  \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\lfloor x \rfloor - x$}
+\hint{בדקו מה קורה ל-$\lfloor x\rfloor$ ול-$x$ כאשר מוסיפים ל-$x$ מספר שלם.}
+\begin{solbox}
+ מחזורית, בעלת מחזור
+ $T = 1$.
+\end{solbox}
+\end{enumerate}

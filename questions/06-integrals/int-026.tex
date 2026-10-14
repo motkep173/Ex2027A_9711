@@ -1,0 +1,31 @@
+% ==================================================================
+% id:       int-026
+% topic:    אינטגרלים
+% subtopic: פונקציה קדומה ואינטגרל לא מסוים
+% solution: full
+% ==================================================================
+מצאו פונקציה קדומה לפונקציה
+$\ds f(x)=\frac{1}{x^{5}}\sin\lr{\frac{1}{x^{2}}}\cos\lr{\frac{1}{x^{2}}}$
+\hint{הציבו את הביטוי שבתוך הפונקציות הטריגונומטריות והשתמשו בזהות למכפלה $\sin\cdot\cos$; אחר כך אינטגרציה בחלקים.}
+\begin{solbox}
+מאוד נחשוד בהצבה  $t=\frac{1}{x^2}$,
+כי אז הפונקציה שלנו תהיה יותר פשוטה.
+ונשתמש בזהות $\ds \sin t\cos t=\frac12\sin\lr{2t}$.
+מתקיים
+$dt=-\frac{2dx}{x^3}$,
+אזי
+\begin{align*}
+    \int\frac{1}{x^{5}}\sin\lr{\frac{1}{x^{2}}}\cos\lr{\frac{1}{x^{2}}}dx&=\ -\frac{1}{2}\int t\sin t\cos tdt\\
+    &=\ -\frac{1}{4}\int t\sin(2t)dt\\
+\end{align*}
+נבצע אינטגרציה בחלקים עם
+$$,u=t,\ v'=\sin(2t)$$
+מכאן
+$$.u'=1,\ v=-\frac{1}{2}\cos\lr{2t}$$
+נקבל
+\begin{align*}
+    -\frac{1}{4}\int t\sin(2t)dt&=\ -\frac{1}{4}\left(-\frac{1}{2}t\cos(2t)+\frac{1}{2}\int\cos(2t)dt\right)\\
+    &=\ \frac{1}{8}t\cos(2t)-\frac{1}{16}\sin(2t)+C\\
+    &=\ \frac{1}{8x^2}\cos\lr{\frac{2}{x^2}}-\frac{1}{16}\sin\lr{\frac{2}{x^2}}+C.
+\end{align*}
+\end{solbox}

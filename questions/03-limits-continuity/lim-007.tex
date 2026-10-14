@@ -1,0 +1,211 @@
+% ==================================================================
+% id:       lim-007
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: גבולות חד־צדדיים
+% solution: full
+% ==================================================================
+\textbf{
+הוכיחו או הפריכו
+כל אחד מהסעיפים הבאים:}
+\begin{enumerate}
+    \item
+אם
+$\displaystyle\lim_{x\to 1^+}f(x)=3$,
+    אזי קיימת סביבה נקובה של
+    $x=1$
+    אשר בה
+    $f(x)<4$.
+\ifsol
+\hint{שימו לב שסביבה נקובה של $1$ כוללת את שני הצדדים שלה, ובדקו מה הנתון אומר על כל צד. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה אינה נכונה.
+ניתן כמה דוגמאות נגדיות.
+
+שימו לב כי ידוע הגבול של
+$f$
+ב-
+$1$
+מימין, לכן היא מוגדרת בסביבה ימנית נקובה של
+$1$,
+ולא בהכרח מוגדרת בסביבה שמאלית. לדוגמא
+$$.f(x)=\sqrt{x-1}+3$$
+
+עוד דוגמא:
+$$,f(x) = \case{cc}{
+       5, &  x<1\\ 3, & x\geq 1}$$
+השלימו את הפרטים.
+\end{solbox}
+\fi
+
+    \item
+אם
+$\displaystyle\lim_{x\to -5^-}f(x)=-2$
+    ובנוסף
+    $\displaystyle\lim_{x\to -5^+}f(x)$
+קיים,
+    אזי קיימת סביבה נקובה של
+    $x=-5$
+    אשר בה
+    $f(x)>-3$.
+\ifsol
+\hint{בדקו מה כל אחד מהגבולות החד-צדדיים אומר על ערכי $f$ בצד שלו. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה אינה נכונה.
+ניקח
+$$,f(x) = \case{cc}{
+       -2 &:  x<-5\\
+       -4 &: x\geq -5}$$
+       השלמת הפרטים מוטלת על הקורא.
+שימו לב כי קיימת סביבה נקובה שמאלית של
+$-5$
+אשר בה
+$f(x)>-3$.
+\end{solbox}
+\fi
+
+    \item נתון כי
+    $\displaystyle\lim_{x\to2^-}f(x)$
+    ו-
+    $\displaystyle\lim_{x\to2^+}f(x)$
+    קיימים,
+    אזי קיימת סביבה נקובה של
+    $x=2$
+    אשר
+    $f$
+    חסומה
+    בה.
+\ifsol
+\hint{בדקו מה הגדרת הגבול החד-צדדי (עם $\varepsilon$ קבוע) אומרת על ערכי $f$ בכל צד. אם נראה לכם שהטענה לא נכונה, חפשו דוגמה נגדית.}
+\begin{solbox}
+הטענה נכונה. נסמן
+$L_1=\displaystyle\lim_{x\to2^-}f(x)$,
+$L_2=\displaystyle\lim_{x\to2^+}f(x)$.
+מקיום הגבול
+הראשון
+קיימת
+$\delta_1>0$
+כך ש-
+$$.|f(x)-L_1|<1,\ \forall x\in(2-\delta_1,2)$$
+לכן
+$|f(x)|\leq 1+L_1$
+לכל
+$x\in(2-\delta_1,2)$.
+בדומה,
+מקיום הגבול
+השני
+קיימת
+$\delta_2>0$
+כך ש-
+$$.|f(x)-L_2|<1,\ \forall x\in(2,2+\delta_2)$$
+לכן
+$|f(x)|\leq 1+L_2$
+לכל
+$x\in(2,2+\delta_2)$.
+תהא
+$\delta=\min\{\delta_1,\delta_2\}$.
+לכן, לכל
+$x$
+המקיים
+$x\in(2-\delta,2+\delta)$,
+כך ש-
+$x\neq 2$,
+מתקיים
+$$.|f(x)|\leq\max\{1+|L_1|,1+|L_2|\}$$
+\end{solbox}
+\fi
+
+    \item
+אם    קיים הגבול
+    $\displaystyle\lim_{x\to 3}f(x)$,
+    אזי קיים הגבול
+    $\displaystyle\lim_{x\to 3}\lfloor f(x)\rfloor$.
+\ifsol
+\hint{בדקו כיצד מתנהגת $\lfloor t\rfloor$ כאשר $t$ קרוב לערך הגבול, ונסו את הטענה על פונקציות פשוטות.}
+\begin{solbox}
+הטענה אינה נכונה.
+ניקח
+$f(x)=x$.
+בבירור
+$\displaystyle\lim_{x\to3}f(x)=3$,
+אך
+$\displaystyle\lim_{x\to 3}\lfloor f(x)\rfloor$
+אינו קיים.
+לכל
+$3<x<4$
+מתקיים
+$\lfloor f(x)\rfloor=3$,
+לכן
+$$.\ds{\lim_{x\to3^+}\lfloor f(x)\rfloor}=3$$
+לכל
+$2<x<3$
+מתקיים
+$\lfloor f(x)\rfloor=2$,
+לכן
+$$.\ds{\lim_{x\to3^-}\lfloor f(x)\rfloor}=2$$
+לכן
+$\ds{\lim_{x\to3}\lfloor f(x)\rfloor}$
+לא קיים.
+\end{solbox}
+\fi
+
+\item
+אם
+$\displaystyle\lim_{x\to -2}f(x)=\frac{1}{3}$,
+    אזי קיים הגבול
+    $\displaystyle\lim_{x\to -2}\lfloor f(x)\rfloor$.
+\ifsol
+\hint{בדקו מה הגבול אומר על ערכי $f$ בסביבה נקובה של $-2$, ומה נובע מכך על $\lfloor f(x)\rfloor$.}
+\begin{solbox}
+הטענה נכונה.
+מכיוון ש-
+$\displaystyle\lim_{x\to-2}f(x)=\tfrac{1}{3}$,
+קיימת סביבה נקובה של
+$(-2)$
+שבה
+$0<f(x)<1$
+(מדוע? השלימו),
+ולכן לכל
+$x$
+בסביבה זו
+$\lfloor f(x)\rfloor=0$,
+מכאן ש-
+$\displaystyle\lim_{x\to-2}\lfloor f(x)\rfloor=0$.
+\end{solbox}
+\fi
+
+    \item
+    אם
+     קיים הגבול
+    $\displaystyle\lim_{x\to x_0}\left(f(x)+g(x)\right)$,
+    אזי קיימים הגבולות
+    $\displaystyle\lim_{x\to x_0} f(x)$
+    ו-
+    $\displaystyle\lim_{x\to x_0} g(x)$.
+\ifsol
+\hint{אם נראה לכם שהטענה נכונה, נסו להביע את $f$ בעזרת $f+g$ ו-$g$. אחרת, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה אינה נכונה.
+תהיינה
+$$f(x)=\frac{1}{x},\quad
+g(x)=-f(x)$$
+ו-
+$x_0=0$.
+מתקיים
+$\displaystyle\lim_{x\to0}(f(x)+g(x))=0$
+כי
+$f(x)+g(x)=0$
+לכל
+$x\neq0$, ומצד שני
+בבירור לא קיימים הגבולות
+$\displaystyle\lim_{x\to0}f(x)$
+ו-
+$\displaystyle\lim_{x\to0}(g(x))$.
+
+שימו לב כי כל עוד
+$\ds{\lim_{x\to x_0}}f(x)$
+לא קיים, הדוגמא
+$g=-f$
+"תעבוד".
+\end{solbox}
+\fi
+\end{enumerate}

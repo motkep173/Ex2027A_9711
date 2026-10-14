@@ -1,0 +1,27 @@
+% ==================================================================
+% id:       int-006
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \tan x \, dx$
+\hint{כתבו את $\tan x$ כמנה ושימו לב שהמונה הוא, עד כדי סימן, הנגזרת של המכנה.}
+\begin{solbox}
+נציג
+$$.\int \tan x\,dx=\int \frac{\sin x}{\cos x}\,dx$$
+נבצע הצבה
+$u=\cos x$
+ואז
+$du=-\sin x dx$.
+נמשיך
+\begin{align*}
+\int \frac{\sin x}{\cos x}\,dx
+&=\ -\int \frac{1}{u}\,du\\
+&=\ -\ln|u|+C
+\end{align*}
+ולכן $\ds \int \tan x\,dx=-\ln|\cos x|+C$.
+%\begin{align*}
+%\boxed{-\ln|\cos x|+C}
+%\end{align*}
+\end{solbox}

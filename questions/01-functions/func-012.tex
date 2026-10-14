@@ -1,0 +1,53 @@
+% ==================================================================
+% id:       func-012
+% topic:    פונקציות
+% subtopic: תחום הגדרה ותכונות של פונקציות
+% solution: full
+% ==================================================================
+\textbf{מצאו את תחום ההגדרה הטבעי של הפונקציות הבאות:}
+\begin{enumerate}\bMs{2}
+\item  $f(x)=\ds{\frac{\sin x}{\sqrt{1-x^2}}}$
+\begin{solbox}
+תחום ההגדרה הוא $(-1,1)$, כי צריך שיתקיים
+$1-x^2>0$.
+\end{solbox}
+
+\item $f(x)=\frac{x}{\sin x}$
+\begin{solbox}
+תחום ההגדרה הוא $\mathbb{R}\setminus\{k\pi:k\in\mathbb{Z}\}$,
+כי צריך שיתקיים
+$\sin x\neq0$.
+\end{solbox}
+
+\item $f(x)=\sqrt{x-1}$
+\begin{solbox}
+תחום ההגדרה הוא $[1,\infty)$.
+\end{solbox}
+
+\item $f(x)=\sqrt[6]{x^2+1}$
+\begin{solbox}
+תחום ההגדרה הוא $\mathbb{R}$, כי $x^2+1>0$ לכל $x$.
+\end{solbox}
+\item $f(x)=\log_2{(x^2-5x+6)}$
+\begin{solbox}
+צריך שיתקיים $x^2-5x+6>0$, כלומר $(x-2)(x-3)>0$, ולכן התחום הוא $(-\infty,2)\cup(3,\infty)$.
+\end{solbox}
+
+\item $f(x)=\tan(\pi x)$
+\begin{solbox}
+צריך שיתקיים $\cos(\pi x)\neq0$, ולכן $x\neq k+\frac12$, $k\in\mathbb{Z}$. התחום הוא $\mathbb{R}\setminus\{k+\frac12:k\in\mathbb{Z}\}$.
+\end{solbox}
+
+\item $f(x)=\cot x$
+\begin{solbox}
+צריך שיתקיים $\sin x\neq0$, ולכן התחום הוא $\mathbb{R}\setminus\{k\pi:k\in\mathbb{Z}\}$.
+\end{solbox}
+
+\item $f(x)=\ds{\sqrt{\frac{x+3}{\abs{x^2-4}}}}$
+\hint{שימו לב שהמכנה אי-שלילי, ולכן סימן השבר נקבע לפי המונה. אל תשכחו לדרוש שהמכנה לא יתאפס.}
+\begin{solbox}
+צריך שיתקיים $x\neq\pm2$ וגם $\frac{x+3}{|x^2-4|}\geq0$. מאחר שהמכנה חיובי בכל מקום שבו הוא מוגדר, נקבל $x\geq-3$. לכן התחום הוא
+$[-3,-2)\cup(-2,2)\cup(2,\infty)$.
+\end{solbox}
+\eMs
+\end{enumerate}

@@ -1,0 +1,37 @@
+% ==================================================================
+% id:       int-011
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \e^{4x}\sin(2x) \, dx$
+\hint{אינטגרציה בחלקים פעמיים תחזיר את האינטגרל המקורי; העבירו אגפים.}
+\begin{solbox}
+נפתור ע"י אינטגרציה בחלקים:
+$$,u=e^{4x},\ v'=\sin(2x)$$
+מכאן
+$$.u'=4e^{4x},\ v=-\frac{1}{2}\cos(2x)$$
+מתקיים
+\begin{align*}
+    ,\int \e^{4x}\sin(2x) \, dx&=\ -\frac{1}{2}e^{4x}\cos(2x)+2\int e^{4x}\cos(2x)dx
+\end{align*}
+שוב נבצע אינטגרציה בחלקים
+$$,u=e^{4x},\ v'=\cos(2x)$$
+מכאן
+$$.u'=4e^{4x},\ v=\frac{1}{2}\sin(2x)$$
+מתקיים
+\begin{align*}
+    .\int e^{4x}\cos(2x)dx&=\ \frac{1}{2}e^{4x}\sin{2x}-2\int e^{4x}\sin(2x)dx
+\end{align*}
+בסה"כ קיבלנו
+\begin{align*}
+    ,\int \e^{4x}\sin(2x) \, dx&=\ -\frac{1}{2}e^{4x}\cos(2x)+2\left(\frac{1}{2}e^{4x}\sin{2x}-2\int e^{4x}\sin(2x)dx\right)
+\end{align*}
+לאחר העברת אגפים נקבל כי
+$$.\int \e^{4x}\sin(2x)=\frac{1}{5}e^{4x}\sin{2x}-\frac{1}{10}e^{4x}\cos(2x)+C$$
+
+%\begin{align*}
+%\boxed{\frac{e^{4x}}{10}\lr{2\sin\lr{2x}-\cos\lr{2x}}+C}
+%\end{align*}
+\end{solbox}

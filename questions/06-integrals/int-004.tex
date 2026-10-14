@@ -1,0 +1,32 @@
+% ==================================================================
+% id:       int-004
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% verified: no
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int\frac{1}{x^2 - 9} \, dx$
+\begin{solbox}
+\unverified
+נפרק לשברים חלקיים:
+$$.\frac{1}{x^2-9}=\frac{1}{(x-3)(x+3)}=\frac{A}{x-3}+\frac{B}{x+3}$$
+כלומר
+$1=A(x+3)+B(x-3)$.
+הצבת
+$x=3$
+נותנת
+$A=\frac16$,
+והצבת
+$x=-3$
+נותנת
+$B=-\frac16$.
+לכן
+\begin{align*}
+\int\frac{dx}{x^2-9}=\frac16\int\frac{dx}{x-3}-\frac16\int\frac{dx}{x+3}=\frac16\ln|x-3|-\frac16\ln|x+3|+C,
+\end{align*}
+כלומר
+\begin{align*}
+\boxed{\int\frac{dx}{x^2-9}=\frac16\ln\abs{\frac{x-3}{x+3}}+C}
+\end{align*}
+\end{solbox}

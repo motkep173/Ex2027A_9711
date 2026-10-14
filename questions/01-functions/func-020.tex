@@ -1,0 +1,55 @@
+% ==================================================================
+% id:       func-020
+% topic:    פונקציות
+% subtopic: תחום הגדרה ותכונות של פונקציות
+% solution: full
+% verified: no
+% ==================================================================
+נגדיר: $\ds{\sinh(x)=\frac{\e^x-\e^{-x}}{2}}$ , $\ds{\cosh(x)=\frac{\e^x+\e^{-x}}{2}}$.
+\textbf{הוכיחו את הזהויות:}
+\begin{enumerate}
+\item $\ds{\cosh(x+y)=\cosh(x)\cosh(y)+\sinh(x)\sinh(y)}$
+\hint{הציבו באגף ימין את ההגדרות בעזרת $e^x$ ו-$e^y$, פתחו סוגריים וכנסו איברים.}
+\begin{solbox}
+$\cosh(x)\cosh(y)=(\frac{e^x+e^{-x}}{2})(\frac{e^y+e^{-y}}{2})=\frac{e^xe^{y}+e^{-x}e^{y}+e^xe^{-y}+e^{-x}e^{-y}}{4}=\frac{e^{x+y}+e^{y-x}+e^{x-y}+e^{-x-y}}{4}$
+\\
+
+$\sinh(x)\sinh(y)=(\frac{e^x-e^{-x}}{2})(\frac{e^y-e^{-y}}{2})=\frac{e^xe^{y}-e^{-x}e^{y}-e^xe^{-y}+e^{-x}e^{-y}}{4}=\frac{e^{x+y}-e^{y-x}-e^{x-y}+e^{-x-y}}{4}$
+\\
+$\cosh(x)\cosh(y)+\sinh(x)\sinh(y)=\frac{e^{x+y}+e^{y-x}+e^{x-y}+e^{-x-y}}{4}+\frac{e^{x+y}-e^{y-x}-e^{x-y}+e^{-x-y}}{4}$
+\\
+$=\frac{2e^{x+y}+2e^{-x-y}}{4}=\frac{e^{x+y}+e^{-x-y}}{2}=\cosh(x+y)$
+\end{solbox}
+\item $\ds{\sinh(x+y)=\sinh(x)\cosh(y)+\cosh(x)\sinh(y)}$
+\begin{solbox}
+$\sinh(x)\cosh(y)=(\frac{e^x-e^{-x}}{2})(\frac{e^y+e^{-y}}{2})=\frac{e^{x+y}-e^{y-x}+e^{x-y}-e^{-x-y}}{4}$
+\\
+
+מטעמי סימטריה
+$\sinh(y)\cosh(x)=\frac{e^{x+y}-e^{x-y}+e^{y-x}-e^{-x-y}}{4}$
+\\
+$\sinh(x)\cosh(y)+\sinh(y)\cosh(x)=\frac{e^{x+y}-e^{y-x}+e^{x-y}-e^{-x-y}}{4}+\frac{e^{x+y}-e^{x-y}+e^{y-x}-e^{-x-y}}{4}=\frac{2e^{x+y}-2e^{-x-y}}{4}=\frac{e^{x+y}-e^{-x-y}}{2}=\sinh(x+y)$
+\end{solbox}
+\item $\ds{\sinh(x)+\sinh(y)=2\sinh\lr{\frac{x+y}{2}}\cosh\lr{\frac{x-y}{2}}}$
+\hint{כתבו את $x$ ואת $y$ כסכום וכהפרש של $\frac{x+y}{2}$ ו-$\frac{x-y}{2}$, והשתמשו בסעיף הקודם.}
+\begin{solbox}
+הוכחה דומה לסעיפים קודמים.
+\end{solbox}
+\begin{solbox}
+\unverified
+נסמן
+$a=\frac{x+y}{2}$
+ו-$b=\frac{x-y}{2}$,
+כך ש-$x=a+b$
+ו-$y=a-b$.
+נשים לב כי
+$\sinh$
+אי-זוגית ו-$\cosh$
+זוגית, ולכן לפי סעיף ב'
+$$,\sinh(a-b)=\sinh(a)\cosh(-b)+\cosh(a)\sinh(-b)=\sinh(a)\cosh(b)-\cosh(a)\sinh(b)$$
+ואילו
+$$.\sinh(a+b)=\sinh(a)\cosh(b)+\cosh(a)\sinh(b)$$
+נחבר ונקבל
+$$.\sinh(x)+\sinh(y)=\sinh(a+b)+\sinh(a-b)=2\sinh(a)\cosh(b)=2\sinh\lr{\frac{x+y}{2}}\cosh\lr{\frac{x-y}{2}}$$
+\end{solbox}
+\end{enumerate}

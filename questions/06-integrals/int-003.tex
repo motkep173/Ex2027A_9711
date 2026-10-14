@@ -1,0 +1,20 @@
+% ==================================================================
+% id:       int-003
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \cos^2x \, dx$
+\hint{השתמשו בזהות טריגונומטרית שמורידה את החזקה של $\cos$.}
+\begin{solbox}
+נשתמש בזהות $\ds \cos^2x=\frac{1+\cos\lr{2x}}{2}$.
+\begin{align*}
+\int \cos^2x\,dx
+&=\int \frac{1+\cos\lr{2x}}{2}\,dx\\
+&=\frac{x}{2}+\frac14\sin\lr{2x}+C
+\end{align*}
+%\begin{align*}
+%\boxed{\frac{x}{2}+\frac14\sin\lr{2x}+C}
+%\end{align*}
+\end{solbox}

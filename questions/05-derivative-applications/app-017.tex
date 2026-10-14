@@ -1,0 +1,30 @@
+% ==================================================================
+% id:       app-017
+% topic:    שימושי הנגזרת
+% subtopic: פולינום טיילור
+% solution: full
+% ==================================================================
+חשבו את הגבול $\ds{\lim_{n\to\infty}6n^3\lr{\ln\lr{1+\frac1n}-\frac1n+\frac1{2n^2}}}$
+\hint{עברו לגבול של פונקציה ב-$0$ בעזרת ההצבה $x=\frac1n$ (משפט היינה), והשתמשו בפיתוח של $\ln(1+x)$.}
+\begin{solbox}
+מה הקשר לסדרות? נבחין בנוכחותה החוזרת של
+$a_n=\frac{1}{n}$.
+$$,6n^3\lr{\ln\lr{1+\frac1n}-\frac1n+\frac1{2n^2}}=\frac{6\left(\ln(1+a_n)-a_n+\frac{a_n^2}{2}\right)}{a_n^3}$$
+לכן נרצה לחשב את הגבול של הפונקציה
+$$g(x)=\frac{6\left(\ln(1+x)-x+\frac{x^2}{2}\right)}{x^3}$$
+ב-
+$x=0$
+ואז נשתמש בהיינה כי
+$\displaystyle\lim_{n\to\infty}a_n=0$.
+מתקיים
+    $$,\frac{6(x-\frac{x^2}{3}+\frac{x^3}{3}+o(x^3)-x+\frac{x^2}{2})}{x^3}=\frac{2x^3+o(x^3)}{x^3}$$
+מכאן
+\begin{align*}
+    \lim_{x\to0}\frac{6\left(\ln(1+x)-x+\frac{x^2}{2}\right)}{x^3}
+    =\ \lim_{x\to0}\frac{2x^3+o(x^3)}{x^3}
+    =\ \lim_{x\to0}\left(2+\frac{o(x^3)}{x^3}\right)
+    =\ 2.
+\end{align*}
+מהיינה נסיק כי
+$\displaystyle\lim_{n\to\infty}g(a_n)=2$.
+\end{solbox}

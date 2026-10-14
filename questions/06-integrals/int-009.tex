@@ -1,0 +1,43 @@
+% ==================================================================
+% id:       int-009
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \sin(\ln x)dx$
+\hint{הציבו את הלוגריתם כמשתנה חדש. באינטגרל שיתקבל, אינטגרציה בחלקים פעמיים מחזירה את האינטגרל המקורי, ואז העבירו אגפים.}
+\begin{solbox}
+נבצע הצבה $t=\ln x$, ואז $x=e^t$ ו-$dx=e^t\,dt$.
+לכן
+\begin{align*}
+\int \sin\lr{\ln x}\,dx
+&=\int e^t\sin t\,dt
+\end{align*}
+
+נבצע אינטגרציה בחלקים עם
+$$,u=\sin t,\ v'=e^t$$
+מכאן
+$$,u'=\cos t,\ v=e^t$$
+מתקיים
+\begin{align}\label{1}
+\int e^t\sin t\,dt=e^t\sin t-\int e^t\cos tdt,
+\end{align}
+שוב, באינטגרל האחרון נשתמש באינטגרציה בחלקים:
+$$,u=\cos t,\ v'=e^t$$
+מתקיים
+\begin{align}\label{2}
+\int e^t\cos t\,dt=e^t\cos t+\int e^t\sin tdt,
+\end{align}
+מ-
+)\ref{1}(
+ו-
+)\ref{2}(,
+נקבל
+$$,\int e^t\sin t\,dt=e^t\sin t-\left(e^t\cos t+\int e^t\sin tdt\right)$$
+כלומר,
+$$\int e^t\sin t\,dt=\frac{e^t}{2}(\sin t-\cos t)+C=\frac{x}{2}\left(\sin(\ln x)-\cos(\ln x)\right)+C$$
+%\begin{align*}
+%\boxed{\frac{x}{2}\lr{\sin\lr{\ln x}-\cos\lr{\ln x}}+C}
+%\end{align*}
+\end{solbox}

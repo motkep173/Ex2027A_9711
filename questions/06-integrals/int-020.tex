@@ -1,0 +1,25 @@
+% ==================================================================
+% id:       int-020
+% topic:    אינטגרלים
+% subtopic: שיטות אינטגרציה
+% solution: full
+% ==================================================================
+חשבו את האינטגרל
+$\ds \int \sin^3(x)\cos^8(x)\,dx$
+\hint{הפרידו גורם אחד מהחזקה האי-זוגית של $\sin$, הביעו את השאר בעזרת $\cos$ והציבו.}
+\begin{solbox}
+נציג $$\ds \sin^3x=\sin x\lr{1-\cos^2x}$$ ונבצע הצבה $u=\cos x$,
+מכאן
+$u'=-\sin x$,
+לכן
+\begin{align*}
+\int \sin^3x\cos^8x\,dx
+&=\ -\int \lr{1-u^2}u^8\,du\\
+&=\ -\int \lr{u^8-u^{10}}\,du\\
+&=\ -\frac{u^9}{9}+\frac{u^{11}}{11}+C\\
+&=\ \frac{\cos^{11}x}{11}-\frac{\cos^9x}{9}+C.
+\end{align*}
+%\begin{align*}
+%\boxed{\frac{\cos^{11}x}{11}-\frac{\cos^9x}{9}+C}
+%\end{align*}
+\end{solbox}
