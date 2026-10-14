@@ -33,13 +33,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install XeLaTeX and the Culmus fonts (David CLM)
+      - name: Install XeLaTeX and the Culmus fonts (David CLM, Ubuntu package culmus)
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q --no-install-recommends \
             texlive-xetex texlive-latex-recommended texlive-latex-extra \
             texlive-pictures texlive-lang-other texlive-fonts-recommended \
-            fonts-culmus lmodern
+            culmus lmodern
           fc-list | grep -q "David CLM" || { echo "David CLM font not found"; exit 1; }
 
       - uses: actions/setup-node@v4
