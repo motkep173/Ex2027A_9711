@@ -1,117 +1,11 @@
 % ==================================================================
 % id:       seq-010
 % topic:    סדרות
-% subtopic: חישוב גבולות של סדרות
+% subtopic: חישוב גבולות בעזרת אריתמטיקה של גבולות
 % solution: full
 % ==================================================================
 \textbf{חשבו את גבול הסדרות הבאות ונמקו את צעדיכם.}
 \begin{enumerate}\bMs{2}
-\item $\ds\lim_{n \to \infty} \frac{\lr{2 - (-1)^n}\lr{n^3 + n}}{1 + 2n^2}$
-\hint{הגורם $2-(-1)^n$ חסום מלרע על ידי מספר חיובי. השתמשו בזה כדי להשוות לסדרה פשוטה יותר.}
-\begin{solbox}
-    הגורם הראשון במכפלה שבמונה הוא סדרה מתחלפת בין המספרים
-    $1,3$,
-    לכן בכל מקרה
-    $$1\le 2-(-1)^n\le 3$$
-    ולכן
-    $$\frac{3(n^3+n)}{1+2n^2}\le\frac{\lr{2 - (-1)^n}\lr{n^3 + n}}{1 + 2n^2}\le
-    \frac{3(n^3+n)}{1+2n^2}$$
-    כאשר נשים לב ששתי הסדרות שקיבלנו מימין ומשמאל הן שואפות ל-$\infty$, לכן מהאי-שיוויון השמאלי (ללא צורך בימני) נובע מכלל הפיצה כי הסדרה מתכנסת ל-$\infty$.
-\end{solbox}
-
-%%%%%
-\item $\ds\lim_{n \to \infty} \left( \frac{2n + 2}{2n + 1} \right)^{2n}$
-\hint{זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) והשתמשו בגבול המגדיר את $e$.}
-\begin{solbox}
-בגלל שזהו מצב מהצורה
-$a_n^{b_n}$
-כאשר
-$a_n\goes 1$
-ו-$b_n\goes\infty$,
-אין לנו כלל שאומר לאן תתכנס הסדרה
-$a_n^{b_n}$,
-ונצטרך לעבוד קצת.
-נציג
-\begin{align*}
-    \left( \frac{2n + 2}{2n + 1} \right)^{2n}&=\
-    \left( \frac{2n + 1+1}{2n + 1} \right)^{2n}=\
-    \left(1+ \frac{1}{2n + 1} \right)^{2n}\\
-    &=\ \left(1+ \frac{1}{2n + 1} \right)^{2n{\color{red}+1-1}}\\
-    &=\ \frac{1}{1+ \frac{1}{2n + 1}}\cdot\left(1+ \frac{1}{2n + 1} \right)^{2n+1}
-\end{align*}
-נזכור את העובדה שנלמדה בכיתה שלפיה
-$$,\lim_{n\to\infty}(1+x_n)^{\frac{1}{x_n}}=e$$
-כאשר
-$(x_n)_{n=1}^\infty$
-סדרה המקיימת
-$\displaystyle\lim_{n\to\infty}x_n=0$.
-במקרה הנוכחי
-$x_n=\frac{1}{2n+1}$.
-לכן הגבול של המונה הוא
-$e$,
-מכאן,
-לפי אריתמטיקה של גבולות (כי הגבול של המכנה הוא
-$1$), נסיק כי הגבול המבוקש הוא
-$e$.
-\end{solbox}
-%%%%%
-\item $\ds\lim_{n \to \infty} \left( \frac{n^2 + n}{n^2 - 1} \right)^{2n - 1}$
-\hint{פרקו את המונה והמכנה לגורמים וצמצמו, ואז המשיכו כמו בסעיף הקודם.}
-\begin{solbox}
-    כמו בסעיף הקודם, זהו מצב של
-    $"1^{\infty}"$
-    ואין לנו כלל עבורו.
-נפשט ונסדר את הסדרה
-\begin{align*}
-    \left( \frac{n^2 + n}{n^2 - 1} \right)^{2n - 1}
-    &=\ \left( \frac{n(n + 1)}{(n - 1)(n+1)} \right)^{2n - 1}
-    =\ \left( \frac{n}{n - 1} \right)^{2n - 1}\\
-    &=\ \left( \frac{n{\color{red}-1+1}}{n - 1} \right)^{2n - 1}=\ \left( 1+\frac{1}{n - 1} \right)^{2n - 1}\\
-    &=\ \left(\left( 1+\frac{1}{n - 1} \right)^{{\color{red}n - 1}}\right)^{\frac{2n-1}{\color{red}n-1}}
-\end{align*}
-לפי אריתמטיקה של חזקות (תזכורת:
-$\displaystyle\lim_{n\to\infty}a_n^{b_n}=a^b$,
-אם
-$a_n\goes a,b_n\goes b$)
-כאשר
-כאן
-$$a_n=\left(1+\frac{1}{n-1}\right)^{n-1}\goes e\qquad,\qquad
-b_n=\frac{2n-1}{n-1}\goes 2$$
-נקבל כי הגבול של הסדרה המקורית הוא
-$e^2$.
-\end{solbox}
-
-%%%%%
-\item $\ds\lim_{n \to \infty} \frac{5n + \sqrt[6]{n^7 - n^5 - n + 1}}{\sqrt[4]{1 + 2n + n^4} + \sqrt[3]{n^2 + 5}}$
-\hint{חלקו את המונה והמכנה בחזקה הגבוהה ביותר של $n$ שמופיעה במכנה (שימו לב לחזקות השבריות שבתוך השורשים).}
-\begin{solbox}
-נסמן את איברי הסדרה ב-
-$a_n$.
-מתקיים
-\begin{align*}
-a_n
-=\ \frac{5n + n^{\frac{7}{6}}\sqrt[6]{1 - \frac{1}{n^2} - \frac{1}{n^6} + \frac{1}{n^7}}}{n \sqrt[4]{\frac{1}{n^4} + \frac{2}{n^3} + 1} + n^{\frac{2}{3}}\sqrt[3]{1 + \frac{5}{n^2}}}
-=\ \frac{5 + n^{\frac{1}{6}}\sqrt[6]{1 - \frac{1}{n^2} - \frac{1}{n^6} + \frac{1}{n^7}}}{\sqrt[4]{\frac{1}{n^4} + \frac{2}{n^3} + 1} + \frac{1}{n^{\frac{1}{3}}}\sqrt[3]{1 + \frac{5}{n^2}}}.
-\end{align*}
-לאחר שחילקנו את המונה והמכנה בחזקה הגדולה ביותר של
-$n$
-מהמכנה,
-נשים לב כי הגבול של המונה הוא
-$\infty$
-והגבול של המכנה הוא
-$1$,
-לכן
-לפי אריתמטיקה של גבולות במובן הרחב, נסיק כי
-$a_n\goes\infty$.
-\end{solbox}
-%%%%%
-\item $\ds\lim_{n \to \infty} n + \sqrt{n^2 - n}$
-\begin{solbox}
-מתקיים
-$$,n + \sqrt{n^2 - n}\geq n \goes\infty$$
-מכאן, לפי כלל הפיצה, שגבולה של הסדרה הוא אינסוף.
-\end{solbox}
-%%%%%
 \item $\ds\lim_{n \to \infty} \left( \sqrt{n^2 - 2n - 1} - \sqrt{n^2 + 2n - 1} \right)$
 \hint{זהו מצב $\infty-\infty$ עם הפרש שורשים: הכפילו וחלקו בצמוד.}
 \begin{solbox}
@@ -157,50 +51,5 @@ $\ds\lim_{n\to\infty}\frac{\cos (n)}{n}=0$
 $$.\ds\lim_{n \to \infty} \frac{n + \cos(n)}{\sqrt{n^2 + 5n + 1}}=1$$
 \end{solbox}
 %%%%
-\item $\ds\lim_{n \to \infty} \lr{\frac{3n^2+4n-2}{3n^2-6n-5}}^{\frac{n^2+3}{2n+5}}$
-\hint{זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) וסדרו את החזקה כך שתופיע בה ההופכית של אותו ביטוי.}
-\begin{solbox}
-נציג
-\begin{align*}
-    \left(\frac{3n^2+4n-2}{3n^2-6n-5}\right)^{\frac{n^2+3}{2n+5}}&=\ \left(\frac{3n^2{\color{red}-6n-5}+4n-2{\color{red}+6n+5}}{3n^2-6n-5}\right)^{\frac{n^2+3}{2n+5}}\\
-    &=\ \left(1+\frac{10n+3}{3n^2-6n-5}\right)^{\frac{n^2+3}{2n+5}}\\
-    &=\ \left(1+\frac{10n+3}{3n^2-6n-5}\right)^{{\color{red}\frac{3n^2-6n-5}{10n+3}}\cdot\frac{n^2+3}{2n+5}\cdot{\color{red}\frac{10n+3}{3n^2-6-5n}}}.
-\end{align*}
-ראינו בכיתה כי
-$$,\displaystyle\lim_{n\to\infty}\left(1+\frac{10n+3}{3n^2-6n-5}\right)^{\frac{3n^2=6n-5}{10n+3}}=e$$
-בנוסף, לא קשה להשתכנע כי
-$$,\displaystyle\lim_{n\to\infty}\frac{n^2+3}{2n+5}\cdot\frac{10n+3}{3n^2-6-5n}=\frac{5}{3}$$
-לכן מאריתמטיקה של חזקות, הגבול המבוקש הוא
-$e^{\frac{5}{3}}$.
-\end{solbox}
-%%%%%
-\item $\ds\lim_{n \to \infty} \lr{1-\frac{1}{n^2}}^{n}$
-\hint{זהו גבול מהצורה $1^\infty$. כתבו את הבסיס כ-$1+$(ביטוי ששואף לאפס) וסדרו את החזקה כך שתופיע בה ההופכית של אותו ביטוי, כמו בסעיפים הקודמים.}
-\begin{solbox}
-כמו בסעיפים הקודמים, זהו מצב של
-$"1^{\infty}"$.
-כאן $x_n=-\frac{1}{n^2}\goes0$, ולכן נסדר את החזקה כך שתופיע בה ההופכית $\frac{1}{x_n}=-n^2$:
-$$.\lr{1-\frac{1}{n^2}}^{n}=\lr{\lr{1-\frac{1}{n^2}}^{{\color{red}-n^2}}}^{{\color{red}-\frac{1}{n^2}}\cdot n}=\lr{\lr{1-\frac{1}{n^2}}^{-n^2}}^{-\frac{1}{n}}$$
-לפי העובדה שנלמדה בכיתה, $\lr{1+x_n}^{\frac{1}{x_n}}\goes e$, כלומר הבסיס שואף ל-$e$. המעריך $-\frac1n$ שואף ל-$0$.
-לכן, לפי אריתמטיקה של חזקות, הגבול המבוקש הוא
-$e^0=1$.
-\end{solbox}
-%%%%%
-\item $\ds\lim_{n \to \infty} n\lr{\ln(n+3)-\ln n}$
-\hint{השתמשו בחוקי הלוגריתמים כדי לכתוב את הסדרה כ-$\ln$ של ביטוי מהצורה $1^\infty$, כמו בסעיפים הקודמים.}
-\begin{solbox}
-לפי חוקי הלוגריתמים,
-$$.n\lr{\ln(n+3)-\ln n}=n\ln\lr{\frac{n+3}{n}}=\ln\lr{1+\frac3n}^{n}$$
-בתוך ה-$\ln$ יש מצב של
-$"1^{\infty}"$,
-וכמו בסעיפים הקודמים
-$$,\lr{1+\frac3n}^{n}=\lr{\lr{1+\frac3n}^{\frac n3}}^{3}\goes e^3$$
-לפי העובדה $\lr{1+x_n}^{\frac{1}{x_n}}\goes e$ עם $x_n=\frac3n$, ולפי אריתמטיקה של חזקות.
-כדי לעבור לגבול של ה-$\ln$ בלי להשתמש ברציפות, נחסום. לכל $x>0$ מתקיים $\frac{x}{1+x}\le\ln(1+x)\le x$. עם $x=\frac3n$ נקבל
-$$.\frac{3}{1+\frac3n}=n\cdot\frac{\frac3n}{1+\frac3n}\le n\ln\lr{1+\frac3n}\le n\cdot\frac3n=3$$
-אגף שמאל שואף ל-$3$ לפי אריתמטיקה של גבולות, ולכן לפי כלל הסנדוויץ' הגבול המבוקש הוא
-$3$
-(בהתאם לכך ש-$\ln e^3=3$).
-\end{solbox}
 \eMs
 \end{enumerate}
