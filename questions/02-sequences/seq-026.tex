@@ -1,0 +1,32 @@
+% ==================================================================
+% id:       seq-026
+% topic:    סדרות
+% subtopic: המספר e
+% solution: full
+% ==================================================================
+\textbf{חשבו את הגבול הבא ונמקו את צעדיכם:}
+$\ds\lim_{n \to \infty} \left( \frac{n^2 + n}{n^2 - 1} \right)^{2n - 1}$
+\hint{פרקו את המונה והמכנה לגורמים וצמצמו, ואז השתמשו בגבול המגדיר את $e$.}
+\begin{solbox}
+    זהו מצב של
+    $"1^{\infty}"$
+    ואין לנו כלל עבורו.
+נפשט ונסדר את הסדרה
+\begin{align*}
+    \left( \frac{n^2 + n}{n^2 - 1} \right)^{2n - 1}
+    &=\ \left( \frac{n(n + 1)}{(n - 1)(n+1)} \right)^{2n - 1}
+    =\ \left( \frac{n}{n - 1} \right)^{2n - 1}\\
+    &=\ \left( \frac{n{\color{red}-1+1}}{n - 1} \right)^{2n - 1}=\ \left( 1+\frac{1}{n - 1} \right)^{2n - 1}\\
+    &=\ \left(\left( 1+\frac{1}{n - 1} \right)^{{\color{red}n - 1}}\right)^{\frac{2n-1}{\color{red}n-1}}
+\end{align*}
+לפי אריתמטיקה של חזקות (תזכורת:
+$\displaystyle\lim_{n\to\infty}a_n^{b_n}=a^b$,
+אם
+$a_n\goes a,b_n\goes b$)
+כאשר
+כאן
+$$a_n=\left(1+\frac{1}{n-1}\right)^{n-1}\goes e\qquad,\qquad
+b_n=\frac{2n-1}{n-1}\goes 2$$
+נקבל כי הגבול של הסדרה המקורית הוא
+$e^2$.
+\end{solbox}
