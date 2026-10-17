@@ -110,17 +110,54 @@ def chapter_body(qs, item, subsections=True, lists=True, first_page=True):
     return out
 
 
+RELEASE_LINE = '---'     # in structure.txt: the release line (see release_cut and released)
+
+
 def load_structure():
     """structure.txt -> {subtopic: (chapter index, subtopic index, chapter name)}"""
     order, chapter, ci = {}, None, -1
     with open(os.path.join(HERE, 'structure.txt'), encoding='utf-8') as f:
         for line in f:
             line = line.strip()
+            if line.startswith(RELEASE_LINE):
+                continue
             if line.startswith('## '):
                 chapter, ci = line[3:].strip(), ci + 1
             elif line and not line.startswith('#'):
                 order[line] = (ci, len(order), chapter)
     return order
+
+
+def release_cut():
+    """The release line in structure.txt -> (subtopics below it, question id or None).
+    '---' alone: everything below the line is not released yet.
+    '--- seq-012': released up to and including question seq-012 (in booklet order), wherever the line is."""
+    hidden, below, last = set(), False, None
+    with open(os.path.join(HERE, 'structure.txt'), encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith(RELEASE_LINE):
+                arg = line[len(RELEASE_LINE):].strip()
+                if arg:
+                    last = arg
+                else:
+                    below = True
+            elif below and line and not line.startswith('#'):
+                hidden.add(line)
+    return hidden, last
+
+
+def released(qs):
+    """The released questions among qs (already in booklet order). The rest stay out of the student
+    booklets and the site, but not out of the preview with --with-suggested or the review page."""
+    hidden, last = release_cut()
+    qs = [q for q in qs if q['subtopic'] not in hidden]
+    if last:
+        ids = [q['id'] for q in qs]
+        if last not in ids:
+            raise SystemExit(f'release line in structure.txt: no question {last!r}')
+        qs = qs[:ids.index(last) + 1]
+    return qs
 
 
 def write_bank(qs, target='bank.tex'):
@@ -313,6 +350,10 @@ if __name__ == '__main__':
         write_bank(qs, 'bank-preview.tex')
         nsug = sum(1 for q in qs if q.get('suggested') == 'yes')
         raise SystemExit(f'{len(qs)} questions ({nsug} suggested) -> bank-preview.tex')
+    total = len(qs)
+    qs = released(qs)
+    if len(qs) < total:
+        print(f'{total - len(qs)} questions after the release line in structure.txt (not released yet)')
     write_bank(qs)
     write_booklet(qs)
     write_solutions(qs)
