@@ -4,6 +4,9 @@
 % subtopic: הרכבת פונקציות
 % solution: full
 % ==================================================================
+נזכיר שההרכבה $f\circ g$ היא הפונקציה שמוגדרת על ידי
+$(f\circ g)(x)=f(g(x))$.
+
 \textbf{מצאו את ההרכבות
 $f(g(x)),g(f(x)),f(f(x)),g(g(x))$:}
 \begin{enumerate}\bMs{2}
@@ -78,6 +81,11 @@ $f(g(x)),g(f(x)),f(f(x)),g(g(x))$:}
 \item $g(x)=2^x$, $f(x)=x^2$
 \begin{solbox}
 $f(g(x))=(2^x)^2=4^x, g(f(x))=2^{x^2},f(f(x))=x^4,g(g(x))=2^{(2^x)}$
+\end{solbox}
+\item $g(x)=2^x$, $\ds{f(x)=\frac{x+1}{x-1}}$.
+בסעיף זה מצאו רק את $f(g(x))$ ואת $g(f(x))$.
+\begin{solbox}
+$f(g(x))=\frac{2^x+1}{2^x-1} , g(f(x))=2^{\frac{x+1}{x-1}}$
 \end{solbox}
 \eMs
 \end{enumerate}

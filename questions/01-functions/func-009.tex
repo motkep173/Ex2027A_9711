@@ -44,25 +44,6 @@ $$.f(x+8\pi)=\cos\lr{\frac{x+8\pi}{4}}=\cos\lr{\frac x4+2\pi}=\cos\lr{\frac x4}=
 \]
 \end{solbox}
 
-\item $f(x) = \cos^2(x) $
-\begin{solbox}
-הפונקציה מחזורית, ו-$T=\pi$ הוא מחזור:
-\[
-.\cos^2(x+\pi)=(-\cos x)^2=\cos^2x
-\]
-כמובן שגם
-$2\pi$
-יהיה מחזור שלה.
-\end{solbox}
-
-\item $f(x) = \sin(2x) $
-\begin{solbox}
-הפונקציה מחזורית, ו-$T=\pi$ הוא מחזור:
-\[
-.\sin(2(x+\pi))=\sin(2x+2\pi)=\sin(2x)
-\]
-\end{solbox}
-
 \item $f(x) = 3.5 $
 \begin{solbox}
 הפונקציה קבועה, ולכן כל $T>0$ הוא מחזור שלה.
@@ -79,9 +60,12 @@ $f(T)=f(0)$,
 $f(2T)=f(T)$,
 וכך הלאה, ולכן לכל $n$ טבעי
 $$.\lfloor nT\rfloor=f(nT)=f(0)=0$$
-מצד שני, לפי תכונת ארכימדס קיים $n$ טבעי כך ש-$nT\geq1$, ועבורו
-$\lfloor nT\rfloor\geq1$.
-זו סתירה.
+מצד שני, מכיוון ש-$T>0$, הסדרה
+$a_n=nT$
+שואפת לאינסוף, ולכן עבור $n$ מספיק גדול מתקיים $nT>1$. עבור $n$ כזה
+$\lfloor nT\rfloor\geq1$,
+בסתירה לכך ש-$\lfloor nT\rfloor=0$.
+לכן לא קיים מחזור, והפונקציה אינה מחזורית.
 \end{solbox}
 
 \item $f(x)=x-\lfloor x \rfloor$
