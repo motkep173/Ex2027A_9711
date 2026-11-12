@@ -4,41 +4,129 @@
 % subtopic: תחום הגדרה ותכונות של פונקציות
 % solution: full
 % ==================================================================
-\textbf{עבור כל אחת מהפונקציות הבאות, קבעו האם הפונקציה מחזורית, ואם כן, חשבו את המחזור שלה.}
+\textbf{עבור כל אחת מהפונקציות הבאות, קבעו האם הפונקציה מחזורית, ואם כן, מצאו מחזור שלה.}
 \begin{enumerate}
-  \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=x^2$}
+\item $f(x)=x^2$
 \hint{הניחו שקיים מחזור $T>0$ ובדקו מה אומר התנאי $f(x+T)=f(x)$ בנקודה פשוטה, למשל $x=0$.}
 \begin{solbox}
-לא מחזורית
+לא מחזורית. נניח בשלילה שקיים מחזור $T>0$, כלומר
+$f(x+T)=f(x)$
+לכל $x$ ממשי. נציב $x=0$ ונקבל
+$$,T^2=f(T)=f(0)=0$$
+ולכן $T=0$, בסתירה לכך ש-$T>0$.
 \end{solbox}
- %\item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(x)$}
- \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(3x)$}
-\begin{solbox}
- מחזורית, בעלת מחזור
- $T = \frac{2 \pi}{3}$.
-\end{solbox}
- \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\cos(\frac{x}{4})$}
-\begin{solbox}
- מחזורית, בעלת מחזור
- $T = 8 \pi$.
-\end{solbox}
- \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\sin(3x) + \cos(\frac{x}{4})$}
-\hint{מצאו את המחזור של כל מחובר בנפרד, ובדקו אם יש מספר חיובי שהוא כפולה שלמה של שניהם.}
-\begin{solbox}
- מחזורית, בעלת מחזור
- $T = 8 \pi$.
-\end{solbox}
- \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\lfloor x \rfloor$}
 
- פונקציה זו נקראת `''פונקציית הערך השלם'', והיא מתאימה לכל מספר ממשי את המספר השלם המקסימלי הקטן או שווה לו.
+\item $f(x)=\sin(3x)$
+\begin{solbox}
+מחזורית, עם מחזור
+$T = \frac{2 \pi}{3}$,
+כי
+$\sin$
+מחזורית עם מחזור $2\pi$, ולכן לכל $x$ ממשי
+$$.f\lr{x+\tfrac{2\pi}{3}}=\sin\lr{3\lr{x+\tfrac{2\pi}{3}}}=\sin(3x+2\pi)=\sin(3x)=f(x)$$
+\end{solbox}
+
+\item $f(x)=\cos\lr{\frac{x}{4}}$
+\begin{solbox}
+מחזורית, עם מחזור
+$T = 8 \pi$,
+כי
+$\cos$
+מחזורית עם מחזור $2\pi$, ולכן לכל $x$ ממשי
+$$.f(x+8\pi)=\cos\lr{\frac{x+8\pi}{4}}=\cos\lr{\frac x4+2\pi}=\cos\lr{\frac x4}=f(x)$$
+\end{solbox}
+
+\item $f(x) =\cos(x)+\sin(x) $
+\begin{solbox}
+הפונקציה מחזורית. למשל $T=2\pi$ הוא מחזור, כי
+\[
+.f(x+2\pi)=\cos(x+2\pi)+\sin(x+2\pi)=\cos x+\sin x=f(x)
+\]
+\end{solbox}
+
+\item $f(x) = \cos^2(x) $
+\begin{solbox}
+הפונקציה מחזורית, ו-$T=\pi$ הוא מחזור:
+\[
+.\cos^2(x+\pi)=(-\cos x)^2=\cos^2x
+\]
+כמובן שגם
+$2\pi$
+יהיה מחזור שלה.
+\end{solbox}
+
+\item $f(x) = \sin(2x) $
+\begin{solbox}
+הפונקציה מחזורית, ו-$T=\pi$ הוא מחזור:
+\[
+.\sin(2(x+\pi))=\sin(2x+2\pi)=\sin(2x)
+\]
+\end{solbox}
+
+\item $f(x) = 3.5 $
+\begin{solbox}
+הפונקציה קבועה, ולכן כל $T>0$ הוא מחזור שלה.
+\end{solbox}
+
+\item $f(x)=\lfloor x \rfloor$
+
+פונקציה זו נקראת ``פונקציית הערך השלם'', והיא מתאימה לכל מספר ממשי את המספר השלם הגדול ביותר שקטן ממנו או שווה לו.
 \hint{בדקו כיצד משתנים ערכי $\lfloor x\rfloor$ כאשר $x$ גדל: האם הפונקציה יכולה לחזור על ערכיה באופן מחזורי?}
 \begin{solbox}
- לא מחזורית.
+לא מחזורית. נניח בשלילה שקיים מחזור $T>0$. אז
+$f(T)=f(0)$,
+וגם
+$f(2T)=f(T)$,
+וכך הלאה, ולכן לכל $n$ טבעי
+$$.\lfloor nT\rfloor=f(nT)=f(0)=0$$
+מצד שני, לפי תכונת ארכימדס קיים $n$ טבעי כך ש-$nT\geq1$, ועבורו
+$\lfloor nT\rfloor\geq1$.
+זו סתירה.
 \end{solbox}
-  \item{$f: \mathbb{R} \rightarrow \mathbb{R}, f(x)=\lfloor x \rfloor - x$}
+
+\item $f(x)=x-\lfloor x \rfloor$
 \hint{בדקו מה קורה ל-$\lfloor x\rfloor$ ול-$x$ כאשר מוסיפים ל-$x$ מספר שלם.}
 \begin{solbox}
- מחזורית, בעלת מחזור
- $T = 1$.
+מחזורית, עם מחזור
+$T = 1$.
+לכל $x$ ממשי מתקיים
+$\lfloor x+1\rfloor=\lfloor x\rfloor+1$,
+כי המספר השלם הגדול ביותר שאינו עולה על $x+1$ גדול ב-$1$ מהמספר השלם הגדול ביותר שאינו עולה על $x$. לכן
+$$.f(x+1)=(x+1)-\lfloor x+1\rfloor=x+1-\lfloor x\rfloor-1=x-\lfloor x\rfloor=f(x)$$
+נעיר שהפונקציה אי-שלילית: מההגדרה
+$\lfloor x\rfloor\leq x<\lfloor x\rfloor+1$,
+ולכן
+$0\leq f(x)<1$
+לכל $x$.
+\end{solbox}
+
+\item פונקצית דיריכלה: $D(x) = \case{cc}{
+       1 & \text{\R{ רציונאלי }} x\\ 0 & \text{\R{ אי-רציונאלי }} x}$
+\hint{בדקו עבור אילו מספרים $T$ מובטח ש-$x$ ו-$x+T$ הם מאותו סוג (רציונלי או אי-רציונלי) לכל $x$.}
+\begin{solbox}
+כל מספר רציונלי חיובי
+$q\in\mathbb{Q}$
+הוא מחזור של פונקציית דיריכלה: אם
+$x$
+רציונלי אז גם
+$x+q$
+רציונלי,ולכן
+$$.D(x)=1=D(x+q)$$
+ואם
+$x$
+אי-רציונלי אז גם
+$x+q$
+אי-רציונלי ולכן
+$$.D(x)=0=D(x+q)$$
+לכן
+$D(x+q)=D(x)$
+לכל
+$x$.
+מספר
+$r$
+אי-רציונלי אינו מחזור, כי למשל עבור
+$x=0$
+הערכים
+$D(0)$ ו-$D(r)$ שונים.
 \end{solbox}
 \end{enumerate}
