@@ -160,6 +160,42 @@ def released(qs):
     return qs
 
 
+def load_sheets(qs):
+    """sheets.txt -> {question id: [(sheet number, [part letters])]}; no letters = the whole question.
+    The submission sheets that were already opened: their exercises are marked in the booklet and on the site."""
+    path = os.path.join(HERE, 'sheets.txt')
+    out, sheet, ids = {}, None, {q['id'] for q in qs}
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith('## '):
+                sheet = int(line[3:])
+            elif line and not line.startswith('#'):
+                qid, *letters = line.split()
+                if sheet is None:
+                    raise SystemExit(f'sheets.txt: {qid} comes before the first "## <sheet number>" line')
+                if qid not in ids:
+                    raise SystemExit(f'sheets.txt: sheet {sheet}: no released question {qid!r}')
+                bad = [x for x in letters if x not in LETTERS]
+                if bad:
+                    raise SystemExit(f'sheets.txt: {qid}: not part letters: {bad}')
+                out.setdefault(qid, []).append((sheet, letters))
+    return out
+
+
+def sheet_label(marks, parts=True):
+    """'דף הגשה 2: סעיפים (א), (ג)' for the marks [(sheet, letters)] of one question."""
+    out = []
+    for sheet, letters in marks:
+        t = f'דף הגשה {sheet}'
+        if letters and parts:
+            t += (': סעיף ' if len(letters) == 1 else ': סעיפים ') + ', '.join(f'({x})' for x in letters)
+        out.append(t)
+    return ' · '.join(out)
+
+
 def write_bank(qs, target='bank.tex'):
     out = [r'''% קובץ זה נוצר אוטומטית ע"י make_bank.py -- אל תערכו אותו ידנית.
 % להסתרת הפתרונות: החליפו את \soltrue ב-\solfalse.
@@ -215,8 +251,14 @@ def write_booklet(qs):
     """Student booklet: questions only -- no solutions, ids, sources or subtopic headings.
     Suggested questions stay out until they are approved."""
     qs = [q for q in qs if q.get('suggested') != 'yes']
+    sheets = load_sheets(qs)
+
+    def item(q, head):
+        # an exercise of a submission sheet carries a small mark above it
+        mark = '\\bksheet{%s}\n' % sheet_label(sheets[q['id']]) if q['id'] in sheets else ''
+        return mark + '\\bookq[%s]{%s}' % (head, q['path'][:-4])
     out = [BOOKLET_HEAD] + qref_defs(qs)
-    out += chapter_body(qs, lambda q, head: '\\bookq[%s]{%s}' % (head, q['path'][:-4]), subsections=False, lists=False)
+    out += chapter_body(qs, item, subsections=False, lists=False)
     out.append('\n\\end{document}\n')
     with open(os.path.join(HERE, 'booklet.tex'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(out))
