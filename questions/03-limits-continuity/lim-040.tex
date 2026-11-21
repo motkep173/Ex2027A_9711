@@ -1,0 +1,52 @@
+% ==================================================================
+% id:       lim-040
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: גבולות של פונקציות מוכרות
+% solution: full
+% ==================================================================
+\textbf{היעזרו בגבולות של הפונקציות המוכרות ובאריתמטיקה של גבולות, וחשבו את הגבולות הבאים:}
+\begin{enumerate}\bMs{2}
+\item $\ds\lim_{x\to\frac\pi3}\sin(x)\cos(x)$
+\ifsol
+\begin{solbox}
+לפי אריתמטיקה של גבולות
+\[\lim_{x\to\frac\pi3}\sin(x)\cos(x)=\sin\lr{\frac\pi3}\cos\lr{\frac\pi3}=\frac{\sqrt3}{2}\cdot\frac12=\frac{\sqrt3}{4}\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to1}\frac{e^x+\ln(x)}{x^2+1}$
+\ifsol
+\begin{solbox}
+המכנה שואף ל-$2\ne0$, ולכן לפי אריתמטיקה של גבולות
+\[\lim_{x\to1}\frac{e^x+\ln(x)}{x^2+1}=\frac{e+0}{2}=\frac e2\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to0}\frac{e^{2x}-1}{e^x-1}$
+\ifsol
+\hint{$e^{2x}=\lr{e^x}^2$.}
+\begin{solbox}
+לכל $x\ne0$ מתקיים $e^x\ne1$, ו-$e^{2x}-1=\lr{e^x-1}\lr{e^x+1}$. לכן
+\[\frac{e^{2x}-1}{e^x-1}=e^x+1\]
+ולכן
+\[\lim_{x\to0}\frac{e^{2x}-1}{e^x-1}=\lim_{x\to0}\left(e^x+1\right)=2\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to\frac\pi2}\frac{1-\sin^2(x)}{\cos(x)}$
+\ifsol
+\begin{solbox}
+בסביבה נקובה של $\frac\pi2$ (למשל בקטע $(0,\pi)$, מלבד $\frac\pi2$) מתקיים $\cos(x)\ne0$, ו-$1-\sin^2(x)=\cos^2(x)$. לכן
+\[\frac{1-\sin^2(x)}{\cos(x)}=\cos(x)\]
+ולכן
+\[\lim_{x\to\frac\pi2}\frac{1-\sin^2(x)}{\cos(x)}=\lim_{x\to\frac\pi2}\cos(x)=0\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to\pi}\frac{\sin(2x)}{\sin(x)}$
+\ifsol
+\begin{solbox}
+בסביבה נקובה של $\pi$ (למשל בקטע $(0,2\pi)$, מלבד $\pi$) מתקיים $\sin(x)\ne0$, ו-$\sin(2x)=2\sin(x)\cos(x)$. לכן
+\[\frac{\sin(2x)}{\sin(x)}=2\cos(x)\]
+ולכן
+\[\lim_{x\to\pi}\frac{\sin(2x)}{\sin(x)}=\lim_{x\to\pi}2\cos(x)=2\cos(\pi)=-2\]
+\end{solbox}
+\fi
+\eMs
+\end{enumerate}
