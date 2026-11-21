@@ -47,7 +47,7 @@ $\ds{
 \lim_{x\to 4} \left( \frac{1}{4-x} \ - \  \frac{48}{64-x^3} \right)
 } $
 \ifsol
-\hint{פרקו את $64-x^3$ בנוסחת הפרש חזקות שלישיות ועברו למכנה משותף.}
+\hint{פרקו את $64-x^3$ בנוסחת הפרש חזקות שלישיות, $a^3-b^3=(a-b)\left(a^2+ab+b^2\right)$, ועברו למכנה משותף.}
 \begin{solbox}
 הצבה של
 $x=4$
@@ -129,5 +129,41 @@ $"\infty-\infty"$.
 הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
 \end{solbox}
 \fi
+\item $\ds\lim_{x\to3}\frac{\sqrt{x+6}-3}{\sqrt{x+1}-2}$
+\ifsol
+\hint{כפלו וחלקו בצמוד של המונה ובצמוד של המכנה.}
+\begin{solbox}
+הצבה של $x=3$ נותנת $\frac00$. בסביבה נקובה של $3$ (למשל $2<x<4$, $x\ne3$) שני השורשים מוגדרים, ו-$\sqrt{x+1}\ne2$. נכפול ונחלק בצמוד של המונה ובצמוד של המכנה:
+\[\frac{\sqrt{x+6}-3}{\sqrt{x+1}-2}
+=\frac{\lr{\sqrt{x+6}-3}\lr{\sqrt{x+6}+3}}{\lr{\sqrt{x+1}-2}\lr{\sqrt{x+1}+2}}\cdot\frac{\sqrt{x+1}+2}{\sqrt{x+6}+3}
+=\frac{x-3}{x-3}\cdot\frac{\sqrt{x+1}+2}{\sqrt{x+6}+3}
+=\frac{\sqrt{x+1}+2}{\sqrt{x+6}+3}\]
+לכן, לפי אריתמטיקה של גבולות (כולל גבול של חזקה, $\lim_{x\to3}\sqrt{x+1}=2$ ו-$\lim_{x\to3}\sqrt{x+6}=3$):
+\[\lim_{x\to3}\frac{\sqrt{x+6}-3}{\sqrt{x+1}-2}=\lim_{x\to3}\frac{\sqrt{x+1}+2}{\sqrt{x+6}+3}=\frac{2+2}{3+3}=\frac23\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}$
+\ifsol
+\hint{כפלו וחלקו בצמוד של המונה.}
+\begin{solbox}
+לכל $0<|x|<1$ נכפול ונחלק בצמוד $\sqrt{1+x}+\sqrt{1-x}$:
+\[\frac{\sqrt{1+x}-\sqrt{1-x}}{x}=\frac{(1+x)-(1-x)}{x\lr{\sqrt{1+x}+\sqrt{1-x}}}=\frac{2}{\sqrt{1+x}+\sqrt{1-x}}\]
+לכן, לפי אריתמטיקה של גבולות (כולל גבול של חזקה):
+\[\lim_{x\to0}\frac{\sqrt{1+x}-\sqrt{1-x}}{x}=\lim_{x\to0}\frac{2}{\sqrt{1+x}+\sqrt{1-x}}=\frac{2}{1+1}=1\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to1}\frac{x^3-1}{x^2-1}$
+\ifsol
+\hint{פרקו את המונה ואת המכנה לגורמים, וצמצמו.}
+\begin{solbox}
+לכל $x\ne\pm1$:
+\[\frac{x^3-1}{x^2-1}=\frac{(x-1)(x^2+x+1)}{(x-1)(x+1)}=\frac{x^2+x+1}{x+1}\]
+לכן, לפי אריתמטיקה של גבולות:
+\[\lim_{x\to1}\frac{x^3-1}{x^2-1}=\lim_{x\to1}\frac{x^2+x+1}{x+1}=\frac32\]
+\end{solbox}
+\fi
+
 \eMs
 \end{enumerate}

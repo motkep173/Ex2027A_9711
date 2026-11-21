@@ -1,0 +1,86 @@
+% ==================================================================
+% id:       lim-036
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: אריתמטיקה של גבולות
+% solution: full
+% ==================================================================
+\textbf{הוכיחו או הפריכו כל אחד מהסעיפים הבאים:}
+\begin{enumerate}
+\item אם קיימים הגבולות $\ds\lim_{x\to x_0}f(x)$ ו-$\ds\lim_{x\to x_0}\lr{f(x)+g(x)}$, אז קיים הגבול $\ds\lim_{x\to x_0}g(x)$.
+\ifsol
+\hint{כתבו את $g$ בעזרת $f+g$ ו-$f$.}
+\begin{solbox}
+הטענה נכונה. מתקיים $g(x)=\lr{f(x)+g(x)}-f(x)$, ולפי אריתמטיקה של גבולות (הפרש של שתי פונקציות שיש להן גבול) קיים הגבול של $g$ ב-$x_0$.
+\end{solbox}
+\fi
+
+    \item
+    אם
+     קיים הגבול
+    $\displaystyle\lim_{x\to x_0}\left(f(x)+g(x)\right)$,
+    אזי קיימים הגבולות
+    $\displaystyle\lim_{x\to x_0} f(x)$
+    ו-
+    $\displaystyle\lim_{x\to x_0} g(x)$.
+\ifsol
+\hint{אם נראה לכם שהטענה נכונה, נסו להביע את $f$ בעזרת $f+g$ ו-$g$. אחרת, חפשו דוגמה נגדית פשוטה.}
+\begin{solbox}
+הטענה אינה נכונה.
+תהיינה
+$$f(x)=\frac{1}{x},\quad
+g(x)=-f(x)$$
+ו-
+$x_0=0$.
+מתקיים
+$\displaystyle\lim_{x\to0}(f(x)+g(x))=0$
+כי
+$f(x)+g(x)=0$
+לכל
+$x\neq0$, ומצד שני
+בבירור לא קיימים הגבולות
+$\displaystyle\lim_{x\to0}f(x)$
+ו-
+$\displaystyle\lim_{x\to0}(g(x))$.
+
+שימו לב כי כל עוד
+$\ds{\lim_{x\to x_0}}f(x)$
+לא קיים, הדוגמא
+$g=-f$
+"תעבוד".
+\end{solbox}
+\fi
+\item אם קיימים הגבולות $\ds\lim_{x\to x_0}f(x)$ ו-$\ds\lim_{x\to x_0}f(x)g(x)$, אז קיים הגבול $\ds\lim_{x\to x_0}g(x)$.
+\ifsol
+\begin{solbox}
+הטענה אינה נכונה. למשל $x_0=0$, $f(x)=0$ ו-$g(x)=\frac1x$. אז $f(x)g(x)=0$ לכל $x\ne0$, ולכן לשתי הפונקציות $f$ ו-$fg$ יש גבול $0$. אבל ל-$\frac1x$ אין גבול ב-$0$: עבור $a_n=\frac1n$ מתקיים $g(a_n)=n\to\infty$.
+\end{solbox}
+\fi
+\item אם $\ds\lim_{x\to x_0}f(x)=2$ ו-$\ds\lim_{x\to x_0}f(x)g(x)=6$, אז $\ds\lim_{x\to x_0}g(x)=3$.
+\ifsol
+\hint{האם מותר לחלק ב-$f$ ליד $x_0$?}
+\begin{solbox}
+הטענה נכונה. מכיוון שהגבול של $f$ שונה מ-$0$, בסביבה נקובה של $x_0$ מתקיים $f(x)\ne0$, ושם
+\[g(x)=\frac{f(x)g(x)}{f(x)}\]
+ולכן
+\[\lim_{x\to x_0}g(x)=\lim_{x\to x_0}\frac{f(x)g(x)}{f(x)}=\frac62=3\]
+לפי אריתמטיקה של גבולות.
+\end{solbox}
+\fi
+\item אם ל-$f$ אין גבול ב-$x_0$, אז ל-$f^2$ אין גבול ב-$x_0$.
+\ifsol
+\begin{solbox}
+הטענה אינה נכונה. למשל $x_0=0$ ו-
+\[f(x)=\begin{cases}1, & x\ge0\\ -1, & x<0.\end{cases}\]
+לפי היינה ל-$f$ אין גבול ב-$0$: עבור $\frac1n$ מתקבל $1$, ועבור $-\frac1n$ מתקבל $(-1)$. אבל $f^2(x)=1$ לכל $x$, ולכן $\ds\lim_{x\to0}f^2(x)=1$.
+\end{solbox}
+\fi
+\item אם $\ds\lim_{x\to x_0}g(x)=0$ וקיים הגבול (הסופי) $\ds\lim_{x\to x_0}\frac{f(x)}{g(x)}$, אז $\ds\lim_{x\to x_0}f(x)=0$.
+\ifsol
+\begin{solbox}
+הטענה נכונה. נסמן $\ds\lim_{x\to x_0}\frac{f(x)}{g(x)}=L$. בסביבה נקובה של $x_0$ המנה מוגדרת, כלומר $g(x)\ne0$, ושם
+\[f(x)=\frac{f(x)}{g(x)}\cdot g(x)\]
+ולכן
+\[\lim_{x\to x_0}f(x)=\lim_{x\to x_0}\left(\frac{f(x)}{g(x)}\cdot g(x)\right)=L\cdot0=0\]
+\end{solbox}
+\fi
+\end{enumerate}

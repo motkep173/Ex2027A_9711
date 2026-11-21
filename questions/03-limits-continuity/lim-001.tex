@@ -139,5 +139,27 @@ $\delta<\varepsilon$,
 \]
 \end{solbox}
 \fi
+\item $\ds\lim_{x\to9}\sqrt x=3$
+\ifsol
+\hint{את הביטוי $\left|\sqrt x-3\right|$ הכפילו וחלקו בצמוד $\sqrt x+3$, ושימו לב מה ניתן לומר על המכנה.}
+\begin{solbox}
+יהי $\varepsilon>0$. נדרוש $\delta\le9$, כך שכל $x$ עם $|x-9|<\delta$ מקיים $x>0$ והשורש מוגדר. כפל בצמוד נותן
+\[\left|\sqrt x-3\right|=\frac{|x-9|}{\sqrt x+3}\le\frac{|x-9|}{3}\]
+נבחר $\delta=\min\{9,3\varepsilon\}$. אם $0<|x-9|<\delta$, אז
+\[\left|\sqrt x-3\right|\le\frac{|x-9|}{3}<\frac{3\varepsilon}{3}=\varepsilon\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to2}\frac1x=\frac12$
+\ifsol
+\hint{הביאו למכנה משותף, והגבילו מראש את $\delta$ כדי לחסום את $\frac1{|x|}$.}
+\begin{solbox}
+יהי $\varepsilon>0$. מתקיים
+\[\left|\frac1x-\frac12\right|=\frac{|x-2|}{2|x|}\]
+נדרוש $\delta\le1$. אז $|x-2|<\delta$ גורר $x>1$, ולכן $\frac{1}{2|x|}<\frac12$. נבחר $\delta=\min\{1,2\varepsilon\}$. אם $0<|x-2|<\delta$, אז
+\[\left|\frac1x-\frac12\right|<\frac{|x-2|}{2}<\varepsilon\]
+\end{solbox}
+\fi
+
 \eMs
 \end{enumerate}

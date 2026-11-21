@@ -1,0 +1,67 @@
+% ==================================================================
+% id:       lim-043
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: אינסוף כגבול וגבול באינסוף
+% solution: full
+% ==================================================================
+\textbf{
+בכל אחד מהסעיפים הבאים, השתמשו במשפט היינה וקבעו האם קיים הגבול. \\
+נמקו את תשובתכם/ן:}
+
+\begin{enumerate}\bMs{2}
+
+\item $\ds{\lim_{x \to 0} e^{\frac{1}{x}}}$
+\ifsol
+\hint{בדקו לאן שואפת $f(a_n)$ עבור סדרות $a_n\to0$ מימין ומשמאל, והשוו.}
+\begin{solbox}
+נראה כי הגבול לא קיים.
+תהיינה
+$(a_n)_{n=1}^\infty$
+ו-
+$(b_n)_{n=1}^\infty$
+שתי סדרות כך ש-
+$$,\lim_{n\to\infty}a_n=\lim_{n\to\infty}b_n=0$$
+ו-
+$a_n>0$, $b_n<0$
+לכל
+$n\in\mathbb{N}$.
+מתקיים
+$$,\displaystyle\lim_{n\to\infty}f(a_n)=\lim_{n\to\infty}e^{\frac{1}{a_n}}
+=\infty$$
+מאחר והגבול במעריך הוא אינסוף.
+מצד שני
+$$,\displaystyle\lim_{n\to\infty}f(b_n)=\lim_{n\to\infty}e^{\frac{1}{b_n}}=0$$
+מאחר והגבול במעריך הוא מינוס אינסוף.
+התקבלו שתי תוצאות שונות, משמעו אין גבול.
+\end{solbox}
+\fi
+
+\item $\ds{\lim_{x \to 0} \arctan\lr{ \frac{1}{x} } }$
+\ifsol
+\hint{מה קורה ל-$\frac1x$ כאשר מתקרבים ל-$0$ מכל צד, ומה ידוע על $\arctan$ בפלוס ומינוס אינסוף?}
+\begin{solbox}
+שוב נראה כי הגבול לא קיים. נבחר שתי סדרות - הראשונה שמתכנסת ל-
+$0$
+מלמעלה, והשניה - מלמטה.
+לדוגמא,
+$a_n=-\tfrac{1}{n}$
+ו-
+$b_n=\tfrac{1}{n}$.
+מתקיים
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(a_n)
+&=\ \displaystyle\lim_{n\to\infty}\arctan(-n)\\
+&=\ -\frac{\pi}{2},
+\end{align*}
+מצד שני
+\begin{align*}
+\displaystyle\lim_{n\to\infty}f(b_n)
+&=\ \displaystyle\lim_{n\to\infty}\arctan(n)\\
+&=\ \frac{\pi}{2},
+\end{align*}
+התקבלו שני גבולות שונים, לכן הגבול המבוקש לא קיים
+(ע"פ היינה).
+\end{solbox}
+\fi
+\eMs
+\end{enumerate}
