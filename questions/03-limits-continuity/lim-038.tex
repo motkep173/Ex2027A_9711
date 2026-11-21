@@ -1,0 +1,43 @@
+% ==================================================================
+% id:       lim-038
+% topic:    גבולות ורציפות של פונקציות
+% subtopic: משפט הסנדוויץ׳
+% solution: full
+% ==================================================================
+\textbf{חשבו את הגבולות הבאים:}
+\begin{enumerate}\bMs{2}
+\item $\ds\lim_{x\to0}x^2\cos\lr{\frac1x}$
+\ifsol
+\begin{solbox}
+מתקיים $\ds\lim_{x\to0}x^2=0$, ולכל $x\ne0$ מתקיים $\left|\cos\lr{\frac1x}\right|\le1$. לפי ``אפסה כפול חסומה''
+\[\lim_{x\to0}x^2\cos\lr{\frac1x}=0\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to0}x\,D(x)$, כאשר $D$ היא פונקציית דיריכלה ($D(x)=1$ אם $x$ רציונלי, ו-$D(x)=0$ אחרת).
+\ifsol
+\begin{solbox}
+מתקיים $\ds\lim_{x\to0}x=0$, ולכל $x$ מתקיים $0\le D(x)\le1$. לפי ``אפסה כפול חסומה''
+\[\lim_{x\to0}x\,D(x)=0\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to0}x\floor{\frac1x}$
+\ifsol
+\hint{השתמשו ב-$t-1<\floor t\le t$ עם $t=\frac1x$, ושימו לב שהכפל ב-$x$ הופך את כיוון אי-השוויון כאשר $x<0$.}
+\begin{solbox}
+לכל $x\ne0$ מתקיים
+\[\frac1x-1<\floor{\frac1x}\le\frac1x\]
+אם $x>0$, נכפול ב-$x$ ונקבל $1-x<x\floor{\frac1x}\le1$. אם $x<0$, הכפל הופך את הכיוון, ונקבל $1\le x\floor{\frac1x}<1-x$. בשני המקרים
+\[1-|x|\le x\floor{\frac1x}\le1+|x|\]
+מתקיים $\ds\lim_{x\to0}\lr{1-|x|}=\lim_{x\to0}\lr{1+|x|}=1$, ולכן לפי משפט הסנדוויץ'
+\[\lim_{x\to0}x\floor{\frac1x}=1\]
+\end{solbox}
+\fi
+\item $\ds\lim_{x\to0}\lr{\sqrt{x+4}+x\sin\lr{\frac1{x^2}}}$
+\ifsol
+\begin{solbox}
+לפי גבול של חזקה $\ds\lim_{x\to0}\sqrt{x+4}=2$, ולפי ``אפסה כפול חסומה'' $\ds\lim_{x\to0}x\sin\lr{\frac1{x^2}}=0$. לפי אריתמטיקה של גבולות
+\[\lim_{x\to0}\lr{\sqrt{x+4}+x\sin\lr{\frac1{x^2}}}=2+0=2\]
+\end{solbox}
+\fi
+\eMs
+\end{enumerate}

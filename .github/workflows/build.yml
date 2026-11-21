@@ -10,6 +10,7 @@ on:
     paths:
       - 'questions/**'
       - 'structure.txt'
+      - 'figures/**'
       - 'sheets.txt'
       - 'make_bank.py'
       - 'make_site.py'

@@ -231,7 +231,20 @@ def protect_math(s, ctx):
 
 # ---------------------------------------------------------------- text
 
+def fig_html(name):
+    """\\qfig{name} -> the SVG figures/name.svg, embedded so the site stays one file."""
+    path = os.path.join(HERE, 'figures', name.strip() + '.svg')
+    if not os.path.exists(path):
+        warnings.append(f'missing figure {path} (run tools/build_figures.py)')
+        return ''
+    with open(path, 'rb') as fh:
+        data = base64.b64encode(fh.read()).decode()
+    return '<img class="qfig" alt="" src="data:image/svg+xml;base64,%s">' % data
+
+
 def text_cmds(s, ctx, refs):
+    s = re.sub(r'\\qfig\[[^\]]*\]', r'\\qfig', s)
+    s = replace_cmd(s, 'qfig', fig_html)
     s = replace_cmd(s, 'textbf', lambda a: '<b>' + a + '</b>')
     s = re.sub(r'\{\\bf\s+', r'\\textbf{', s)
     s = replace_cmd(s, 'textbf', lambda a: '<b>' + a + '</b>')

@@ -69,6 +69,25 @@ $$.1-\cos x=2\sin^2(\tfrac{x}{2})$$
 הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של סכום, של מכפלה ושל מנה של פונקציות מתכנסות שווה לסכום, למכפלה ולמנה של הגבולות, כל עוד הגבול של המכנה שונה מ-$0$.
 \end{solbox}
 \fi
+\item $\ds{ \lim_{x \to \pi} \frac{\sin(x)}{x-\pi}}$
+
+\ifsol
+\hint{הציבו $t=x-\pi$, והשתמשו בזהות $\sin(t+\pi)=-\sin(t)$.}
+\begin{solbox}
+נציב
+$t=x-\pi$.
+כאשר
+$x\to\pi$
+מתקיים
+$t\to0$,
+ו-$t\neq0$ לכל $x\neq\pi$.
+מהזהות
+$\sin(t+\pi)=-\sin(t)$
+נקבל
+$$.\lim_{x\to\pi}\frac{\sin(x)}{x-\pi}=\lim_{t\to0}\frac{\sin(t+\pi)}{t}=-\lim_{t\to0}\frac{\sin(t)}{t}=-1$$
+\end{solbox}
+\fi
+
 
 \item (*) $\ds{ \lim_{x \to {\pi}} \frac{\sin^2 x}{1+ \cos^3 x}}$
 
@@ -280,34 +299,7 @@ $\ds{
 \end{solbox}
 \fi
 
-\item
-$\ds{
-\lim_{x\to 1} (1 - x) \cdot \tan\lr{\frac\pi2 x}
-}$
-
-\ifsol
-\hint{הציבו $t=1-x$ והשתמשו בזהות $\tan(\frac\pi2-\theta)=\cot\theta$.}
-\begin{solbox}
-נסמן
-$t=1-x$.
-לכן
-$$,(1 - x) \cdot \tan\lr{\frac\pi2 x}=t\cdot\tan\left(\frac{\pi}{2}-\frac{\pi}{2}t\right)=t\cdot\cot\left(\frac{\pi}{2}t\right)=\frac{t}{\sin\left(\frac{\pi}{2}t\right)}\cdot\cos\left(\frac{\pi}{2}t\right)$$
-מכיוון ש-
-$x\longrightarrow1$,
-נסיק כי
-$t\longrightarrow0$,
-לכן
-\begin{align*}
-    \lim_{x\to 1} (1 - x) \cdot \tan\lr{\frac\pi2 x}&=\ \lim_{t\to 0}\frac{t}{\sin\left(\frac{\pi}{2}t\right)}\cdot\cos\left(\frac{\pi}{2}t\right)\\
-    &=\ {\color{red}\frac{2}{\pi}\cdot}\lim_{t\to 0}\frac{{\color{red}\frac{\pi}{2}}t}{\sin\left(\frac{\pi}{2}t\right)}\cdot\cos\left(\frac{\pi}{2}t\right)\\
-    &=\ \frac{2}{\pi}\cdot1\cdot1
-    = \frac{2}{\pi}.
-\end{align*}
-הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של מכפלה של פונקציות מתכנסות שווה למכפלת הגבולות.
-\end{solbox}
-\fi
-
-\item
+\item (*)
 $\ds{
 \lim_{x\to 0}\frac{2 \cdot \arcsin(x)}{3x}
 }$

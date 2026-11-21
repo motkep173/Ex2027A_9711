@@ -10,6 +10,10 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows.meta}
 
+% איור: \qfig{שם} מציג את figures/שם.pdf, ובאתר את figures/שם.svg.
+% המקור הוא figures/שם.tex, ובונים אותו עם python3 tools/build_figures.py.
+\newcommand{\qfig}[2][0.5\linewidth]{\par\begin{center}\includegraphics[width=#1]{figures/#2.pdf}\end{center}\par}
+
 % רמז לסעיף: \hint{...} בשורה נפרדת, לפני ה-solbox של הסעיף.
 % במאגר (\soltrue) הרמז מודפס בכחול; בחוברת לסטודנטים (\solfalse) הוא מוסתר, ובאתר הוא נפתח בלחיצה.
 \ifsol
