@@ -280,32 +280,6 @@ $\ds{
 \end{solbox}
 \fi
 
-\item $\ds{ \lim_{x \to \infty} (2x+3)\lr{\ln(x + 2) - \ln(x)}}$
-
-\ifsol
-\hint{השתמשו בחוקי הלוגריתמים כדי לכתוב את הביטוי כ-$\ln$ של חזקה, ושימו לב שבתוך ה-$\ln$ יש גבול מהצורה $1^\infty$.}
-\begin{solbox}
-ניעזר בחוקי לוגריתמים ונקבל
-\begin{align*}
-    (2x+3)\lr{\ln(x + 2) - \ln(x)}=(2x+3)\ln(1+\tfrac{2}{x})
-    = \ln\left((1+\tfrac{2}{x})^{2x+3}\right)
-    \end{align*}
-    הביטוי בתוך ה-$\ln$ דומה לגבול המופלא המוכר, ולכן נמשיך לפשט רק אותו  ה-$\ln$-
-    \begin{align*}
-    (1+\tfrac{2}{x})^{2x+3}
-    &=\ (1+\tfrac{2}{x})^{{\color{red}\frac{x}{2}}\cdot(2x+3)\cdot{\color{red}\frac{2}{x}}}\\
-    &=\ (1+\tfrac{2}{x})^{{\frac{x}{2}}\cdot{(4+\tfrac{6}{x})}}
-\end{align*}
-לכן
-\begin{align*}
-    \lim_{x\to\infty}(2x+3)\lr{\ln(x + 2) - \ln(x)}&=\ \lim_{x\to\infty}(4+\tfrac{6}{x})\ln(1+\tfrac{2}{x})^{\frac{x}{2}}\\
-    &=\ 4\cdot\ln e
-    = 4.
-\end{align*}
-הערה: בחישוב הגבול השתמשנו באריתמטיקה של גבולות: הגבול של מכפלה של פונקציות מתכנסות שווה למכפלת הגבולות.
-\end{solbox}
-\fi
-
 \item
 $\ds{
 \lim_{x\to 1} (1 - x) \cdot \tan\lr{\frac\pi2 x}
