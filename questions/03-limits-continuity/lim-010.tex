@@ -174,5 +174,71 @@ $(\ast)$
 \end{solbox}
 \fi
 
+\item $\ds\lim_{x\to\infty}\lr{\frac{x+2}{x-1}}^{x}$
+\ifsol
+\begin{solbox}
+נכתוב $\frac{x+2}{x-1}=1+\frac{3}{x-1}$, ולכן
+\[\lr{\frac{x+2}{x-1}}^{x}=\lr{\lr{1+\frac{3}{x-1}}^{\frac{x-1}{3}}}^{\frac{3x}{x-1}}\]
+כאשר $x\to\infty$ מתקיים $\frac{3}{x-1}\to0$, ולכן לפי הגבול המופלא הבסיס החיצוני שואף ל-$e$. בנוסף $\ds\lim_{x\to\infty}\frac{3x}{x-1}=3$. לפי גבול של חזקה:
+\[\lim_{x\to\infty}\lr{\frac{x+2}{x-1}}^{x}=e^3\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to\infty}\frac{3^{x+1}+2^{x}}{3^{x}-2^{x+2}}$
+\ifsol
+\hint{חלקו את המונה ואת המכנה בגורם הדומיננטי $3^x$.}
+\begin{solbox}
+הביטוי מהצורה $\frac{\infty}{\infty}$ (כי $\ds\lim_{x\to\infty}3^x=\infty$). נחלק את המונה ואת המכנה ב-$3^x>0$, ונשתמש ב-$3^{x+1}=3\cdot3^x$ וב-$2^{x+2}=4\cdot2^x$:
+\[\frac{3^{x+1}+2^{x}}{3^{x}-2^{x+2}}=\frac{3+\lr{\frac23}^x}{1-4\lr{\frac23}^x}.\]
+מאריתמטיקה של חזקות (הבסיס $\frac23$ הוא קבוע בין $0$ ל-$1$, והמעריך שואף ל-$\infty$) נובע ש-$\ds\lim_{x\to\infty}\lr{\frac23}^x=0$.
+בפרט המכנה שואף ל-$1-4\cdot0=1\ne0$, ולכן הוא שונה מ-$0$ לכל $x$ גדול מספיק. לפי אריתמטיקה של גבולות:
+\[\lim_{x\to\infty}\frac{3^{x+1}+2^{x}}{3^{x}-2^{x+2}}=\frac{3+0}{1-0}=3.\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to\infty}\lr{1+\sin\lr{\frac{2}{x}}}^{x}$
+\ifsol
+\hint{צורה $1^\infty$ עם $u=\sin\lr{\frac2x}$. כתבו את המעריך כ-$\frac1u\cdot ux$ וחשבו את $\lim ux$ בעזרת $\frac{\sin(t)}{t}\to1$.}
+\begin{solbox}
+נסמן $u=\sin\lr{\frac2x}$. עבור $x>\frac4\pi$ מתקיים $0<\frac2x<\frac\pi2$, ולכן $0<u<1$; בפרט $u\ne0$ והבסיס חיובי. כאשר $x\to\infty$ מתקיים $\frac2x\to0$, ולכן (הצבה $t=\frac2x$ וגבול $\sin(t)\to\sin(0)=0$) $u\to0$. זו צורה $1^\infty$, ונכתוב:
+\[\lr{1+\sin\lr{\frac{2}{x}}}^{x}=\left[(1+u)^{\frac1u}\right]^{ux}.\]
+\begin{itemize}
+\item הבסיס: לפי הגבול המופלא $(1+u)^{\frac1u}\to e$ וגבול של הרכבה ($u\to0$ ו-$u\ne0$), $(1+u)^{\frac1u}\to e$.
+\item המעריך: נציב $t=\frac2x$; כאשר $x\to\infty$ מתקיים $t\to0^+$, ו-$t\ne0$. לכן
+\[\lim_{x\to\infty}ux=\lim_{x\to\infty}x\sin\lr{\frac2x}=\lim_{t\to0^+}2\cdot\frac{\sin(t)}{t}=2\cdot1=2\]
+לפי הגבול המופלא $\frac{\sin(t)}{t}\to1$ ואריתמטיקה של גבולות.
+\end{itemize}
+לפי כלל החזקה באריתמטיקה של גבולות (הבסיס שואף ל-$e>0$ והמעריך ל-$2$):
+\[\lim_{x\to\infty}\lr{1+\sin\lr{\frac{2}{x}}}^{x}=e^2.\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to\infty}\frac{\floor{x^2}}{x^2+x}$
+\ifsol
+\hint{השתמשו ב-$t-1<\floor{t}\le t$ עם $t=x^2$, ובמשפט הסנדוויץ'.}
+\begin{solbox}
+לכל $t\in\rr$ מתקיים $t-1<\floor t\le t$. עם $t=x^2$:
+\[x^2-1<\floor{x^2}\le x^2.\]
+לכל $x>0$ מתקיים $x^2+x>0$, ולכן מותר לחלק בו בלי לשנות את כיוון אי-השוויונות:
+\[\frac{x^2-1}{x^2+x}<\frac{\floor{x^2}}{x^2+x}\le\frac{x^2}{x^2+x}.\]
+נחשב את הגבולות של החסמים. בחלוקת המונה והמכנה ב-$x^2$ ולפי $\frac{c}{\pm\infty}=0$ ואריתמטיקה של גבולות:
+\[\lim_{x\to\infty}\frac{x^2-1}{x^2+x}=\lim_{x\to\infty}\frac{1-\frac{1}{x^2}}{1+\frac1x}=\frac{1-0}{1+0}=1\]
+\[\lim_{x\to\infty}\frac{x^2}{x^2+x}=\lim_{x\to\infty}\frac{1}{1+\frac1x}=1\]
+לפי משפט הסנדוויץ':
+\[\lim_{x\to\infty}\frac{\floor{x^2}}{x^2+x}=1.\]
+\end{solbox}
+\fi
+
+\item $\ds\lim_{x\to\infty}\frac{x\sin(x)+2\cos\lr{x^2}}{x^2+1}$
+\ifsol
+\hint{חלקו את המונה ואת המכנה בגורם הדומיננטי $x^2$. מה מקבלים במונה?}
+\begin{solbox}
+הגבול $\ds\lim_{x\to\infty}\sin(x)$ אינו קיים, ולכן אי אפשר להשתמש בכלל הכפל. נחלק את המונה ואת המכנה בגורם הדומיננטי $x^2$:
+\[\frac{x\sin(x)+2\cos\lr{x^2}}{x^2+1}=\frac{\frac1x\cdot\sin(x)+\frac{2}{x^2}\cdot\cos\lr{x^2}}{1+\frac{1}{x^2}}\]
+במונה, $\ds\lim_{x\to\infty}\frac1x=0$ ו-$\abs{\sin(x)}\le1$, וגם $\ds\lim_{x\to\infty}\frac{2}{x^2}=0$ ו-$\abs{\cos\lr{x^2}}\le1$. לכן לפי ``אפסה כפול חסומה'' שני המחוברים במונה שואפים ל-$0$, והמונה שואף ל-$0$. המכנה שואף ל-$1+0=1$. לפי אריתמטיקה של גבולות:
+\[\lim_{x\to\infty}\frac{x\sin(x)+2\cos\lr{x^2}}{x^2+1}=\frac{0}{1}=0\]
+\end{solbox}
+\fi
+
 \eMs
 \end{enumerate}
