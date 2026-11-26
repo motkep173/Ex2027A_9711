@@ -68,5 +68,22 @@ $b_n=\tfrac{1}{n}$.
 (ע"פ היינה).
 \end{solbox}
 \fi
+
+\item $\ds{\lim_{x\to0}\frac{3+2e^{\frac1x}}{1+e^{\frac1x}}}$
+\ifsol
+\hint{בחרו סדרה ששואפת ל-$0$ מימין וסדרה ששואפת ל-$0$ משמאל. מה קורה ל-$e^{\frac1x}$ בכל אחת מהן?}
+\begin{solbox}
+נראה כי הגבול לא קיים. נבחר $a_n=\frac1n$ ו-$b_n=-\frac1n$. שתי הסדרות שואפות ל-$0$, ואיבריהן שונים מ-$0$.
+\begin{itemize}
+\item כאן $f(a_n)=\frac{3+2e^{n}}{1+e^{n}}$. נחלק את המונה ואת המכנה ב-$e^n>0$:
+\[f(a_n)=\frac{3e^{-n}+2}{e^{-n}+1}\]
+מתקיים $\ds\lim_{n\to\infty}e^{-n}=0$, ולכן לפי אריתמטיקה של גבולות
+\[\lim_{n\to\infty}f(a_n)=\frac{0+2}{0+1}=2\]
+\item כאן $f(b_n)=\frac{3+2e^{-n}}{1+e^{-n}}$, ולפי אריתמטיקה של גבולות
+\[\lim_{n\to\infty}f(b_n)=\frac{3+0}{1+0}=3\]
+\end{itemize}
+התקבלו שני גבולות שונים, ולכן לפי משפט היינה הגבול $\ds\lim_{x\to0}\frac{3+2e^{\frac1x}}{1+e^{\frac1x}}$ אינו קיים.
+\end{solbox}
+\fi
 \eMs
 \end{enumerate}
