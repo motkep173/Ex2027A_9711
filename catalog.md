@@ -1,8 +1,6 @@
 # קטלוג מאגר השאלות
 
-נוצר אוטומטית ע"י `make_bank.py`. סה"כ **70** שאלות.
-
-**פתרונות שטרם נבדקו (1):** [lim-000](questions/03-limits-continuity/lim-000.tex)
+נוצר אוטומטית ע"י `make_bank.py`. סה"כ **75** שאלות.
 
 
 ## מספרים ממשיים (7)
@@ -71,7 +69,7 @@
 | [func-018](questions/01-functions/func-018.tex) | פונקציה הופכית | מלא | {בדקו את ההפיכות של הפונקציות הבאות. מצאו פונקציות הופכיות בתחומים בהם… |
 | [func-024](questions/01-functions/func-024.tex) | פונקציה הופכית | מלא | {נתבונן בפונקציה $f(x)=\frac{x^2-1}{x}$} מה תחום ההגדרה של הפונקציה? ה… |
 
-## גבולות ורציפות של פונקציות (19)
+## גבולות ורציפות של פונקציות (24)
 
 | מזהה | תת־נושא | פתרון | התחלת השאלה |
 |---|---|---|---|
@@ -90,7 +88,12 @@
 | [lim-006](questions/03-limits-continuity/lim-006.tex) | גבולות חד־צדדיים | מלא | מצאו את כל הערכים של הפרמטרים $a,b$ עבורם קיים ${ \lim_{x\to0}}f(x)$, … |
 | [lim-007](questions/03-limits-continuity/lim-007.tex) | גבולות חד־צדדיים | מלא | { הוכיחו או הפריכו כל אחד מהסעיפים הבאים:} אם $ \lim_{x\to 1^+}f(x)=3$… |
 | [lim-027](questions/03-limits-continuity/lim-027.tex) | גבולות חד־צדדיים | מלא | {חשבו את הגבולות הבאים, או הראו שהגבול אינו קיים.} $ \lim_{x\to1}\lr{\… |
-| [lim-000](questions/03-limits-continuity/lim-000.tex) | גבולות מופלאים | מלא ⚠️ טרם נבדק | הוכיחו כי $ \lim_{x\to0}\frac{1-\cos(x)}{x^2}=\frac12$. \ifsol \fi |
+| [lim-000](questions/03-limits-continuity/lim-000.tex) | גבולות מופלאים | מלא | הוכיחו כי $ \lim_{x\to0}\frac{1-\cos(x)}{x^2}=\frac12$. \ifsol \fi |
 | [lim-008](questions/03-limits-continuity/lim-008.tex) | גבולות מופלאים | מלא | { היעזרו בגבולות המופלאים שנלמדו בכיתה, ובכל אחד מהסעיפים הבאים, חשבו … |
 | [lim-009](questions/03-limits-continuity/lim-009.tex) | גבולות מופלאים | מלא | {בכל אחד מהסעיפים הבאים, חשבו את גבול הסדרה:} \bMs{2} $\limn n(\ln(n+2… |
 | [lim-023](questions/03-limits-continuity/lim-023.tex) | גבולות מופלאים | מלא | מצאו את כל הערכים של $a$ עבורם $ \lim_{x\to0}\frac{\sin(ax)}{\sqrt{1+x… |
+| [lim-010](questions/03-limits-continuity/lim-010.tex) | אינסוף כגבול וגבול באינסוף | מלא | { בכל אחד מהסעיפים הבאים, חשבו את הגבול: } \bMs{2} $ {\lim_{x\to\infty… |
+| [lim-011](questions/03-limits-continuity/lim-011.tex) | אינסוף כגבול וגבול באינסוף | מלא | { בשאלה זו נקצר ונכתוב $ {\lim_{x\to x_0}}f(x)=\pm\infty$ אם $ {\lim_{… |
+| [lim-042](questions/03-limits-continuity/lim-042.tex) | אינסוף כגבול וגבול באינסוף | מלא | מצאו $a$ כך ש-$ \lim_{x\to\infty}\lr{\sqrt{x^2+ax+1}-x}=2$. \ifsol \fi |
+| [lim-043](questions/03-limits-continuity/lim-043.tex) | אינסוף כגבול וגבול באינסוף | מלא | { בכל אחד מהסעיפים הבאים, השתמשו במשפט היינה וקבעו האם קיים הגבול. \\ … |
+| [lim-044](questions/03-limits-continuity/lim-044.tex) | אינסוף כגבול וגבול באינסוף | מלא | חשבו את הגבול $ \lim_{x\to0}\frac{3+2e^{\frac1x}}{1+e^{\frac1x}}$, או … |
