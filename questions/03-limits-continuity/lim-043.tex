@@ -33,6 +33,8 @@ $$,\displaystyle\lim_{n\to\infty}f(a_n)=\lim_{n\to\infty}e^{\frac{1}{a_n}}
 $$,\displaystyle\lim_{n\to\infty}f(b_n)=\lim_{n\to\infty}e^{\frac{1}{b_n}}=0$$
 מאחר והגבול במעריך הוא מינוס אינסוף.
 התקבלו שתי תוצאות שונות, משמעו אין גבול.
+לדוגמה, אפשר לבחור $a_n=\frac1n$ ו-$b_n=-\frac1n$. אז
+$$f(a_n)=e^{n}\xrightarrow[n\to\infty]{}\infty,\qquad f(b_n)=e^{-n}\xrightarrow[n\to\infty]{}0$$
 \end{solbox}
 \fi
 
@@ -40,6 +42,9 @@ $$,\displaystyle\lim_{n\to\infty}f(b_n)=\lim_{n\to\infty}e^{\frac{1}{b_n}}=0$$
 \ifsol
 \hint{מה קורה ל-$\frac1x$ כאשר מתקרבים ל-$0$ מכל צד, ומה ידוע על $\arctan$ בפלוס ומינוס אינסוף?}
 \begin{solbox}
+נזכיר איך נראה הגרף של $\arctan$: היא מוגדרת לכל $x\in\mathbb{R}$, עולה ממש, והתמונה שלה היא $\lr{-\frac\pi2,\frac\pi2}$. כאשר $x\to\infty$ הגרף מתקרב לישר $y=\frac\pi2$, וכאשר $x\to-\infty$ לישר $y=-\frac\pi2$. כלומר
+$$\lim_{x\to\infty}\arctan(x)=\frac\pi2,\qquad \lim_{x\to-\infty}\arctan(x)=-\frac\pi2$$
+\qfig{lim-043b}
 שוב נראה כי הגבול לא קיים. נבחר שתי סדרות - הראשונה שמתכנסת ל-
 $0$
 מלמעלה, והשניה - מלמטה.

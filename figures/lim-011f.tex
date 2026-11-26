@@ -1,0 +1,20 @@
+\documentclass[border=4pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[x=0.75cm,y=0.45cm,>=Stealth]
+  \draw[->] (-0.3,0) -- (6.6,0) node[right] {$x$};
+  \draw[->] (0,-6.4) -- (0,6.4) node[above] {$y$};
+  \draw[dashed,gray] (0,0) -- (6.3,6.3) node[right,black] {$y=x$};
+  \draw[dashed,gray] (0,0) -- (6.3,-6.3) node[right,black] {$y=-x$};
+  \foreach \k in {0,2,4} {
+    \draw[very thick,blue!70!black] (\k,\k) -- (\k+1,\k+1);
+    \fill[blue!70!black] (\k,\k) circle (2.2pt);
+    \draw[blue!70!black,fill=white] (\k+1,\k+1) circle (2.2pt);
+    \draw[very thick,blue!70!black] (\k+1,-\k-1) -- (\k+2,-\k-2);
+    \fill[blue!70!black] (\k+1,-\k-1) circle (2.2pt);
+    \draw[blue!70!black,fill=white] (\k+2,-\k-2) circle (2.2pt);
+  }
+  \foreach \x in {1,...,6} \draw (\x,0.12) -- (\x,-0.12) node[below] {\small $\x$};
+\end{tikzpicture}
+\end{document}

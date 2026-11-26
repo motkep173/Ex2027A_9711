@@ -3,13 +3,11 @@
 % topic:    גבולות ורציפות של פונקציות
 % subtopic: גבולות מופלאים
 % solution: full
-% verified: no
 % ==================================================================
 הוכיחו כי $\ds\lim_{x\to0}\frac{1-\cos(x)}{x^2}=\frac12$.
 \ifsol
-\hint{היעזרו בזהות הטריגונומטרית $1-\cos(x)=2\sin^2\lr{\frac x2}$ (המקרה $\alpha=\frac x2$ של $\cos(2\alpha)=1-2\sin^2(\alpha)$), ובגבול המופלא $\lim_{t\to0}\frac{\sin(t)}{t}=1$.}
+\hint{היעזרו בזהות הטריגונומטרית $1-\cos(x)=2\sin^2\lr{\frac x2}$, ובגבול המופלא $\lim_{t\to0}\frac{\sin(t)}{t}=1$.}
 \begin{solbox}
-\unverified
 לפי הזהות הטריגונומטרית $\cos(2\alpha)=1-2\sin^2(\alpha)$, עם $\alpha=\frac x2$, מתקיים $1-\cos(x)=2\sin^2\lr{\frac x2}$. לכן לכל $x\ne0$:
 \[\frac{1-\cos(x)}{x^2}=\frac{2\sin^2\lr{\frac x2}}{x^2}=\frac12\cdot\lr{\frac{\sin\lr{\frac x2}}{\frac x2}}^2\]
 כאשר $x\to0$ מתקיים $t=\frac x2\to0$, ו-$t\ne0$ לכל $x\ne0$. לכן לפי הגבול המופלא $\ds\lim_{t\to0}\frac{\sin(t)}{t}=1$:
